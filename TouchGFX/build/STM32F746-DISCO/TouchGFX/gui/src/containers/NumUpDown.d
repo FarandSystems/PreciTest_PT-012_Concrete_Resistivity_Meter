@@ -1,7 +1,7 @@
-TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/containers/Text_Template.o: \
- TouchGFX/gui/src/containers/Text_Template.cpp \
- TouchGFX/gui/include/gui/containers/Text_Template.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp \
+TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/containers/NumUpDown.o: \
+ TouchGFX/gui/src/containers/NumUpDown.cpp \
+ TouchGFX/gui/include/gui/containers/NumUpDown.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp \
  TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -38,17 +38,15 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/containers/Text_Template.o: \
  Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonController.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp
+ Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp
 
-TouchGFX/gui/include/gui/containers/Text_Template.hpp:
+TouchGFX/gui/include/gui/containers/NumUpDown.hpp:
 
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp:
+TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp:
 
 TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
 
@@ -122,12 +120,6 @@ Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonControlle
 
 Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
-
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
@@ -135,3 +127,5 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:

@@ -91,10 +91,11 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/spalsh_screen_screen/Spalsh_scre
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h Core/Inc/adc.h \
  Core/Inc/main.h Core/Inc/spi.h Core/Inc/ProcessData.h \
- Core/Inc/Wenner_Constants.h Core/Inc/Flash.h \
+ Core/Inc/Device_Constants.h Core/Inc/Flash.h \
  Core/Inc/LM35_Temperature_Measurement.h Core/Inc/tim.h Core/Inc/i2c.h \
- Core/Inc/Alarm.h Core/Inc/PowerManagement.h \
- Drivers/BSP/stm32746g_discovery_qspi.h \
+ Core/Inc/Alarm.h Core/Inc/ltdc.h Core/Inc/gpio.h Core/Inc/dma.h \
+ Core/Inc/crc.h Core/Inc/fmc.h Core/Inc/dma2d.h Core/Inc/quadspi.h \
+ Core/Inc/PowerManagement.h Drivers/BSP/stm32746g_discovery_qspi.h \
  Drivers/BSP/../Components/n25q128a/n25q128a.h
 
 TouchGFX/gui/include/gui/spalsh_screen_screen/Spalsh_screenView.hpp:
@@ -291,7 +292,7 @@ Core/Inc/spi.h:
 
 Core/Inc/ProcessData.h:
 
-Core/Inc/Wenner_Constants.h:
+Core/Inc/Device_Constants.h:
 
 Core/Inc/Flash.h:
 
@@ -302,6 +303,20 @@ Core/Inc/tim.h:
 Core/Inc/i2c.h:
 
 Core/Inc/Alarm.h:
+
+Core/Inc/ltdc.h:
+
+Core/Inc/gpio.h:
+
+Core/Inc/dma.h:
+
+Core/Inc/crc.h:
+
+Core/Inc/fmc.h:
+
+Core/Inc/dma2d.h:
+
+Core/Inc/quadspi.h:
 
 Core/Inc/PowerManagement.h:
 

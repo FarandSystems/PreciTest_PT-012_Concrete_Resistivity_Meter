@@ -1,0 +1,2 @@
+stm32f746g_disco\image_dark_togglebars_toggle_round_large_button_off.o: ../touchgfx/generated/images/src/__designer/image_dark_togglebars_toggle_round_large_button_off.cpp
+stm32f746g_disco\image_dark_togglebars_toggle_round_large_button_off.o: ../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp

@@ -1573,12 +1573,7 @@
     "FrameworkFeatures": {
       "LCD16bpp": {
         "Id": "LCD16bpp",
-        "Features": [
-          {
-            "Id": "RGB565",
-            "IsEnabled": true
-          }
-        ]
+        "IsEnabled": true
       }
     },
     "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
@@ -1586,7 +1581,7 @@
     "PostGenerateTargetCommand": "touchgfx update_project --project-file=../STM32F746G_DISCO.ioc --platform=m7",
     "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
     "RunSimulatorCommand": "build\\bin\\simulator.exe",
-    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile clean && make -f ../gcc/Makefile -j8",
     "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
     "LandscapeSkinX": 0,
     "LandscapeSkinY": 0,

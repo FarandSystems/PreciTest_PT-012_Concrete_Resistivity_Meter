@@ -70,7 +70,7 @@ stm32f746g_disco\main.o: ../Core/Inc/PowerManagement.h
 stm32f746g_disco\main.o: ../Drivers/BSP/stm32746g_discovery_qspi.h
 stm32f746g_disco\main.o: ../Drivers/BSP/../Components/n25q128a/n25q128a.h
 stm32f746g_disco\main.o: ../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp
-stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 stm32f746g_disco\main.o: ../Core/Inc/FreeRTOSConfig.h
 stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -80,10 +80,7 @@ stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVD
 stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
-stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
-stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
-stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+stm32f746g_disco\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 stm32f746g_disco\main.o: ../touchgfx/App/app_touchgfx.h
 stm32f746g_disco\main.o: ../USB_DEVICE/App/usb_device.h
 stm32f746g_disco\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h

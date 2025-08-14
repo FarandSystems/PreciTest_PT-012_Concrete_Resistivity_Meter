@@ -50,6 +50,27 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/main_screen_screen/Main_ScreenVi
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
+ TouchGFX/gui/include/gui/containers/Message_Box.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
+ TouchGFX/gui/include/gui/containers/ClockAndDateSetting.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
+ TouchGFX/gui/include/gui/containers/NumUpDown.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp \
+ TouchGFX/gui/include/gui/containers/Digital_Clock.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/Digital_ClockBase.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/TextProgress.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
+ TouchGFX/gui/include/gui/containers/Ready.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/ReadyBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
@@ -65,28 +86,9 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/main_screen_screen/Main_ScreenVi
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp \
- TouchGFX/gui/include/gui/containers/Message_Box.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- TouchGFX/gui/include/gui/containers/ClockAndDateSetting.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
- TouchGFX/gui/include/gui/containers/Text_Template.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp \
- TouchGFX/gui/include/gui/containers/Digital_Clock.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Digital_ClockBase.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/TextProgress.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp \
- Core/Inc/Mirror.hpp TouchGFX/generated/images/include/BitmapDatabase.hpp \
  TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp \
+ Core/Inc/Mirror.hpp TouchGFX/generated/images/include/BitmapDatabase.hpp \
  Core/Inc/main.h Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h \
  Core/Inc/stm32f7xx_hal_conf.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_rcc.h \
@@ -129,10 +131,11 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/main_screen_screen/Main_ScreenVi
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h Core/Inc/adc.h \
  Core/Inc/main.h Core/Inc/spi.h Core/Inc/ProcessData.h \
- Core/Inc/Wenner_Constants.h Core/Inc/Flash.h \
+ Core/Inc/Device_Constants.h Core/Inc/Flash.h \
  Core/Inc/LM35_Temperature_Measurement.h Core/Inc/tim.h Core/Inc/i2c.h \
- Core/Inc/Alarm.h Core/Inc/PowerManagement.h \
- Drivers/BSP/stm32746g_discovery_qspi.h \
+ Core/Inc/Alarm.h Core/Inc/ltdc.h Core/Inc/gpio.h Core/Inc/dma.h \
+ Core/Inc/crc.h Core/Inc/fmc.h Core/Inc/dma2d.h Core/Inc/quadspi.h \
+ Core/Inc/PowerManagement.h Drivers/BSP/stm32746g_discovery_qspi.h \
  Drivers/BSP/../Components/n25q128a/n25q128a.h
 
 TouchGFX/gui/include/gui/main_screen_screen/Main_ScreenView.hpp:
@@ -235,6 +238,48 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 
+TouchGFX/gui/include/gui/containers/Message_Box.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
+
+TouchGFX/gui/include/gui/containers/ClockAndDateSetting.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
+
+TouchGFX/gui/include/gui/containers/NumUpDown.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp:
+
+TouchGFX/gui/include/gui/containers/Digital_Clock.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/containers/Digital_ClockBase.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/TextProgress.hpp:
+
+Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
+
+TouchGFX/gui/include/gui/containers/Ready.hpp:
+
+TouchGFX/generated/gui_generated/include/gui_generated/containers/ReadyBase.hpp:
+
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:
@@ -265,51 +310,13 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:
 
-TouchGFX/gui/include/gui/containers/Message_Box.hpp:
+TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
-
-TouchGFX/gui/include/gui/containers/ClockAndDateSetting.hpp:
-
-TouchGFX/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
-
-TouchGFX/gui/include/gui/containers/Text_Template.hpp:
-
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp:
-
-TouchGFX/gui/include/gui/containers/Digital_Clock.hpp:
-
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Digital_ClockBase.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/DigitalClock.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/clock/AbstractClock.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/TextProgress.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/containers/progress_indicators/AbstractProgressIndicator.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp:
 
 Core/Inc/Mirror.hpp:
 
 TouchGFX/generated/images/include/BitmapDatabase.hpp:
-
-TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 
 Core/Inc/main.h:
 
@@ -407,7 +414,7 @@ Core/Inc/spi.h:
 
 Core/Inc/ProcessData.h:
 
-Core/Inc/Wenner_Constants.h:
+Core/Inc/Device_Constants.h:
 
 Core/Inc/Flash.h:
 
@@ -418,6 +425,20 @@ Core/Inc/tim.h:
 Core/Inc/i2c.h:
 
 Core/Inc/Alarm.h:
+
+Core/Inc/ltdc.h:
+
+Core/Inc/gpio.h:
+
+Core/Inc/dma.h:
+
+Core/Inc/crc.h:
+
+Core/Inc/fmc.h:
+
+Core/Inc/dma2d.h:
+
+Core/Inc/quadspi.h:
 
 Core/Inc/PowerManagement.h:
 

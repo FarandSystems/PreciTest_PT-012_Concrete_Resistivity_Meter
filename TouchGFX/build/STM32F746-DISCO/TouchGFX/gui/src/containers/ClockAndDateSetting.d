@@ -38,8 +38,7 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/containers/ClockAndDateSetting.o
  Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonController.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
@@ -49,8 +48,8 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/containers/ClockAndDateSetting.o
  Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
- TouchGFX/gui/include/gui/containers/Text_Template.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp \
+ TouchGFX/gui/include/gui/containers/NumUpDown.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
@@ -97,10 +96,11 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/gui/src/containers/ClockAndDateSetting.o
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h Core/Inc/adc.h \
  Core/Inc/main.h Core/Inc/spi.h Core/Inc/ProcessData.h \
- Core/Inc/Wenner_Constants.h Core/Inc/Flash.h \
+ Core/Inc/Device_Constants.h Core/Inc/Flash.h \
  Core/Inc/LM35_Temperature_Measurement.h Core/Inc/tim.h Core/Inc/i2c.h \
- Core/Inc/Alarm.h Core/Inc/PowerManagement.h \
- Drivers/BSP/stm32746g_discovery_qspi.h \
+ Core/Inc/Alarm.h Core/Inc/ltdc.h Core/Inc/gpio.h Core/Inc/dma.h \
+ Core/Inc/crc.h Core/Inc/fmc.h Core/Inc/dma2d.h Core/Inc/quadspi.h \
+ Core/Inc/PowerManagement.h Drivers/BSP/stm32746g_discovery_qspi.h \
  Drivers/BSP/../Components/n25q128a/n25q128a.h
 
 TouchGFX/gui/include/gui/containers/ClockAndDateSetting.hpp:
@@ -179,9 +179,7 @@ Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonControlle
 
 Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 
@@ -201,9 +199,9 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBa
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
 
-TouchGFX/gui/include/gui/containers/Text_Template.hpp:
+TouchGFX/gui/include/gui/containers/NumUpDown.hpp:
 
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp:
+TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
@@ -309,7 +307,7 @@ Core/Inc/spi.h:
 
 Core/Inc/ProcessData.h:
 
-Core/Inc/Wenner_Constants.h:
+Core/Inc/Device_Constants.h:
 
 Core/Inc/Flash.h:
 
@@ -320,6 +318,20 @@ Core/Inc/tim.h:
 Core/Inc/i2c.h:
 
 Core/Inc/Alarm.h:
+
+Core/Inc/ltdc.h:
+
+Core/Inc/gpio.h:
+
+Core/Inc/dma.h:
+
+Core/Inc/crc.h:
+
+Core/Inc/fmc.h:
+
+Core/Inc/dma2d.h:
+
+Core/Inc/quadspi.h:
 
 Core/Inc/PowerManagement.h:
 

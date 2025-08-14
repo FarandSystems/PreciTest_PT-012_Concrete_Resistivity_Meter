@@ -37,8 +37,7 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/generated/gui_generated/src/containers/C
  Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonController.hpp \
  Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
+ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
@@ -48,15 +47,15 @@ TouchGFX/build/STM32F746-DISCO/TouchGFX/generated/gui_generated/src/containers/C
  Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
- TouchGFX/gui/include/gui/containers/Text_Template.hpp \
- TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp \
+ TouchGFX/gui/include/gui/containers/NumUpDown.hpp \
+ TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
+ TouchGFX/generated/images/include/BitmapDatabase.hpp \
  TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp \
- TouchGFX/generated/images/include/BitmapDatabase.hpp
+ Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp
 
 TouchGFX/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp:
 
@@ -132,9 +131,7 @@ Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonControlle
 
 Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/BoxWithBorder.hpp:
-
-Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
 
@@ -154,9 +151,9 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollBa
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
 
-TouchGFX/gui/include/gui/containers/Text_Template.hpp:
+TouchGFX/gui/include/gui/containers/NumUpDown.hpp:
 
-TouchGFX/generated/gui_generated/include/gui_generated/containers/Text_TemplateBase.hpp:
+TouchGFX/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
@@ -166,8 +163,8 @@ Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
 Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
 
-Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
+TouchGFX/generated/images/include/BitmapDatabase.hpp:
 
 TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:
 
-TouchGFX/generated/images/include/BitmapDatabase.hpp:
+Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:

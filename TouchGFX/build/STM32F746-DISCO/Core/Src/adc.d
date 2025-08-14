@@ -41,9 +41,11 @@ TouchGFX/build/STM32F746-DISCO/Core/Src/adc.o: Core/Src/adc.c \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h \
  Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h Core/Inc/adc.h \
- Core/Inc/spi.h Core/Inc/ProcessData.h Core/Inc/Wenner_Constants.h \
+ Core/Inc/spi.h Core/Inc/ProcessData.h Core/Inc/Device_Constants.h \
  Core/Inc/Flash.h Core/Inc/LM35_Temperature_Measurement.h Core/Inc/tim.h \
- Core/Inc/i2c.h Core/Inc/Alarm.h Core/Inc/PowerManagement.h \
+ Core/Inc/i2c.h Core/Inc/Alarm.h Core/Inc/ltdc.h Core/Inc/gpio.h \
+ Core/Inc/dma.h Core/Inc/crc.h Core/Inc/fmc.h Core/Inc/dma2d.h \
+ Core/Inc/quadspi.h Core/Inc/PowerManagement.h \
  Drivers/BSP/stm32746g_discovery_qspi.h \
  Drivers/BSP/../Components/n25q128a/n25q128a.h \
  Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp
@@ -144,7 +146,7 @@ Core/Inc/spi.h:
 
 Core/Inc/ProcessData.h:
 
-Core/Inc/Wenner_Constants.h:
+Core/Inc/Device_Constants.h:
 
 Core/Inc/Flash.h:
 
@@ -155,6 +157,20 @@ Core/Inc/tim.h:
 Core/Inc/i2c.h:
 
 Core/Inc/Alarm.h:
+
+Core/Inc/ltdc.h:
+
+Core/Inc/gpio.h:
+
+Core/Inc/dma.h:
+
+Core/Inc/crc.h:
+
+Core/Inc/fmc.h:
+
+Core/Inc/dma2d.h:
+
+Core/Inc/quadspi.h:
 
 Core/Inc/PowerManagement.h:
 

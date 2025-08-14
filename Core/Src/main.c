@@ -113,11 +113,20 @@ int main(void)
   BSP_QSPI_MemoryMappedMode();
   HAL_NVIC_DisableIRQ(QUADSPI_IRQn);
   MX_DMA2D_Init();
+	
   MX_FMC_Init();
 	BSP_SDRAM_Initialization_sequence();
 	Erase_Graphic_Buffers();	
   MX_LTDC_Init();
   MX_I2C3_Init();
+	
+	HAL_Delay(50); // allow FT5336 to boot
+
+	// FT5336 7-bit address is 0x38 -> 8-bit left-shifted
+	for (int i = 0; i < 10; ++i) {
+			if (HAL_I2C_IsDeviceReady(&hi2c3, (0x38 << 1), 1, 10) == HAL_OK) break;
+			HAL_Delay(10);
+	}
 	MX_I2C1_Init();
   MX_TIM3_Init();
   MX_TIM5_Init();
@@ -149,7 +158,8 @@ int main(void)
 	 
   /* USER CODE END 2 */
 
-  /* Call init function for freertos objects (in cmsis_os2.c) */
+  /* Init scheduler */
+  osKernelInitialize();  /* Call init function for freertos objects (in cmsis_os2.c) */
   MX_FREERTOS_Init();
 
   /* Start scheduler */

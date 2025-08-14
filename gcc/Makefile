@@ -189,6 +189,37 @@ source_paths = $(foreach comp, $(all_components), $(comp)/src) \
 							 $(foreach comp, $(cubemx_components), $(comp)/Src) \
 							 $(touchgfx_generator_components)
 
+
+
+# ==== USB Device (CubeMX) ====
+# Adjust CDC to your class (CDC/HID/MSC/etc.)
+usb_inc_paths := \
+  USB_DEVICE/App \
+  USB_DEVICE/Target \
+  Middlewares/ST/STM32_USB_Device_Library/Core/Inc \
+  Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc
+
+include_paths += $(usb_inc_paths)
+
+
+
+# ==== USB Device sources (adjust class as needed) ====
+usb_src_files := \
+  USB_DEVICE/App/usb_device.c \
+  USB_DEVICE/App/usbd_cdc_if.c \
+  USB_DEVICE/Target/usbd_conf.c \
+  USB_DEVICE/Target/usbd_desc.c \
+  Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c \
+  Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c \
+  Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c \
+  Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c
+
+# Add to global C sources
+c_source_files += $(usb_src_files)
+
+
+
+
 # Finds files that matches the specified pattern. The directory list
 # is searched recursively. It is safe to invoke this function with an
 # empty list of directories.

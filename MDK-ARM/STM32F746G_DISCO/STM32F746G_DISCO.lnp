@@ -143,7 +143,7 @@
 "stm32f746g_disco\stream_buffer.o"
 "stm32f746g_disco\tasks.o"
 "stm32f746g_disco\timers.o"
-"stm32f746g_disco\cmsis_os.o"
+"stm32f746g_disco\cmsis_os2.o"
 "stm32f746g_disco\heap_4.o"
 "stm32f746g_disco\port.o"
 "stm32f746g_disco\usbd_core.o"

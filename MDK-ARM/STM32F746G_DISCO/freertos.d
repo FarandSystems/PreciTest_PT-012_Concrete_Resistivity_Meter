@@ -79,9 +79,6 @@ stm32f746g_disco\freertos.o: ../Core/Inc/PowerManagement.h
 stm32f746g_disco\freertos.o: ../Drivers/BSP/stm32746g_discovery_qspi.h
 stm32f746g_disco\freertos.o: ../Drivers/BSP/../Components/n25q128a/n25q128a.h
 stm32f746g_disco\freertos.o: ../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp
-stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
-stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
-stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
-stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
+stm32f746g_disco\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 stm32f746g_disco\freertos.o: ../touchgfx/App/app_touchgfx.h
