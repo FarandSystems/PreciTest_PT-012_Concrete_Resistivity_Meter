@@ -1,0 +1,1405 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "Name": "background",
+            "X": 0,
+            "Y": 0,
+            "Width": 272,
+            "Height": 480,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Title.png",
+            "Released": "Title.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId2",
+            "ReleasedColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "PressedColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "TextRotation": "0",
+            "Name": "TITLE",
+            "X": 1,
+            "Y": 0,
+            "Width": 270,
+            "Height": 28,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Hollow_Gray.png",
+            "Released": "Button_Hollow_Gray.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId29",
+            "ReleasedColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "PressedColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "TextRotation": "0",
+            "Name": "SAVE",
+            "X": 4,
+            "Y": 386,
+            "Width": 126,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Hollow_Gray.png",
+            "Released": "Button_Hollow_Gray.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId4",
+            "ReleasedColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "PressedColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "TextRotation": "0",
+            "Name": "HOLD",
+            "X": 138,
+            "Y": 387,
+            "Width": 126,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Hollow.png",
+            "Released": "Button_Hollow.png",
+            "Alpha": 255,
+            "TextId": "MODE_50mm",
+            "ReleasedColor": {
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
+            },
+            "PressedColor": {
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
+            },
+            "TextRotation": "0",
+            "Name": "MODE",
+            "X": 139,
+            "Y": 251,
+            "Width": 126,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Hollow.png",
+            "Released": "Button_Hollow.png",
+            "Alpha": 255,
+            "TextId": "HIGH_RANGE",
+            "ReleasedColor": {
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
+            },
+            "PressedColor": {
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
+            },
+            "TextRotation": "0",
+            "Name": "RANGE",
+            "X": 5,
+            "Y": 251,
+            "Width": 126,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Hollow.png",
+            "Released": "Button_Hollow.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId8",
+            "ReleasedColor": {
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
+            },
+            "PressedColor": {
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
+            },
+            "TextRotation": "0",
+            "Name": "NEW_PROJECT",
+            "X": 4,
+            "Y": 320,
+            "Width": 126,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Hollow_Gray.png",
+            "Released": "Button_Hollow_Gray.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId9",
+            "ReleasedColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "PressedColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "TextRotation": "0",
+            "Name": "TEMP_CORRECT",
+            "X": 139,
+            "Y": 320,
+            "Width": 126,
+            "Height": 60,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId10",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 247,
+              "Blue": 115
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId11",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "PROJECT_NUM",
+            "X": 1,
+            "Y": 29,
+            "Width": 113,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId12",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 123,
+              "Green": 28,
+              "Blue": 16
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId22",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TEMPERATURE",
+            "X": 208,
+            "Y": 26,
+            "Width": 61,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId13",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 247,
+              "Blue": 115
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId19",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "RESISTIVITY",
+            "X": 8,
+            "Y": 66,
+            "Width": 132,
+            "Height": 86,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId14",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 140,
+              "Green": 198,
+              "Blue": 58
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId18",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "RESISTANCE",
+            "X": 9,
+            "Y": 143,
+            "Width": 132,
+            "Height": 86,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "OHM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 140,
+              "Green": 198,
+              "Blue": 58
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "OHM_UNIT",
+            "X": 198,
+            "Y": 170,
+            "Width": 23,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "OHM_CM",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 247,
+              "Blue": 115
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "OHM_CM_UNIT",
+            "X": 198,
+            "Y": 99,
+            "Width": 48,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId30",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 247,
+              "Blue": 115
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId31",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "Name": "WARNING",
+            "X": 136,
+            "Y": 128,
+            "Width": 7,
+            "Height": 43,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId17",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId28",
+              "UseBuffer": true,
+              "BufferSize": 50
+            },
+            "Name": "HELP",
+            "X": 14,
+            "Y": 447,
+            "Width": 244,
+            "Height": 27,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Color": {
+              "Red": 140,
+              "Green": 198,
+              "Blue": 58
+            },
+            "CenterX": 12,
+            "CenterY": 12,
+            "Radius": 11,
+            "LineWidth": 0,
+            "StartAngle": 0,
+            "EndAngle": 360,
+            "CapPrecision": "Round",
+            "Alpha": 255,
+            "Name": "READY",
+            "X": 247,
+            "Y": 62,
+            "Width": 24,
+            "Height": 24,
+            "Type": "Circle",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "CustomContainerDefinitionName": "Message_Box",
+            "Name": "message_Box",
+            "X": -1,
+            "Y": 0,
+            "Width": 272,
+            "Height": 480,
+            "Type": "CustomContainerInstance",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "USB_Symbol.png",
+            "Alpha": 255,
+            "Name": "USB_SYMBOL",
+            "X": 138,
+            "Y": 30,
+            "Width": 63,
+            "Height": 29,
+            "Type": "Image",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "CustomContainerDefinitionName": "ClockAndDateSetting",
+            "Name": "CLOCK_AND_DATE_SETTING",
+            "X": 11,
+            "Y": 97,
+            "Width": 250,
+            "Height": 130,
+            "Type": "CustomContainerInstance",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "CustomContainerDefinitionName": "Digital_Clock",
+            "Name": "TIME",
+            "X": 2,
+            "Y": 59,
+            "Width": 65,
+            "Height": 25,
+            "Type": "CustomContainerInstance",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "NumberOfDecimals": 0,
+            "TextId": "SingleUseId41",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "FileNameBackground": "Battery_Symbol.png",
+            "IndicatorPositionX": 0,
+            "IndicatorPositionY": -6,
+            "IndicatorPositionWidth": 50,
+            "IndicatorPositionHeight": 26,
+            "ProgressRangeMin": 0,
+            "ProgressRangeMax": 100,
+            "ProgressRangeSteps": 0,
+            "ProgressRangeStepsMin": 0,
+            "ProgressInitialValue": 0,
+            "Name": "BATTERY_PERCENT",
+            "X": 192,
+            "Y": 62,
+            "Width": 55,
+            "Height": 22,
+            "Type": "TextProgress",
+            "Visible": false,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Hold_Interaction",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "HOLD",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Hold_btn_CallBack",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "Save_Interaction",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "SAVE",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Save_btn_CallBack",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "Mode_Interaction",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "MODE",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Mode_btn_CallBack",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "New_Project_Interaction",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "NEW_PROJECT",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "New_Proj_btn_CallBack",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "Temp_Correct_Interaction",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "TEMP_CORRECT",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Temp_Correct_btn_CallBack",
+              "Type": "ActionCustom"
+            }
+          },
+          {
+            "InteractionName": "Clock_Touch_Interaction",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerCustomTypeName": "Digital_Clock Touch_Clock happens",
+              "TriggerComponent": "TIME",
+              "Type": "TriggerCustom"
+            },
+            "Action": {
+              "FunctionName": "Clock_Touch_CallBack",
+              "Type": "ActionCustom"
+            }
+          }
+        ],
+        "Name": "Main_Screen",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 4080
+      },
+      {
+        "Components": [
+          {
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "Name": "Background",
+            "X": 0,
+            "Y": 0,
+            "Width": 272,
+            "Height": 480,
+            "Type": "Box",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "RelativeFilename": "Farand_Logo.png",
+            "Alpha": 255,
+            "Name": "Logo",
+            "X": 0,
+            "Y": 178,
+            "Width": 272,
+            "Height": 136,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Wating",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerScreenEntered"
+            },
+            "Action": {
+              "Duration": 3000,
+              "Type": "ActionDelay"
+            }
+          },
+          {
+            "InteractionName": "Enter_Main_Screen",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "InteractionToTriggerOn": "Wating",
+              "Type": "TriggerInteractionCompleted"
+            },
+            "Action": {
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "Main_Screen",
+              "Type": "ActionGotoScreen"
+            }
+          }
+        ],
+        "Name": "Spalsh_screen",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Message_Box_BackGround.png",
+            "Alpha": 255,
+            "Name": "BackGround",
+            "X": 11,
+            "Y": 175,
+            "Width": 250,
+            "Height": 130,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Filled_Small.png",
+            "Released": "Button_Filled_Small.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId23",
+            "ReleasedColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "PressedColor": {
+              "Red": 41,
+              "Green": 41,
+              "Blue": 41
+            },
+            "TextRotation": "0",
+            "Name": "Center_Btn",
+            "X": 73,
+            "Y": 240,
+            "Width": 126,
+            "Height": 30,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId26",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId27",
+              "UseBuffer": true,
+              "BufferSize": 30
+            },
+            "Name": "Message_Text",
+            "X": 95,
+            "Y": 195,
+            "Width": 83,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Button_CallBack",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "Center_Btn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Button_CallBack",
+              "Type": "ActionCustom"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "Set_Text",
+            "Description": "",
+            "HasValue": true,
+            "ValueType": "char*"
+          }
+        ],
+        "Name": "Message_Box",
+        "X": 104,
+        "Y": -104,
+        "Width": 272,
+        "Height": 480
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Message_Box_BackGround.png",
+            "Alpha": 255,
+            "Name": "BackGround",
+            "X": 0,
+            "Y": 0,
+            "Width": 250,
+            "Height": 130,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId35",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "Hour_lbl",
+            "X": 11,
+            "Y": 23,
+            "Width": 15,
+            "Height": 27,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId36",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "Minute_lbl",
+            "X": 88,
+            "Y": 23,
+            "Width": 17,
+            "Height": 27,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId37",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "Second_lbl",
+            "X": 167,
+            "Y": 23,
+            "Width": 13,
+            "Height": 27,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "SelectedItemOffset": 0,
+            "UseSelectedStyle": false,
+            "ExtraSizeBefore": 0,
+            "ExtraSizeAfter": 0,
+            "MarginBefore": 0,
+            "MarginAfter": 0,
+            "IsHorizontal": false,
+            "IsCircular": true,
+            "ItemTemplateName": "Text_Template",
+            "NumberofItems": 24,
+            "InitialElement": 12,
+            "ItemMargin": 0,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0,
+            "Name": "Hour_set",
+            "X": 31,
+            "Y": 16,
+            "Width": 50,
+            "Height": 50,
+            "Type": "ScrollWheel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "SelectedItemOffset": 0,
+            "UseSelectedStyle": false,
+            "ExtraSizeBefore": 0,
+            "ExtraSizeAfter": 0,
+            "MarginBefore": 0,
+            "MarginAfter": 0,
+            "IsHorizontal": false,
+            "IsCircular": true,
+            "ItemTemplateName": "Text_Template",
+            "NumberofItems": 60,
+            "InitialElement": 30,
+            "ItemMargin": 0,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 1.0,
+            "DragAcceleration": 1.0,
+            "Name": "Minute_set",
+            "X": 111,
+            "Y": 16,
+            "Width": 50,
+            "Height": 50,
+            "Type": "ScrollWheel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "SelectedItemOffset": 0,
+            "UseSelectedStyle": false,
+            "ExtraSizeBefore": 0,
+            "ExtraSizeAfter": 0,
+            "MarginBefore": 0,
+            "MarginAfter": 0,
+            "IsHorizontal": false,
+            "IsCircular": true,
+            "ItemTemplateName": "Text_Template",
+            "NumberofItems": 60,
+            "InitialElement": 30,
+            "ItemMargin": 0,
+            "Easing": "Back",
+            "EasingOption": "Out",
+            "SwipeAcceleration": 4.5000000000000009,
+            "DragAcceleration": 4.4000000000000012,
+            "Name": "Second_set",
+            "X": 186,
+            "Y": 16,
+            "Width": 50,
+            "Height": 50,
+            "Type": "ScrollWheel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Button_Filled_Small.png",
+            "Released": "Button_Filled_Small.png",
+            "Alpha": 255,
+            "TextId": "SingleUseId38",
+            "ReleasedColor": {
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
+            },
+            "PressedColor": {
+              "Red": 41,
+              "Green": 41,
+              "Blue": 41
+            },
+            "TextRotation": "0",
+            "Name": "Center_Btn",
+            "X": 62,
+            "Y": 78,
+            "Width": 126,
+            "Height": 30,
+            "Type": "ButtonWithLabel",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "Center_Btn",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "FunctionName": "Button_CallBack",
+              "Type": "ActionCustom"
+            }
+          }
+        ],
+        "Name": "ClockAndDateSetting",
+        "X": 115,
+        "Y": 71,
+        "Width": 250,
+        "Height": 130
+      },
+      {
+        "Components": [
+          {
+            "RelativeFilename": "Scroll_Back.png",
+            "Alpha": 255,
+            "Name": "Background",
+            "X": 0,
+            "Y": 0,
+            "Width": 50,
+            "Height": 50,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId33",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 75,
+              "Blue": 75
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Wildcard1": {
+              "TextId": "SingleUseId34",
+              "UseBuffer": true,
+              "BufferSize": 10
+            },
+            "Name": "TextBox",
+            "X": 3,
+            "Y": 8,
+            "Width": 11,
+            "Height": 33,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [],
+        "Name": "Text_Template",
+        "X": 215,
+        "Y": 111,
+        "Width": 50,
+        "Height": 50
+      },
+      {
+        "Components": [
+          {
+            "TextColor": {
+              "Red": 206,
+              "Green": 202,
+              "Blue": 206
+            },
+            "TextId": "SingleUseId40",
+            "DisplaySeconds": true,
+            "DisplayLeadingZeroForHourIndicator": true,
+            "Alpha": 255,
+            "UseAmPm": false,
+            "InitialHour": 0,
+            "InitialMinute": 0,
+            "InitialSecond": 0,
+            "Name": "digitalClock",
+            "X": 0,
+            "Y": 0,
+            "Width": 65,
+            "Height": 25,
+            "Type": "DigitalClock",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Pressed": "Clock_Transparent.png",
+            "Released": "Clock_Transparent.png",
+            "Alpha": 255,
+            "Name": "Clock_Back",
+            "X": 0,
+            "Y": 0,
+            "Width": 65,
+            "Height": 25,
+            "Type": "Button",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "Clock_Back",
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "TriggerCustomTypeName": "Digital_Clock Touch_Clock happens",
+              "Type": "ActionEmit"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "Touch_Clock",
+            "HasValue": false
+          }
+        ],
+        "Name": "Digital_Clock",
+        "X": 208,
+        "Y": 124,
+        "Width": 65,
+        "Height": 25
+      }
+    ],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId2",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId4",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId8",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId9",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId10",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId11",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId12",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId13",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId14",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId17",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId18",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId19",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId22",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "OHM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "KILO_OHM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MEGA_OHM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MICRO_OHM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MILI_OHM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "OHM_CM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "KILO_OHM_CM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MEGA_OHM_CM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MICRO_OHM_CM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MILI_OHM_CM",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MODE_50mm",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MODE_38mm",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MODE_BULK",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MODE_WENNER",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId23",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "HIGH_RANGE",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "LOW_RANGE",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SAVE_COMPLT",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId26",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId27",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId28",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId29",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId30",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId31",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId33",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId34",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId35",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId36",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId37",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId38",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId40",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "KILO_S_M",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MEGA_S_M",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "S_M",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MILI_S_M",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "MICRO_S_M",
+        "IsResource": true
+      },
+      {
+        "TextEntryId": "SingleUseId41",
+        "IsResource": false
+      }
+    ],
+    "Name": "STM32F746G_DISCO",
+    "Resolution": {
+      "Width": 480,
+      "Height": 272
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Spalsh_screen",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "24": "LCD24bpp",
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 480,
+        "Height": 272
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "Features": [
+          {
+            "Id": "RGB565",
+            "IsEnabled": true
+          }
+        ]
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../STM32F746G_DISCO.ioc --platform=m7",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait"
+  },
+  "Version": "4.14.0",
+  "CreatedBy": "4.13.0"
+}
