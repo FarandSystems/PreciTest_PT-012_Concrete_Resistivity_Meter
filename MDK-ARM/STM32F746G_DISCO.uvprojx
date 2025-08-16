@@ -898,9 +898,9 @@
               <FilePath>../touchgfx/generated/images/src/image_clock_transparent.cpp</FilePath>
             </File>
             <File>
-              <FileName>image_Farand_Logo.cpp</FileName>
+              <FileName>image_FW412_SplashScreenLogo.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>../touchgfx/generated/images/src/image_farand_logo.cpp</FilePath>
+              <FilePath>../touchgfx/generated/images/src/image_fw412_splashscreenlogo.cpp</FilePath>
             </File>
             <File>
               <FileName>image_Message_Box_BackGround.cpp</FileName>

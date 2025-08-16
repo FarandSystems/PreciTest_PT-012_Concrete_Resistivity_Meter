@@ -230,6 +230,26 @@
           <WinNumber>1</WinNumber>
           <ItemText>first_time_disconnection_flag,0x0A</ItemText>
         </Ww>
+        <Ww>
+          <count>16</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>signal_Median</ItemText>
+        </Ww>
+        <Ww>
+          <count>17</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>device_ID_On_Flash</ItemText>
+        </Ww>
+        <Ww>
+          <count>18</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>spikeLess_flag</ItemText>
+        </Ww>
+        <Ww>
+          <count>19</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>signal_Captured,0x0A</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
@@ -1188,8 +1208,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../touchgfx/generated/images/src/image_farand_logo.cpp</PathWithFileName>
-      <FilenameWithoutPath>image_Farand_Logo.cpp</FilenameWithoutPath>
+      <PathWithFileName>../touchgfx/generated/images/src/image_fw412_splashscreenlogo.cpp</PathWithFileName>
+      <FilenameWithoutPath>image_FW412_SplashScreenLogo.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

@@ -65,7 +65,7 @@
 "stm32f746g_disco\image_button_hollow.o"
 "stm32f746g_disco\image_button_hollow_gray.o"
 "stm32f746g_disco\image_clock_transparent.o"
-"stm32f746g_disco\image_farand_logo.o"
+"stm32f746g_disco\image_fw412_splashscreenlogo.o"
 "stm32f746g_disco\image_message_box_background.o"
 "stm32f746g_disco\image_scroll_back.o"
 "stm32f746g_disco\image_scroll_back_test.o"

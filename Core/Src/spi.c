@@ -274,7 +274,7 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) //Move this function
 		if(divisor == 0)
 		{			
 			Add_One_Sample_to_ADCBuffer();
-		}	
+		}
 		
 		divisor++; 
 		if(divisor == SUB_SAMPLE_DIVISOR)
@@ -285,6 +285,9 @@ void HAL_SPI_TxRxCpltCallback(SPI_HandleTypeDef *hspi) //Move this function
 		//Change Pin Function to EXTI to Read DRDY
 		HAL_GPIO_WritePin(SPIx_NSS_PORT, SPIx_NSS_PIN, GPIO_PIN_RESET);
 		Init_Input_From_ADC_As_EXTI();		
+		
+		
+		
 
 }
 /* USER CODE END 1 */

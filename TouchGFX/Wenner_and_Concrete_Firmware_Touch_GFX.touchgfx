@@ -12,7 +12,7 @@
             },
             "Alpha": 255,
             "Name": "BACKGROUND",
-            "X": 0,
+            "X": -1,
             "Y": 0,
             "Width": 272,
             "Height": 480,
@@ -170,7 +170,7 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Pressed": "Button_Hollow.png",
+            "Pressed": "Button_Filled.png",
             "Released": "Button_Hollow.png",
             "Alpha": 255,
             "TextId": "NEW_PROJECT",
@@ -180,9 +180,9 @@
               "Blue": 123
             },
             "PressedColor": {
-              "Red": 253,
-              "Green": 255,
-              "Blue": 123
+              "Red": 0,
+              "Green": 0,
+              "Blue": 0
             },
             "TextRotation": "0",
             "Name": "NEW_PROJECT",
@@ -663,9 +663,9 @@
           {
             "Type": "Box",
             "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
+              "Red": 223,
+              "Green": 168,
+              "Blue": 65
             },
             "Alpha": 255,
             "Name": "Background",
@@ -682,13 +682,13 @@
           },
           {
             "Type": "Image",
-            "RelativeFilename": "Farand_Logo.png",
+            "RelativeFilename": "FW412_SplashScreenLogo.png",
             "Alpha": 255,
             "Name": "Logo",
             "X": 0,
-            "Y": 178,
+            "Y": 174,
             "Width": 272,
-            "Height": 136,
+            "Height": 66,
             "Visible": true,
             "LockPosition": false,
             "Draggable": false,
@@ -709,8 +709,8 @@
             "AutoSize": true,
             "LineSpacing": 0,
             "Name": "SPLASH_TITLE",
-            "X": 39,
-            "Y": 314,
+            "X": 37,
+            "Y": 336,
             "Width": 195,
             "Height": 27,
             "Visible": true,

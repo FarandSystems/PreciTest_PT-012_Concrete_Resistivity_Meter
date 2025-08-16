@@ -510,6 +510,9 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
 			if(captureIndex < CAPTURE_COUNT - 1)
 			{
 				captureIndex++;
+				
+				
+				
 				sampleIndex = 0;
 			}		
 		}

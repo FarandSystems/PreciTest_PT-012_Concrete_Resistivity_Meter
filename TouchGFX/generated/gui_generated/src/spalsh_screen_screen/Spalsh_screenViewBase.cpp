@@ -14,12 +14,12 @@ Spalsh_screenViewBase::Spalsh_screenViewBase() :
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     Background.setPosition(0, 0, 272, 480);
-    Background.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    Background.setColor(touchgfx::Color::getColorFromRGB(223, 168, 65));
 
-    Logo.setXY(0, 178);
-    Logo.setBitmap(touchgfx::Bitmap(BITMAP_FARAND_LOGO_ID));
+    Logo.setXY(0, 174);
+    Logo.setBitmap(touchgfx::Bitmap(BITMAP_FW412_SPLASHSCREENLOGO_ID));
 
-    SPLASH_TITLE.setXY(39, 314);
+    SPLASH_TITLE.setXY(37, 336);
     SPLASH_TITLE.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     SPLASH_TITLE.setLinespacing(0);
     SPLASH_TITLE.setTypedText(touchgfx::TypedText(T_SPLASH_FW412));

@@ -250,6 +250,8 @@ void SendCapturedSignalToPC(void)
 		}
 		#endif
 		#ifdef CONCRETE
+//		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+		
 		//Each Capture Contains at most 1024 bytes = 256 samples * 8/2 bytes
 		for(capture_Index = 0; capture_Index < maximum_capture_index  ; capture_Index++) //for both Soil and Concrete only 16 captured signals are sent to PC for USB memory and speed optimization.
 		{
@@ -290,6 +292,8 @@ void SendCapturedSignalToPC(void)
   	}		
 	
 	}	
+
+	
 // Median applied  signal
 	waveformIndex = 17;
 	for(sample_Index = 0; sample_Index < 255; sample_Index += 2)
@@ -440,7 +444,22 @@ void Add_One_Sample_to_ADCBuffer(void)
 {
 	if(captureIndex < CAPTURE_COUNT && sampleIndex < 256)
 	{
-		signal_Captured[captureIndex][sampleIndex] = (SPI_RxBuffer[0] << 24) + (SPI_RxBuffer[1] << 16) + (SPI_RxBuffer[2] << 8);	
+		if(captureIndex != 0)
+		{
+			signal_Captured[captureIndex][sampleIndex] = 1e9; //(SPI_RxBuffer[0] << 24) + (SPI_RxBuffer[1] << 16) + (SPI_RxBuffer[2] << 8);	
+		}
+		else
+		{
+			if(sampleIndex < 174)
+			{
+				signal_Captured[0][sampleIndex] = -1e9 + (2e9 / 200) * sampleIndex;
+			}
+			else
+			{
+				signal_Captured[0][sampleIndex] = 0;
+			}
+		}
+		
 		sampleIndex++;
 	}	
 }

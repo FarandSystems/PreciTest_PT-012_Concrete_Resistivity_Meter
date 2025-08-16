@@ -16,7 +16,7 @@ Main_ScreenViewBase::Main_ScreenViewBase() :
     __background.setPosition(0, 0, 272, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
-    BACKGROUND.setPosition(0, 0, 272, 480);
+    BACKGROUND.setPosition(-1, 0, 272, 480);
     BACKGROUND.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
 
     TITLE.setXY(1, 0);
@@ -54,10 +54,10 @@ Main_ScreenViewBase::Main_ScreenViewBase() :
     MEASURE.setAction(buttonCallback);
 
     NEW_PROJECT.setXY(4, 320);
-    NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
+    NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
     NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
     NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFromRGB(253, 255, 123));
-    NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFromRGB(253, 255, 123));
+    NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
     NEW_PROJECT.setAction(buttonCallback);
 
     TEMP_CORRECT.setXY(139, 320);
