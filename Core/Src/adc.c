@@ -24,9 +24,13 @@
 void SendCapturedSignalToPC(void);
 void EraseADCBuffer(void);
 
+void SendTestPatternToPC(void);
+
 extern uint8_t systemMode;
 extern uint8_t SPI_RxBuffer[3];
 extern uint8_t spikeLess_flag;
+
+
 
 uint8_t sendData[SEND_DATA_BUFFER_SIZE] __attribute__((at(SEND_DATA_BASE_ADDRESS)));
 int32_t	signal_Captured [CAPTURE_COUNT][256] __attribute__((at(ADC_DATA_BASE_ADDRESS)));
@@ -37,6 +41,8 @@ extern float signal_LPF_And_Cut[256]__attribute__((at(FILTERED_MEDIAN_LOWPASS_DA
 
 uint16_t captureIndex;
 uint16_t sampleIndex;
+
+uint8_t timeCounter = 0;
 
 __IO uint16_t ADC_ConvertedValue[2];
 
@@ -444,21 +450,29 @@ void Add_One_Sample_to_ADCBuffer(void)
 {
 	if(captureIndex < CAPTURE_COUNT && sampleIndex < 256)
 	{
-		if(captureIndex != 0)
-		{
-			signal_Captured[captureIndex][sampleIndex] = 1e9; //(SPI_RxBuffer[0] << 24) + (SPI_RxBuffer[1] << 16) + (SPI_RxBuffer[2] << 8);	
-		}
-		else
-		{
-			if(sampleIndex < 174)
-			{
-				signal_Captured[0][sampleIndex] = -1e9 + (2e9 / 200) * sampleIndex;
-			}
-			else
-			{
-				signal_Captured[0][sampleIndex] = 0;
-			}
-		}
+			signal_Captured[captureIndex][sampleIndex] = (SPI_RxBuffer[0] << 24) + (SPI_RxBuffer[1] << 16) + (SPI_RxBuffer[2] << 8);	
+//		if(captureIndex != 0)
+//		{
+//			if(sampleIndex < 174)
+//			{
+//				signal_Captured[captureIndex][sampleIndex] = 1e9; //(SPI_RxBuffer[0] << 24) + (SPI_RxBuffer[1] << 16) + (SPI_RxBuffer[2] << 8);	
+//			}
+//			else
+//			{
+//				signal_Captured[captureIndex][sampleIndex] = 0;
+//			}
+//		}
+//		else
+//		{
+//			if(sampleIndex < 174)
+//			{
+//				signal_Captured[0][sampleIndex] = -1e9 + (2e9 / 200) * sampleIndex;
+//			}
+//			else
+//			{
+//				signal_Captured[0][sampleIndex] = 0;
+//			}
+//		}
 		
 		sampleIndex++;
 	}	
@@ -475,5 +489,148 @@ void EraseADCBuffer(void)
 			signal_Captured[m][n] = 0;
 		}		
 	}
+}
+
+
+
+void SendTestPatternToPC(void)
+{
+	uint16_t capture_Index = 0;
+	uint16_t sample_Index = 0;
+	uint16_t packetNumber = 0;
+	uint16_t waveformIndex = 0;
+	uint16_t maximum_capture_index;
+	
+	maximum_capture_index = 8; //CAPTURE_COUNT;
+	
+	timeCounter++;
+		
+	//Pack Captured WaveForms into 8Bytes Packet Format in a total 32(16)x1024 bytes buffer
+	
+		/* each Sample is fragmented to 3 bytes & 2 Samples (6Bytes) are packed in 1 packet(8Bytes)
+	8N indexed Bytes are used for coding(0x1A) & 8N+7 indexed Bytes are reserved
+	so for sending 256 samples in (8x256/2) = 1024 bytes are needed
+	8N: 0(Coding)
+	8N+1: HHk(Samplek MSB) 
+	8N+2: HLk(Samplek Middle Byte) 
+	8N+3: LHk(Samplek LSB) 
+	8N+4: HH(k+1)(Sample(k+1) MSB) 
+	8N+5: HL(k+1)(Sample(k+1) Middle Byte) 
+	8N+6: LH(k+1)(Sample(k+1) LSB) 
+	8N+7: Reserved 
+	
+	each capture is buffered in 1024 bytes which start at capture_Index * 10
+	
+	32 Capturede Signal + 8 Auxilary Signal (for Monitoring Process Signal)
+	
+	*/
+	if(CAPTURE_COUNT >= 16)
+	{		
+		Correct_Sixteenth_Captured_Signal();
+	}
+	spikeLess_flag = 0;
+		
+	//Each Capture Contains at most 1024 bytes = 256 samples * 8/2 bytes
+	for(capture_Index = 0; capture_Index < maximum_capture_index  ; capture_Index++) //for both Soil and Concrete only 16 captured signals are sent to PC for USB memory and speed optimization.
+	{
+		for(sample_Index = 0; sample_Index < 255; sample_Index += 2)
+		{	 
+			int32_t signal_1 = 1e9 + 1e6 * sample_Index + 1e7 * capture_Index;
+			int32_t signal_2 = 1e9 + 1e6 * (sample_Index + 1) + 1e7 * capture_Index;
+			packetNumber = sample_Index >> 1;	 //each Packet contains 2 samples(8Bytes) ; sample_Index = 0,2,4,...254 & packetNumber = 0,1,2,...,127
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 0] = 0x00; //reserved for code 0x1A
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 1] = ((signal_1) & 0xFF000000) >> 24; 
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 2] = ((signal_1) & 0x00FF0000) >> 16; 
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 3] = ((signal_1) & 0x0000FF00) >> 8; 
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 4] = ((signal_2) & 0xFF000000) >> 24;
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 5] = ((signal_2) & 0x00FF0000) >> 16;
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 6] = ((signal_2) & 0x0000FF00) >> 8;
+			sendData[(capture_Index << 10) + (packetNumber << 3) + 7] = 0x00;	//reserved for temperature data 				
+		}
+	}
+	sendData[1] = 0x01;
+	sendData[2] = 0x02;
+	sendData[3] = 0x03;
+	sendData[4] = timeCounter;
+	
+	
+	sendData[8188] = 0x01;
+	sendData[8189] = 0x02;
+	sendData[8190] = 0x03;
+	sendData[8191] = timeCounter;
+	
+	//Since sendData[(waveformIndex << 10) + k] = 0 for k > 214(in Soil) && k > 174 (in Concrete), They can be used for sending other data
+	// Other system patrameters sent in the end of 18'th signal
+	
+//	waveformIndex = 19;
+//	// Data index = 216 in C# App, contains samplePlus  (216 = 864/4)
+//	sendData[(waveformIndex << 10) + 864] = 0x00;	 // Reserved
+//	sendData[(waveformIndex << 10) + 865] = (((int32_t)samplePlus) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 866] = (((int32_t)samplePlus) & 0x0000FF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 867] = (((int32_t)samplePlus) & 0x000000FF) >> 0;
+//	// Data index = 217 in C# App, contains sampleMinus (217=868/4)
+//	sendData[(waveformIndex << 10) + 868] = (((int32_t)sampleMinus) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 869] = (((int32_t)sampleMinus) & 0x0000FF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 870] = (((int32_t)sampleMinus) & 0x000000FF) >> 0;	
+//	sendData[(waveformIndex << 10) + 871] = 0x00;	 // Reserved
+//	
+//	// Data index = 218 in C# App, contains Average Amplitude (Temperature Correctd)  (218 = 872/4)
+//	sendData[(waveformIndex << 10) + 872] = 0x00;	 // Reserved
+//	sendData[(waveformIndex << 10) + 873] = (((int32_t)average_Amplitude_Temp_Corrected) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 874] = (((int32_t)average_Amplitude_Temp_Corrected) & 0x0000FF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 875] = (((int32_t)average_Amplitude_Temp_Corrected) & 0x000000FF) >> 0;			
+//	// Data index = 219 in C# App, contains ADC Levels for temperature sensor  (219=876/4)
+//	sendData[(waveformIndex << 10) + 876] = 0x00;	
+//	sendData[(waveformIndex << 10) + 877] = ( ADC_ConvertedValue[1] & 0xFF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 878] = ( ADC_ConvertedValue[1] & 0x00FF) >> 0;	
+//	sendData[(waveformIndex << 10) + 879] = 0x00;	 // Reserved
+//	
+//	// Data index = 220 in C# App, contains displayed temperature  (220 = 880/4)
+//	sendData[(waveformIndex << 10) + 880] = 0x00;	 // Reserved
+//	sendData[(waveformIndex << 10) + 881] = (((uint32_t)(temp_Deg_Display * 100.0f)) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 882] = (((uint32_t)(temp_Deg_Display * 100.0f)) & 0x0000FF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 883] = (((uint32_t)(temp_Deg_Display * 100.0f)) & 0x000000FF) >> 0;			
+//	// Data index = 221 in C# App, contains ADC Levels for temperature sensor  (221 = 884 / 4)	
+//	sendData[(waveformIndex << 10) + 884] = 0x00;	 // Reserved			
+//	sendData[(waveformIndex << 10) + 885] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 886] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x0000FF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 887] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x000000FF) >> 0;	
+//	// Data index = 222 in C# App, contains ADC Levels for temperature sensor  (221 = 888 / 4)	
+//	sendData[(waveformIndex << 10) + 888] = 0x00;	 // Reserved			
+//	sendData[(waveformIndex << 10) + 889] = (((uint32_t)(probeTypeIndex)) & 0x000000FF) >> 0;	
+
+//	sendData[(waveformIndex << 10) + 890] = (((uint32_t)(electrical_Connection_Status)) & 0x000000FF) >> 0;					
+//	
+//	sendData[(waveformIndex << 10) + 891] = 0x00;	 // Reserved	
+//	
+//	// Data index = 223 in C# App, contains ADC Levels for temperature sensor  (223 = 892/4)
+//	sendData[(waveformIndex << 10) + 892] = 0x00;	 // Reserved
+//	sendData[(waveformIndex << 10) + 893] = (((uint32_t)(resistance_conductivity_Range + 6)) & 0x000000FF) >> 0;	
+//	sendData[(waveformIndex << 10) + 894] = 0x00;
+//	sendData[(waveformIndex << 10) + 895] = 0x00;
+//	
+//	// Data index = 224 in C# App, contains ADC Levels for temperature sensor  (224 = 896/4)
+//	sendData[(waveformIndex << 10) + 896] = 0x00;	 // Reserved
+//	sendData[(waveformIndex << 10) + 897] = (((int32_t)varPlus) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 898] = (((int32_t)varPlus) & 0x0000FF00) >> 8;	
+//	sendData[(waveformIndex << 10) + 899] = (((int32_t)varPlus) & 0x000000FF) >> 0;
+//	
+//	// Data index = 225 in C# App, contains ADC Levels for temperature sensor  (225 = 900/4)
+//	sendData[(waveformIndex << 10) + 900] = (((int32_t)varMinus) & 0x00FF0000) >> 16;	
+//	sendData[(waveformIndex << 10) + 901] = (((int32_t)varMinus) & 0x0000FF00) >> 8;
+//	sendData[(waveformIndex << 10) + 902] = (((int32_t)varMinus) & 0x000000FF) >> 0;
+//	sendData[(waveformIndex << 10) + 903] = 0x00;	 // Reserved
+//	
+//	// Data index = 226 in C# App, contains ADC Levels for temperature sensor  (226 = 904/4)
+//	sendData[(waveformIndex << 10) + 904] = 0x00;	//Reserved
+//	sendData[(waveformIndex << 10) + 905] = 0x00;
+//	sendData[(waveformIndex << 10) + 906] = 0x00;
+//	sendData[(waveformIndex << 10) + 907] = (((int32_t)OutputFilterOperation) & 0x000000FF) >> 0;
+//	
+
+	
+	
+	Send_Via_USB(sendData,USB_TRANSMIT_SIZE);	
+	
 }
 /* USER CODE END 1 */

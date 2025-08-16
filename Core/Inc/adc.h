@@ -44,6 +44,8 @@ void MX_ADC3_Init(void);
 extern uint16_t captureIndex;
 extern uint16_t sampleIndex;
 extern __IO uint16_t ADC_ConvertedValue[2];
+
+extern void SendTestPatternToPC(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -67,6 +67,8 @@ extern uint8_t auto_turn_off_mode;
 extern uint8_t divisor;
 extern uint8_t systemMode;
 
+
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

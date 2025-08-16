@@ -451,6 +451,9 @@ void Code_0x1A(uint8_t* Buf, uint32_t Len)
 		Buf[8 * n] = (0x0F & Buf[8 * n]) | Code_Byte;
 	}
 }
+
+
+
 uint8_t USB_device_state = USBD_STATE_CONFIGURED;
 uint8_t USB_device_state_prev = USBD_STATE_SUSPENDED;
 void Check_USB_Connection(void)

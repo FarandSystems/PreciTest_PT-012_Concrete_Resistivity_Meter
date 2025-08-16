@@ -287,7 +287,7 @@ extern uint8_t usb_connection_state;
 	#define CCR1_VAL_MEASUREMENT                                8000//8000->400ms (=CAPTURE_COUNT * 25ms(40Hz))
 	#define CCR1_VAL_PROCESS                                    1200 //1200->60ms
 	#define CCR1_VAL_ERASE_BUFFER                               800//800->40ms
-	#define USB_TRANSMIT_SIZE                                   24576
+	#define USB_TRANSMIT_SIZE                                   8192//24576 //
 	#define CAPTURE_COUNT		                                   	16	
 	#define TIP_CUT_SAMPLE                                      15 
 	#define TAIL_CUT_SAMPLE                                     85
@@ -300,7 +300,7 @@ extern uint8_t usb_connection_state;
 	#define LOWER_DISCONNECTED_THERESHOLD												0.005f
 	#define PROBE_SIZE_AFFECTED_VARIABLE                        probeTypeIndex
 	#define RX_DATA_SIZE                                        16384
-	#define	SEND_DATA_BUFFER_SIZE																24576
+	#define	SEND_DATA_BUFFER_SIZE																8192 //24576
 	#define	ADC_DATA_BUFFER_SIZE																16384
 	#define	CORRECTED_VALUE_DATA_BUFFER_SIZE										16384
 	#define	FILTERED_VALUE_DATA_BUFFER_SIZE											16384
