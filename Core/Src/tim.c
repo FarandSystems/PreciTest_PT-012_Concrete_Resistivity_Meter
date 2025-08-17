@@ -600,8 +600,8 @@ void Update_System_Mode(void)
 			if(sendFlag == 1)
 			{
 				HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
-				//SendCapturedSignalToPC();
-				SendTestPatternToPC();
+				SendCapturedSignalToPC();
+				//SendTestPatternToPC();
 			}
 			if(hold_flag == 0)
 			{

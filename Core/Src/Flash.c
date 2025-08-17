@@ -26,7 +26,7 @@ uint32_t ReadParameter(uint16_t parameterIndex)
 {
 	__IO uint32_t data32;
 
-	data32 = *(__IO uint32_t *)(ADDR_FLASH_SECTOR_4 + 4 * parameterIndex);
+	data32 = *(__IO uint32_t *)(ADDR_FLASH_SECTOR_7 + 4 * parameterIndex);
 	
 	return data32;	
 }
@@ -54,15 +54,15 @@ void SaveParameter(uint16_t parameterIndex, uint32_t paramFloat)
 	paramWords[parameterIndex] = paramFloat; // Write one Word
 
 	/* Erase the whole Sector*/
-	FLASH_Erase_Sector(FLASH_SECTOR_4, VOLTAGE_RANGE_3);
+	FLASH_Erase_Sector(FLASH_SECTOR_7, VOLTAGE_RANGE_3);
 
 	
 	//Write All paramWords on Flash
-	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_4 ,paramWords[0])== HAL_OK)
+	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 ,paramWords[0])== HAL_OK)
 	{
 		for(i = 1; i < 626 ; i++)
 		{
-			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_4 + 4 * i ,paramWords[i]);
+			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 + 4 * i ,paramWords[i]);
 		}
 	}
 	else
@@ -180,9 +180,9 @@ void Save_Device_ID(uint8_t year, uint8_t SN)
 
 #ifdef CONCRETE
 	// Save Device ID
-	// 4111802 (FW411, 2018, SN:02)
-	device_ID = ((uint32_t)(04) << 24)+
-										((uint32_t)(11) << 16)+
+	// 4111802 (PT012, 2018, SN:02)
+	device_ID = ((uint32_t)(0) << 24)+
+										((uint32_t)(12) << 16)+
 										((uint32_t)(year) << 8)+
 										((uint32_t)(SN) << 0);
 #endif	

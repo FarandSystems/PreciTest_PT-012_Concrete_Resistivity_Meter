@@ -35,6 +35,9 @@ double RMS_Plus;
 double RMS_Minus;
 uint8_t change_sign_counter; 
 
+uint32_t peak_of_median_signal = 0;
+extern uint32_t peak_of_median_signal;
+
 uint8_t temp_Correction_flag = 0;
 uint8_t save_flag;
 uint8_t hold_flag;
@@ -98,6 +101,9 @@ void Correct_Sixteenth_Captured_Signal(void);
 void Calculate_RMS_Amplitude(void);
 void OmitSpikes(void);
 void Calculate_RMS_Plus_Minus(void);
+
+void Find_Peak(void);
+	
 
 // Signal Processing(Apply Several Filters)
 void Process_Captured_Data(void)
@@ -209,112 +215,56 @@ void Omit_Far_Points(void)
 		}	
 	}
 }
+
+// Returns the median of three floats (robust & branch-light).
+static inline float median3f(float a, float b, float c)
+{
+    if (a > b) { float t = a; a = b; b = t; }
+    if (b > c) { float t = b; b = c; c = t; }
+    if (a > b) { float t = a; a = b; b = t; }
+    return b;
+}
+
 void OmitSpikes(void)
 {
-	float aa = 0;
-	float bb = 0;
-	float cc = 0;
-	
-	for (uint16_t n = 0; n < CAPTURE_COUNT; n++)
-	{
-		for (uint16_t sampleIndexF = 0; sampleIndexF < 256; sampleIndexF++)
-		{	
-			if(sampleIndexF == 0) 
-			{				
-				aa = signal_Captured[n][255];
-				bb = signal_Captured[n][sampleIndexF];
-				cc = signal_Captured[n][sampleIndexF + 1];
-			}
-			else if(sampleIndexF == 255)
-			{				
-				aa = signal_Captured[n][254];
-				bb = signal_Captured[n][sampleIndexF];
-				cc = signal_Captured[n][0];
-			}	
-			else
-			{		
-				aa = signal_Captured[n][sampleIndexF + 0];
-				bb = signal_Captured[n][sampleIndexF + 1];
-				cc = signal_Captured[n][sampleIndexF + 2];
-			}
+    // ---- Pass 1: median filter along samples (wrap 256) for each capture ----
+    for (uint16_t n = 0; n < CAPTURE_COUNT; n++)
+    {
+        for (uint16_t i = 0; i < 256; i++)
+        {
+            // Wrap indices for a 256-sample row
+            uint16_t ip = (uint16_t)((i + 255u) & 0xFFu); // i-1
+            uint16_t in = (uint16_t)((i + 1u)   & 0xFFu); // i+1
 
-			if (aa <= bb && bb <= cc)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = bb;
-			}
-			if (aa <= cc && cc <= bb)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = cc;
-			}
-			if (bb <= aa && aa <= cc)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = aa;
-			}
-			if (bb <= cc && cc <= aa)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = cc;
-			}
-			if (cc <= aa && aa <= bb)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = aa;
-			}
-			if (cc <= bb && bb <= aa)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = bb;
-			}
-		}
-	}
-	
-	for (uint16_t sampleIndexF = 0; sampleIndexF < 256; sampleIndexF++)
-	{
-		for (uint16_t n = 0; n < CAPTURE_COUNT; n++)
-		{
-			if(n == 0) 
-			{				
-				aa = signal_SubSampled_SpikeLess[CAPTURE_COUNT - 1][sampleIndexF];
-				bb = signal_SubSampled_SpikeLess[n + 0][sampleIndexF];
-				cc = signal_SubSampled_SpikeLess[n + 1][sampleIndexF];
-			}
-			else if(n == (CAPTURE_COUNT - 1))
-			{				
-				aa = signal_SubSampled_SpikeLess[n - 1][sampleIndexF];
-				bb = signal_SubSampled_SpikeLess[n + 0][sampleIndexF];
-				cc = signal_SubSampled_SpikeLess[0][sampleIndexF];
-			}	
-			else
-			{		
-				aa = signal_SubSampled_SpikeLess[n - 1][sampleIndexF];
-				bb = signal_SubSampled_SpikeLess[n + 0][sampleIndexF];
-				cc = signal_SubSampled_SpikeLess[n + 1][sampleIndexF];
-			}
+            float aa = signal_Captured[n][ip]; // prev
+            float bb = signal_Captured[n][i];  // curr
+            float cc = signal_Captured[n][in]; // next
 
-			if (aa <= bb && bb <= cc)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = bb;
-			}
-			if (aa <= cc && cc <= bb)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = cc;
-			}
-			if (bb <= aa && aa <= cc)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = aa;
-			}
-			if (bb <= cc && cc <= aa)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = cc;
-			}
-			if (cc <= aa && aa <= bb)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = aa;
-			}
-			if (cc <= bb && bb <= aa)
-			{
-				signal_SubSampled_SpikeLess[n][sampleIndexF] = bb;
-			}
-		}
-	}
+            signal_SubSampled_SpikeLess[n][i] = median3f(aa, bb, cc);
+        }
+    }
+
+    // ---- Pass 2: median filter across captures (wrap CAPTURE_COUNT) per sample ----
+    for (uint16_t i = 0; i < 256; i++)
+    {
+        for (uint16_t n = 0; n < CAPTURE_COUNT; n++)
+        {
+            uint16_t np = (n == 0) ? (CAPTURE_COUNT - 1) : (uint16_t)(n - 1);
+            uint16_t nn = (uint16_t)((n + 1u) % CAPTURE_COUNT);
+
+            float aa = signal_SubSampled_SpikeLess[np][i]; // prev capture
+            float bb = signal_SubSampled_SpikeLess[n][i];  // this capture
+            float cc = signal_SubSampled_SpikeLess[nn][i]; // next capture
+
+            // NOTE: This writes in-place like your original.
+            // If you want "pure" two-pass behavior (no in-place dependency),
+            // write to a secondary buffer here, then copy back after the loop.
+            signal_SubSampled_SpikeLess[n][i] = median3f(aa, bb, cc);
+        }
+    }
 }
+
+
 void Apply_LowPass_Filter_On_Signal_SubSampled(void)
 {
 	for(uint16_t sampleIndexF = 0; sampleIndexF < 256; sampleIndexF++)
@@ -888,6 +838,29 @@ void Apply_Filter_After_N_Measurements(void)
 	}			
 }
 
+void Find_Peak(void)
+{
+	int32_t plus_peak = -1e7;
+	
+	int32_t minus_peak = 1e7;
+	
+	for (int i =0; i < 255; i++)
+	{
+		if(signal_Median[i] > plus_peak)
+		{
+			plus_peak = signal_Median[i];
+		}
+		
+		if(signal_Median[i] < minus_peak)
+		{
+			minus_peak = signal_Median[i];
+		}
+	}
+	
+	peak_of_median_signal = fabs((plus_peak - minus_peak) / 2.0f) / 256.0f;
+	
+}
+
 void Check_Electrical_Connection(void)
 {	
 	// Save Previous values bofore updating
@@ -905,7 +878,18 @@ void Check_Electrical_Connection(void)
 	
 	Concrete_disconnect_Criteria_Prev2 = Concrete_disconnect_Criteria_Prev1;
 	Concrete_disconnect_Criteria_Prev1 = Concrete_disconnect_Criteria;
-	Concrete_disconnect_Criteria = (average_Amplitude_Temp_Corrected * 1.0f) / 3.0E6f;//(varPlus + varMinus)*100/(2*amplitude_RMS);
+	
+	Find_Peak();
+	if (peak_of_median_signal > 2e6)
+	{
+		Concrete_disconnect_Criteria = peak_of_median_signal / average_Amplitude_Temp_Corrected;//(varPlus + varMinus)*100/(2*amplitude_RMS);
+	}
+	else
+	{
+		Concrete_disconnect_Criteria = 1;
+	}
+	
+	
 	//Concrete_disconnect_Criteria = (varPlus + varMinus) * 100.0f / (2.0f * amplitude_RMS);	
 
 	electrical_Connection_Status = Connected;			

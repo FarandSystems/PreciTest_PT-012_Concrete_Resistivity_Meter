@@ -194,7 +194,7 @@ void SendCapturedSignalToPC(void)
 	uint16_t maximum_capture_index;
 	
 	#ifdef CONCRETE
-		maximum_capture_index = CAPTURE_COUNT;
+		maximum_capture_index = 2; // 6 Process Data and a pair of raw data that would be selected by rx_buffer
 	#endif
 	#ifdef SOIL
 	if(CAPTURE_COUNT > 32)
@@ -259,49 +259,53 @@ void SendCapturedSignalToPC(void)
 //		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
 		
 		//Each Capture Contains at most 1024 bytes = 256 samples * 8/2 bytes
-		for(capture_Index = 0; capture_Index < maximum_capture_index  ; capture_Index++) //for both Soil and Concrete only 16 captured signals are sent to PC for USB memory and speed optimization.
+		
+		//Sending Selected Raw captured data
+		for(capture_Index = Capture_Data_Pair_Select; capture_Index < Capture_Data_Pair_Select + maximum_capture_index  ; capture_Index++) //for both Soil and Concrete only 16 captured signals are sent to PC for USB memory and speed optimization.
 		{
+			uint8_t index = capture_Index - Capture_Data_Pair_Select; // 0 or 1
 			for(sample_Index = 0; sample_Index < 255; sample_Index += 2)
 			{	 
 				packetNumber = sample_Index >> 1;	 //each Packet contains 2 samples(8Bytes) ; sample_Index = 0,2,4,...254 & packetNumber = 0,1,2,...,127
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 0] = 0x00; //reserved for code 0x1A
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 1] = ((signal_Captured[capture_Index ][sample_Index]) & 0xFF000000) >> 24; 
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 2] = ((signal_Captured[capture_Index ][sample_Index]) & 0x00FF0000) >> 16; 
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 3] = ((signal_Captured[capture_Index ][sample_Index]) & 0x0000FF00) >> 8; 
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 4] = ((signal_Captured[capture_Index ][sample_Index + 1]) & 0xFF000000) >> 24;
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 5] = ((signal_Captured[capture_Index ][sample_Index + 1]) & 0x00FF0000) >> 16;
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 6] = ((signal_Captured[capture_Index ][sample_Index + 1]) & 0x0000FF00) >> 8;
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 7] = 0x00;	//reserved for temperature data 				
+				sendData[(index << 10) + (packetNumber << 3) + 0] = 0x00; //reserved for code 0x1A
+				sendData[(index << 10) + (packetNumber << 3) + 1] = ((signal_Captured[capture_Index ][sample_Index]) & 0xFF000000) >> 24; 
+				sendData[(index << 10) + (packetNumber << 3) + 2] = ((signal_Captured[capture_Index ][sample_Index]) & 0x00FF0000) >> 16; 
+				sendData[(index << 10) + (packetNumber << 3) + 3] = ((signal_Captured[capture_Index ][sample_Index]) & 0x0000FF00) >> 8; 
+				sendData[(index << 10) + (packetNumber << 3) + 4] = ((signal_Captured[capture_Index ][sample_Index + 1]) & 0xFF000000) >> 24;
+				sendData[(index << 10) + (packetNumber << 3) + 5] = ((signal_Captured[capture_Index ][sample_Index + 1]) & 0x00FF0000) >> 16;
+				sendData[(index << 10) + (packetNumber << 3) + 6] = ((signal_Captured[capture_Index ][sample_Index + 1]) & 0x0000FF00) >> 8;
+				sendData[(index << 10) + (packetNumber << 3) + 7] = 0x00;	//reserved for temperature data 				
 			}
 		}
 		#endif
 	}
 	
 	// All the captured signals, spikes removed
-	if(spikeLess_flag == 1)
-	{
-		for(capture_Index = 0; capture_Index < maximum_capture_index ; capture_Index++) //for both Soil and Concrete only 16 captured signals are sent to PC for USB memory and speed optimization.
+//	if(spikeLess_flag == 1)
+//	{
+		for(capture_Index = Capture_Data_Pair_Select; capture_Index < Capture_Data_Pair_Select + maximum_capture_index  ; capture_Index++) //for both Soil and Concrete only 16 captured signals are sent to PC for USB memory and speed optimization.
 		{
+			uint8_t index = capture_Index - Capture_Data_Pair_Select; // 0 or 1
 			for(sample_Index = 0; sample_Index < 255; sample_Index += 2)
 			{
 				//Each Capture Contains at most 1024 bytes = 256 samples * 8/2 bytes 
 				packetNumber = sample_Index >> 1;	 //each Packet contains 2 samples(8Bytes) ; sample_Index = 0,2,4,...254 & packetNumber = 0,1,2,...,127
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 0] = 0x00; //reserved for code 0x1A
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 1] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index]) & 0xFF000000) >> 24; 
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 2] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index]) & 0x00FF0000) >> 16; 
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 3] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index]) & 0x0000FF00) >> 8; 
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 4] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index + 1]) & 0xFF000000) >> 24;
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 5] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index + 1]) & 0x00FF0000) >> 16;
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 6] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index + 1]) & 0x0000FF00) >> 8;
-				sendData[(capture_Index << 10) + (packetNumber << 3) + 7] = 0x00;	//reserved for temperature data 
+				sendData[(index << 10) + (packetNumber << 3) + 0] = 0x00; //reserved for code 0x1A
+				sendData[(index << 10) + (packetNumber << 3) + 1] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index]) & 0xFF000000) >> 24; 
+				sendData[(index << 10) + (packetNumber << 3) + 2] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index]) & 0x00FF0000) >> 16; 
+				sendData[(index << 10) + (packetNumber << 3) + 3] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index]) & 0x0000FF00) >> 8; 
+				sendData[(index << 10) + (packetNumber << 3) + 4] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index + 1]) & 0xFF000000) >> 24;
+				sendData[(index << 10) + (packetNumber << 3) + 5] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index + 1]) & 0x00FF0000) >> 16;
+				sendData[(index << 10) + (packetNumber << 3) + 6] = ((int32_t)(signal_SubSampled_SpikeLess[capture_Index][sample_Index + 1]) & 0x0000FF00) >> 8;
+				sendData[(index << 10) + (packetNumber << 3) + 7] = 0x00;	//reserved for temperature data 
 			}
-  	}		
+//  	}		
 	
 	}	
 
 	
 // Median applied  signal
-	waveformIndex = 17;
+	waveformIndex = 4;
 	for(sample_Index = 0; sample_Index < 255; sample_Index += 2)
 	{
 		//Each Capture Contains at most 1024 bytes = 256 samples * 8/2 bytes 
@@ -318,7 +322,7 @@ void SendCapturedSignalToPC(void)
 
 	// LPF applied and transients cut out signal
 
-	waveformIndex = 18;
+	waveformIndex = 5;
 	for(sample_Index = 0; sample_Index < 255; sample_Index += 2)
 	{
 		//Each Capture Contains at most 1024 bytes = 256 samples * 8/2 bytes 
@@ -337,7 +341,7 @@ void SendCapturedSignalToPC(void)
 	//Since sendData[(waveformIndex << 10) + k] = 0 for k > 214(in Soil) && k > 174 (in Concrete), They can be used for sending other data
 	// Other system patrameters sent in the end of 18'th signal
 	
-	waveformIndex = 19;
+	waveformIndex = 6;
 	// Data index = 216 in C# App, contains samplePlus  (216 = 864/4)
 	sendData[(waveformIndex << 10) + 864] = 0x00;	 // Reserved
 	sendData[(waveformIndex << 10) + 865] = (((int32_t)samplePlus) & 0x00FF0000) >> 16;	
@@ -372,14 +376,15 @@ void SendCapturedSignalToPC(void)
 	sendData[(waveformIndex << 10) + 887] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x000000FF) >> 0;	
 	// Data index = 222 in C# App, contains ADC Levels for temperature sensor  (221 = 888 / 4)	
 	sendData[(waveformIndex << 10) + 888] = 0x00;	 // Reserved			
-	sendData[(waveformIndex << 10) + 889] = (((uint32_t)(probeTypeIndex)) & 0x000000FF) >> 0;	
+	sendData[(waveformIndex << 10) + 889] = (((uint32_t)(probeTypeIndex)) & 0x00FF0000) >> 16;	
+	sendData[(waveformIndex << 10) + 890] = 0x00;	 // Reserved	
 	#ifdef CONCRETE
-		sendData[(waveformIndex << 10) + 890] = (((uint32_t)(electrical_Connection_Status)) & 0x000000FF) >> 0;					
+		sendData[(waveformIndex << 10) + 891] = (((uint32_t)(electrical_Connection_Status)) & 0x000000FF) >> 0;					
 	#endif
 	#ifdef SOIL
-		sendData[(waveformIndex << 10) + 890] = (((uint32_t)(electrical_Connection_Status)) & 0x000000FF) >> 0;		
+		sendData[(waveformIndex << 10) + 891] = (((uint32_t)(electrical_Connection_Status)) & 0x000000FF) >> 0;		
 	#endif
-	sendData[(waveformIndex << 10) + 891] = 0x00;	 // Reserved	
+	
 	
 	// Data index = 223 in C# App, contains ADC Levels for temperature sensor  (223 = 892/4)
 	sendData[(waveformIndex << 10) + 892] = 0x00;	 // Reserved
@@ -404,7 +409,7 @@ void SendCapturedSignalToPC(void)
 	sendData[(waveformIndex << 10) + 905] = 0x00;
 	sendData[(waveformIndex << 10) + 906] = 0x00;
 	sendData[(waveformIndex << 10) + 907] = (((int32_t)OutputFilterOperation) & 0x000000FF) >> 0;
-	
+
 	
 		
 //		waveformIndex = 19;

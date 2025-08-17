@@ -50,6 +50,7 @@ extern "C" {
 #include "crc.h"
 #include "fmc.h"
 #include "dma2d.h"
+#include "command_RX.h"
 #include "quadspi.h"
 #include "PowerManagement.h"
 #include <stm32746g_discovery_qspi.h>
@@ -295,8 +296,8 @@ extern uint8_t usb_connection_state;
 	#define AVE_START_SAMPLE                                    30
 	#define AVE_END_SAMPLE                                      80
 	#define CONCRETE_LOW_RANGE_THERESHOLD                                4000
-	#define CONCRETE_HIGH_RANGE_THERESHOLD                               1000000
-	#define DISCONNECTED_THERESHOLD                             2.2f  // This parameter is < 2 when probe is connected, (This Parameter was 2.5 previously. and caused poor performance of disconnect detection)
+	#define CONCRETE_HIGH_RANGE_THERESHOLD                               1800000
+	#define DISCONNECTED_THERESHOLD                             1.5f  // This parameter is < 2 when probe is connected, (This Parameter was 2.5 previously. and caused poor performance of disconnect detection)
 	#define LOWER_DISCONNECTED_THERESHOLD												0.005f
 	#define PROBE_SIZE_AFFECTED_VARIABLE                        probeTypeIndex
 	#define RX_DATA_SIZE                                        16384

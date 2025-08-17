@@ -1,4 +1,5 @@
 stm32f746g_disco\command_rx.o: ..\Core\Src\command_RX.c
+stm32f746g_disco\command_rx.o: ../Core/Inc/command_RX.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/main.h
 stm32f746g_disco\command_rx.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/stm32f7xx_hal_conf.h
@@ -65,6 +66,7 @@ stm32f746g_disco\command_rx.o: ../Core/Inc/dma.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/crc.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/fmc.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/dma2d.h
+stm32f746g_disco\command_rx.o: ../Core/Inc/command_RX.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/quadspi.h
 stm32f746g_disco\command_rx.o: ../Core/Inc/PowerManagement.h
 stm32f746g_disco\command_rx.o: ../Drivers/BSP/stm32746g_discovery_qspi.h

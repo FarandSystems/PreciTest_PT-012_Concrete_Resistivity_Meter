@@ -66,6 +66,7 @@ stm32f746g_disco\i2c.o: ../Core/Inc/dma.h
 stm32f746g_disco\i2c.o: ../Core/Inc/crc.h
 stm32f746g_disco\i2c.o: ../Core/Inc/fmc.h
 stm32f746g_disco\i2c.o: ../Core/Inc/dma2d.h
+stm32f746g_disco\i2c.o: ../Core/Inc/command_RX.h
 stm32f746g_disco\i2c.o: ../Core/Inc/quadspi.h
 stm32f746g_disco\i2c.o: ../Core/Inc/PowerManagement.h
 stm32f746g_disco\i2c.o: ../Drivers/BSP/stm32746g_discovery_qspi.h

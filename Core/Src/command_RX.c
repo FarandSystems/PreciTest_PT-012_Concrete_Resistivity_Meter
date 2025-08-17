@@ -26,19 +26,24 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"
+
+#include "command_RX.h"
+
 
 
 void Service_Input_Commands(uint8_t* Rx_Buffer);
-extern void Send_Via_USB(uint8_t* Buf, uint32_t Len);
-extern void Code_0x1A(uint8_t* Buf, uint32_t Len);
-extern void Farand_USB_Tx (uint8_t* Buf, uint32_t Len);
-extern uint8_t BSP_SD_WriteBlocks(uint32_t *pData, uint64_t WriteAddr, uint32_t BlockSize, uint32_t NumOfBlocks);
+
+
 
 uint8_t auto_Detect_PC_Sent_Bytes[8] = DETECION_PC_SENT_BYTES
 uint8_t auto_Detect_Device_Sent_Bytes[8] = DETECION_DEVICE_SENT_BYTES
 			
 uint8_t spikeLess_flag = 0;
+
+
+uint8_t Capture_Data_Pair_Select = 0;
+
+
 
 void Service_Input_Commands(uint8_t* Rx_Buffer)
 {	
@@ -91,6 +96,10 @@ void Service_Input_Commands(uint8_t* Rx_Buffer)
 			{
 				spikeLess_flag = 1;
 			}
+			
+			// Selecting which pair of Raw_Captures would send to PC
+			Capture_Data_Pair_Select = Rx_Buffer[2];
+			
  			break;
 		
 		case 0x06: // Stop Sending Captured Data to PC			
