@@ -22,35 +22,19 @@ Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
 G:\Wenner_and_Concrete_Portrait_Touch_GFX_Milad\MDK-ARM\STM32F746G_DISCO.uvprojx
-Project File Date:  08/17/2025
+Project File Date:  08/19/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F746G_DISCO'
-compiling ProcessData.c...
-..\Core\Src\ProcessData.c(551): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.0001f * (CON_LOW_L1_G * average_Amplitude_Temp_Corrected  + CON_LOW_L1_O);
-..\Core\Src\ProcessData.c(556): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.0001f * (CON_LOW_L2_G * average_Amplitude_Temp_Corrected  + CON_LOW_L2_O);
-..\Core\Src\ProcessData.c(561): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.0001f * (CON_LOW_L3_G * average_Amplitude_Temp_Corrected  + CON_LOW_L3_O);
-..\Core\Src\ProcessData.c(566): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.0001f * (CON_LOW_L4_G * average_Amplitude_Temp_Corrected  + CON_LOW_L4_O);
-..\Core\Src\ProcessData.c(580): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.01f * (CON_HIGH_L1_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L1_O);
-..\Core\Src\ProcessData.c(585): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.01f * (CON_HIGH_L2_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L2_O);
-..\Core\Src\ProcessData.c(590): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.01f * (CON_HIGH_L3_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L3_O);
-..\Core\Src\ProcessData.c(595): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		resistance_Fast = 0.01f * (CON_HIGH_L4_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L4_O);
-..\Core\Src\ProcessData.c(890): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	if (average_Amplitude_Temp_Corrected > 3e6)
-..\Core\Src\ProcessData.c: 9 warnings, 0 errors
+compiling Main_ScreenView.cpp...
+../touchgfx/gui/include/gui/common/FrontendApplication.hpp(11): warning:  #611-D: overloaded virtual function "touchgfx::Application::draw"  is only partially overridden in class "FrontendApplication" 
+  class FrontendApplication : public FrontendApplicationBase
+../touchgfx/gui/src/main_screen_screen/main_screenview.cpp: 1 warning, 0 errors
 linking...
-Program Size: Code=124764 RO-data=460156 RW-data=1300 ZI-data=181588  
+Program Size: Code=124764 RO-data=460160 RW-data=1300 ZI-data=181588  
 FromELF: creating hex file...
-"STM32F746G_DISCO\STM32F746G_DISCO.axf" - 0 Error(s), 9 Warning(s).
+"STM32F746G_DISCO\STM32F746G_DISCO.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 

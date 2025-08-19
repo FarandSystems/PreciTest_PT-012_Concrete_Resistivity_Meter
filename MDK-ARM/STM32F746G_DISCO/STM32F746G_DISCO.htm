@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32F746G_DISCO\STM32F746G_DISCO.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32F746G_DISCO\STM32F746G_DISCO.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Aug 19 17:47:40 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Aug 19 20:10:50 2025
 <BR><P>
 <H3>Maximum Stack Usage =       2648 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2001,7 +2001,9 @@ Global Symbols
 <P><STRONG><a name="[2d7]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[365]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
+<BR>[Called By]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[365]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit
@@ -2012,8 +2014,6 @@ Global Symbols
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[3bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_FMC_Init
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-<LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
-<LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[442]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Digital_ClockBase::Digital_ClockBase()
 <LI><a href="#[4d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextProvider::TextProvider()
 <LI><a href="#[467]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::TextArea()
@@ -2359,11 +2359,11 @@ Global Symbols
 <P><STRONG><a name="[290]"></a>BSP_QSPI_Init</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, stm32746g_discovery_qspi.o(i.BSP_QSPI_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 260<LI>Call Chain = BSP_QSPI_Init &rArr; QSPI_DummyCyclesCfg &rArr; QSPI_WriteEnable &rArr; HAL_QSPI_Command &rArr; QSPI_Config
 </UL>
-<BR>[Calls]<UL><LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<BR>[Calls]<UL><LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[291]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_DeInit
 <LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_ResetMemory
 <LI><a href="#[295]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QSPI_DummyCyclesCfg
-<LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -2616,7 +2616,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2d9]"></a>Error_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(i.Error_Handler))
-<BR><BR>[Called By]<UL><LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
+<BR><BR>[Called By]<UL><LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 <LI><a href="#[3d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USB_DEVICE_Init
@@ -2634,7 +2635,6 @@ Global Symbols
 <LI><a href="#[3bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA2D_Init
 <LI><a href="#[3bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_CRC_Init
 <LI><a href="#[3ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_ADC3_Init
-<LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[40f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USBD_LL_Init
 <LI><a href="#[349]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_ResetCallback
 <LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_MspInit
@@ -2884,8 +2884,8 @@ Global Symbols
 <LI><a href="#[2e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
 <LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
-<LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<BR>[Called By]<UL><LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 </UL>
 
 <P><STRONG><a name="[2db]"></a>HAL_DMA_Start_IT</STRONG> (Thumb, 122 bytes, Stack size 24 bytes, stm32f7xx_hal_dma.o(i.HAL_DMA_Start_IT))
@@ -2893,8 +2893,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
-<LI><a href="#[376]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
+<BR>[Called By]<UL><LI><a href="#[376]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
+<LI><a href="#[2da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
 </UL>
 
 <P><STRONG><a name="[29b]"></a>HAL_Delay</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, stm32f7xx_hal.o(i.HAL_Delay))
@@ -2938,10 +2938,10 @@ Global Symbols
 <P><STRONG><a name="[303]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 306 bytes, Stack size 36 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_DeInit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_GPIO_DeInit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspDeInit
-<LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspDeInit
-<LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_MISO
+<BR>[Called By]<UL><LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_MISO
 <LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
+<LI><a href="#[364]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspDeInit
+<LI><a href="#[2ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspDeInit
 </UL>
 
 <P><STRONG><a name="[2ec]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, spi.o(i.HAL_GPIO_EXTI_Callback))
@@ -2965,17 +2965,17 @@ Global Symbols
 <P><STRONG><a name="[296]"></a>HAL_GPIO_Init</STRONG> (Thumb, 530 bytes, Stack size 40 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<BR>[Called By]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_MISO
+<LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
+<LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 <LI><a href="#[365]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MspInit
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[2eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_FMC_MspInit
 <LI><a href="#[2d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
-<LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_MISO
-<LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
-<LI><a href="#[375]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_MspInit
 </UL>
 
@@ -2991,25 +2991,18 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Go_to_Middle_Range
 <LI><a href="#[2d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Go_to_Low_Range
 <LI><a href="#[2d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Go_to_High_Range
+<LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
+<LI><a href="#[377]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxRxCpltCallback
+<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 <LI><a href="#[3e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_ADC_24Bit
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[2b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Set_LED_Color
 <LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateAlarm
-<LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
-<LI><a href="#[377]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxRxCpltCallback
-<LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 </UL>
 
 <P><STRONG><a name="[2cb]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_hal.o(i.HAL_GetTick))
-<BR><BR>[Called By]<UL><LI><a href="#[367]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Transmit
-<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Receive
-<LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MemoryMapped
-<LI><a href="#[363]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Command
-<LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
-<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
-<LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
+<BR><BR>[Called By]<UL><LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCCEx_PeriphCLKConfig
 <LI><a href="#[2d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Init
 <LI><a href="#[36d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
@@ -3017,6 +3010,13 @@ Global Symbols
 <LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
 <LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
 <LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[367]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Transmit
+<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Receive
+<LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MemoryMapped
+<LI><a href="#[363]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Command
+<LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[2e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_WaitForLastOperation
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WaitOnTXISFlagUntilTimeout
@@ -3223,12 +3223,12 @@ Global Symbols
 <P><STRONG><a name="[308]"></a>HAL_InitTick</STRONG> (Thumb, 120 bytes, Stack size 40 bytes, stm32f7xx_hal_timebase_tim.o(i.HAL_InitTick))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_InitTick &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-<LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
+<BR>[Calls]<UL><LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
 <LI><a href="#[30a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetClockConfig
 <LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+<LI><a href="#[297]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[298]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 </UL>
 <BR>[Called By]<UL><LI><a href="#[368]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[306]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
@@ -3329,15 +3329,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[298]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f7xx_hal_cortex.o(i.HAL_NVIC_EnableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<BR><BR>[Called By]<UL><LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[37a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[3be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-<LI><a href="#[37a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_MspInit
 </UL>
 
@@ -3346,16 +3346,16 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
+<BR>[Called By]<UL><LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
+<LI><a href="#[37a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
 <LI><a href="#[314]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_LTDC_MspInit
 <LI><a href="#[2f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_MspInit
 <LI><a href="#[2e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA2D_MspInit
 <LI><a href="#[3c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[3be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_DMA_Init
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-<LI><a href="#[309]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[37a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
+<LI><a href="#[292]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_QSPI_MspInit
 <LI><a href="#[34e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PCD_MspInit
 </UL>
 
@@ -3867,8 +3867,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = HAL_SPI_TxRxCpltCallback &rArr; Init_Input_From_ADC_As_EXTI &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[378]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Add_One_Sample_to_ADCBuffer
 <LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_EXTI
+<LI><a href="#[378]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Add_One_Sample_to_ADCBuffer
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
 </UL>
@@ -3911,12 +3911,12 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[37a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
 <LI><a href="#[37b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
+<BR>[Called By]<UL><LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
 <LI><a href="#[3ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM7_Init
 <LI><a href="#[3cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM5_Init
 <LI><a href="#[3cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM3_Init
 <LI><a href="#[3ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM1_Init
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 </UL>
 
 <P><STRONG><a name="[37a]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 198 bytes, Stack size 8 bytes, tim.o(i.HAL_TIM_Base_MspInit))
@@ -3933,8 +3933,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2be]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 106 bytes, Stack size 0 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_Base_Start_IT))
-<BR><BR>[Called By]<UL><LI><a href="#[2ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_and_Start_Timers
-<LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<BR><BR>[Called By]<UL><LI><a href="#[308]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[2ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Configure_and_Start_Timers
 <LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::New_Proj_btn_CallBack()
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Save_btn_CallBack()
 </UL>
@@ -3964,9 +3964,9 @@ Global Symbols
 <P><STRONG><a name="[381]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, stm32f7xx_hal_tim.o(i.HAL_TIM_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_OC_DelayElapsedCallback &rArr; Update_System_Mode &rArr; Process_Captured_Data &rArr; Calculate_Signal_Amplitude_Levels &rArr; GetSamplePlusAverage &rArr; __hardfp_sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
-<LI><a href="#[384]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
+<BR>[Calls]<UL><LI><a href="#[384]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
 <LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
+<LI><a href="#[385]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 <LI><a href="#[388]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
 <LI><a href="#[382]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
 <LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutCallback
@@ -4002,14 +4002,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
 </UL>
 
-<P><STRONG><a name="[383]"></a>HAL_TIM_OC_DelayElapsedCallback</STRONG> (Thumb, 228 bytes, Stack size 32 bytes, tim.o(i.HAL_TIM_OC_DelayElapsedCallback))
+<P><STRONG><a name="[383]"></a>HAL_TIM_OC_DelayElapsedCallback</STRONG> (Thumb, 236 bytes, Stack size 32 bytes, tim.o(i.HAL_TIM_OC_DelayElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = HAL_TIM_OC_DelayElapsedCallback &rArr; Update_System_Mode &rArr; Process_Captured_Data &rArr; Calculate_Signal_Amplitude_Levels &rArr; GetSamplePlusAverage &rArr; __hardfp_sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[2a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caibrate_And_Filter_Temperature
-<LI><a href="#[2b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Check_Power_And_Charging
 <LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ReadCapturedValue
 <LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Update_System_Mode
+<LI><a href="#[2b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Check_Power_And_Charging
 </UL>
 <BR>[Called By]<UL><LI><a href="#[381]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
 </UL>
@@ -4277,8 +4277,8 @@ Global Symbols
 <P><STRONG><a name="[3c9]"></a>MX_SPI2_Init</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, spi.o(i.MX_SPI2_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = MX_SPI2_Init &rArr; HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_DMA_Init &rArr; DMA_CheckFifoParam
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[374]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<BR>[Calls]<UL><LI><a href="#[374]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -4286,10 +4286,10 @@ Global Symbols
 <P><STRONG><a name="[3ca]"></a>MX_TIM1_Init</STRONG> (Thumb, 102 bytes, Stack size 40 bytes, tim.o(i.MX_TIM1_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = MX_TIM1_Init &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
+<BR>[Calls]<UL><LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -4297,10 +4297,10 @@ Global Symbols
 <P><STRONG><a name="[3cc]"></a>MX_TIM3_Init</STRONG> (Thumb, 96 bytes, Stack size 40 bytes, tim.o(i.MX_TIM3_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = MX_TIM3_Init &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
+<BR>[Calls]<UL><LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -4308,13 +4308,13 @@ Global Symbols
 <P><STRONG><a name="[3cd]"></a>MX_TIM5_Init</STRONG> (Thumb, 166 bytes, Stack size 64 bytes, tim.o(i.MX_TIM5_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = MX_TIM5_Init &rArr; HAL_TIM_MspPostInit &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<BR>[Calls]<UL><LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
 <LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
 <LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -4323,9 +4323,9 @@ Global Symbols
 <P><STRONG><a name="[3ce]"></a>MX_TIM7_Init</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, tim.o(i.MX_TIM7_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = MX_TIM7_Init &rArr; HAL_TIM_Base_Init &rArr; HAL_TIM_Base_MspInit &rArr; HAL_NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+<BR>[Calls]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -4333,13 +4333,13 @@ Global Symbols
 <P><STRONG><a name="[3cf]"></a>MX_TIM8_Init</STRONG> (Thumb, 218 bytes, Stack size 112 bytes, tim.o(i.MX_TIM8_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = MX_TIM8_Init &rArr; HAL_TIM_OC_ConfigChannel &rArr; TIM_OC6_SetConfig
 </UL>
-<BR>[Calls]<UL><LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Init
+<BR>[Calls]<UL><LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Init
 <LI><a href="#[38b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_ConfigChannel
 <LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ConfigClockSource
 <LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
 <LI><a href="#[3cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_MasterConfigSynchronization
 <LI><a href="#[3d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_ConfigBreakDeadTime
+<LI><a href="#[2d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[2d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -4439,8 +4439,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[2d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[376]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
 </UL>
-<BR>[Called By]<UL><LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_SPI_Capture
+<BR>[Called By]<UL><LI><a href="#[2ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Start_SPI_Capture
+<LI><a href="#[25d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
 <P><STRONG><a name="[2b5]"></a>Restart_Output_Filter</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, processdata.o(i.Restart_Output_Filter))
@@ -4595,8 +4595,8 @@ Global Symbols
 <P><STRONG><a name="[2ed]"></a>Start_SPI_Capture</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, spi.o(i.Start_SPI_Capture))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Start_SPI_Capture &rArr; Init_Input_From_ADC_As_MISO &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_ADC_24Bit
-<LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_MISO
+<BR>[Calls]<UL><LI><a href="#[3b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Init_Input_From_ADC_As_MISO
+<LI><a href="#[3e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Read_ADC_24Bit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
 </UL>
@@ -5333,9 +5333,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = Update_System_Mode &rArr; Process_Captured_Data &rArr; Calculate_Signal_Amplitude_Levels &rArr; GetSamplePlusAverage &rArr; __hardfp_sqrt &rArr; _dsqrt &rArr; __fpl_dnaninf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[3dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Process_Captured_Data
+<LI><a href="#[425]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[3f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendCapturedSignalToPC
 <LI><a href="#[424]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EraseADCBuffer
-<LI><a href="#[425]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[383]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
 </UL>
@@ -5492,8 +5492,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
 <LI>Call Chain = TouchGFXHAL::initialize() &rArr; TouchGFXGeneratedHAL::initialize() &rArr; touchgfx::HAL::initialize() &rArr; touchgfx::OSWrappers::initialize() &rArr; osSemaphoreNew &rArr; xQueueGenericSend &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
-<BR>[Calls]<UL><LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGFXGeneratedHAL::initialize()
-<LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CortexMMCUInstrumentation::init()
+<BR>[Calls]<UL><LI><a href="#[20a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::CortexMMCUInstrumentation::init()
+<LI><a href="#[435]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGFXGeneratedHAL::initialize()
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx_init
 </UL>
@@ -5637,7 +5637,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main_screenview.o(.constdata__ZTV15Main_ScreenView)
 </UL>
-<P><STRONG><a name="[14e]"></a>Main_ScreenView::Show_Very_Low()</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, main_screenview.o(i._ZN15Main_ScreenView13Show_Very_LowEv))
+<P><STRONG><a name="[14e]"></a>Main_ScreenView::Show_Very_Low()</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, main_screenview.o(i._ZN15Main_ScreenView13Show_Very_LowEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304 + Unknown Stack Size
 <LI>Call Chain = Main_ScreenView::Show_Very_Low() &rArr; touchgfx::Unicode::snprintf(unsigned short*, unsigned short, const char*, ...) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list) &rArr; touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const unsigned short*, const char*, std::__va_list) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>
@@ -5725,8 +5725,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
 <LI>Call Chain = Main_ScreenView::Save_btn_CallBack() &rArr; touchgfx::ButtonWithLabel::setLabelText(touchgfx::TypedText) &rArr; touchgfx::TypedText::getText() const &rArr; touchgfx::TypedText::assertValid() const &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Alarm
-<LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<BR>[Calls]<UL><LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Alarm
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Button::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)
 <LI><a href="#[44d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::TypedText(unsigned short)
@@ -5799,8 +5799,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
 <LI>Call Chain = Main_ScreenView::New_Proj_btn_CallBack() &rArr; touchgfx::ButtonWithLabel::setLabelText(touchgfx::TypedText) &rArr; touchgfx::TypedText::getText() const &rArr; touchgfx::TypedText::assertValid() const &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
-<BR>[Calls]<UL><LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Alarm
-<LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<BR>[Calls]<UL><LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[450]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Alarm
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::invalidate() const
 <LI><a href="#[44d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::TypedText(unsigned short)
 <LI><a href="#[44e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ButtonWithLabel::setLabelText(touchgfx::TypedText)
@@ -8090,8 +8090,8 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> cortexmmcuinstrumentation.o(.constdata__ZTVN8touchgfx25CortexMMCUInstrumentationE)
 </UL>
 <P><STRONG><a name="[d1]"></a>touchgfx::CortexMMCUInstrumentation::~CortexMMCUInstrumentation()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, cortexmmcuinstrumentation.o(i._ZN8touchgfx25CortexMMCUInstrumentationD1Ev))
-<BR>[Address Reference Count : 2]<UL><LI> cortexmmcuinstrumentation.o(.constdata__ZTVN8touchgfx25CortexMMCUInstrumentationE)
-<LI> touchgfxhal.o(i.__sti___15_TouchGFXHAL_cpp_03fe9600)
+<BR>[Address Reference Count : 2]<UL><LI> touchgfxhal.o(i.__sti___15_TouchGFXHAL_cpp_03fe9600)
+<LI> cortexmmcuinstrumentation.o(.constdata__ZTVN8touchgfx25CortexMMCUInstrumentationE)
 </UL>
 <P><STRONG><a name="[671]"></a>touchgfx::CortexMMCUInstrumentation::~CortexMMCUInstrumentation__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cortexmmcuinstrumentation.o(i._ZN8touchgfx25CortexMMCUInstrumentationD1Ev), UNUSED)
 
@@ -9359,8 +9359,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[547]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Unicode::vsnprintf(unsigned short*, unsigned short, const char*, std::__va_list)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Show_Very_Low()
-<LI><a href="#[443]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NumUpDownBase::NumUpDownBase()
+<BR>[Called By]<UL><LI><a href="#[443]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NumUpDownBase::NumUpDownBase()
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NumUpDown::setNumber(unsigned char)
 <LI><a href="#[434]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Message_BoxBase::Message_BoxBase()
 <LI><a href="#[1cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextProgress::setValue(int)
@@ -9369,6 +9368,7 @@ Global Symbols
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Connect_Charger_Warning()
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Display_Resistance(float)
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Save_And_Create()
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Show_Very_Low()
 <LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::DigitalClock::updateClock()
 </UL>
 
@@ -9428,11 +9428,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::SlideTransition&lang;(touchgfx::Direction)2&rang;::handleTickEvent()
 </UL>
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9501,11 +9501,11 @@ Global Symbols
 <LI> textareawithwildcard.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 </UL>
 <P><STRONG><a name="[ff]"></a>touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable15handleDragEventERKNS_9DragEventE))
-<BR>[Address Reference Count : 29]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 29]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9532,11 +9532,11 @@ Global Symbols
 <LI> textprogress.o(.constdata__ZTVN8touchgfx12TextProgressE)
 </UL>
 <P><STRONG><a name="[100]"></a>touchgfx::Drawable::handleTickEvent()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable15handleTickEventEv))
-<BR>[Address Reference Count : 26]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 26]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9560,11 +9560,11 @@ Global Symbols
 <LI> textareawithwildcard.o(.constdata__ZTVN8touchgfx23TextAreaWithOneWildcardE)
 </UL>
 <P><STRONG><a name="[fd]"></a>touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable16handleClickEventERKNS_10ClickEventE))
-<BR>[Address Reference Count : 27]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 27]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9589,11 +9589,11 @@ Global Symbols
 <LI> scrollbase.o(.constdata__ZTVN8touchgfx10ScrollBaseE)
 </UL>
 <P><STRONG><a name="[fe]"></a>touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable18handleGestureEventERKNS_12GestureEventE))
-<BR>[Address Reference Count : 29]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 29]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9628,11 +9628,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f9]"></a>touchgfx::Drawable::setX(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable4setXEs))
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9662,11 +9662,11 @@ Global Symbols
 <LI> scrollbase.o(.constdata__ZTVN8touchgfx10ScrollBaseE)
 </UL>
 <P><STRONG><a name="[fa]"></a>touchgfx::Drawable::setY(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable4setYEs))
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9710,11 +9710,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[102]"></a>touchgfx::Drawable::moveTo(short, short)</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, abstractclock.o(i._ZN8touchgfx8Drawable6moveToEss))
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9744,11 +9744,11 @@ Global Symbols
 <LI> scrollbase.o(.constdata__ZTVN8touchgfx10ScrollBaseE)
 </UL>
 <P><STRONG><a name="[fb]"></a>touchgfx::Drawable::setWidth(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable8setWidthEs))
-<BR>[Address Reference Count : 27]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 27]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -9773,11 +9773,11 @@ Global Symbols
 <LI> textprogress.o(.constdata__ZTVN8touchgfx12TextProgressE)
 </UL>
 <P><STRONG><a name="[fc]"></a>touchgfx::Drawable::setHeight(short)</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, clockanddatesetting.o(i._ZN8touchgfx8Drawable9setHeightEs))
-<BR>[Address Reference Count : 27]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 27]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -10535,8 +10535,7 @@ Global Symbols
 <LI><a href="#[4f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Drawable::setWidthHeight(short, short)
 <LI><a href="#[57b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TypedText::getAlignment() const
 </UL>
-<BR>[Called By]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Show_Very_Low()
-<LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NumUpDown::setNumber(unsigned char)
+<BR>[Called By]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NumUpDown::setNumber(unsigned char)
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Update_Temperature_Battery_Range_Panels()
 <LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Set_Fixed_Panels_First_Time()
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Connect_Charger_Warning()
@@ -10544,6 +10543,7 @@ Global Symbols
 <LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Display_Resistance(float)
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Save_And_Create()
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::ShowMessageBox(char*)
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Show_Very_Low()
 </UL>
 
 <P><STRONG><a name="[467]"></a>touchgfx::TextArea::TextArea()</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, clockanddatesettingbase.o(i._ZN8touchgfx8TextAreaC1Ev))
@@ -10580,11 +10580,11 @@ Global Symbols
 <P><STRONG><a name="[107]"></a>touchgfx::Container::forEachChild(touchgfx::GenericCallback&lang;touchgfx::Drawable&, void, void&rang;*)</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, container.o(i._ZN8touchgfx9Container12forEachChildEPNS_15GenericCallbackIRNS_8DrawableEvvEE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = touchgfx::Container::forEachChild(touchgfx::GenericCallback&lang;touchgfx::Drawable&, void, void&rang;*)
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -10609,11 +10609,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::handleClickEvent(const touchgfx::ClickEvent&)
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -10638,11 +10638,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[525]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::startSMOC(const touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -10679,11 +10679,11 @@ Global Symbols
 <LI><a href="#[4bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::AbstractProgressIndicator::AbstractProgressIndicator()
 <LI><a href="#[49f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::ScrollBase::ScrollBase__sub_object()
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -10701,11 +10701,11 @@ Global Symbols
 <LI> scrollbase.o(.constdata__ZTVN8touchgfx10ScrollBaseE)
 </UL>
 <P><STRONG><a name="[105]"></a>touchgfx::Container::remove(touchgfx::Drawable&)</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, container.o(i._ZN8touchgfx9Container6removeERNS_8DrawableE))
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -10725,11 +10725,11 @@ Global Symbols
 <P><STRONG><a name="[106]"></a>touchgfx::Container::removeAll()</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, container.o(i._ZN8touchgfx9Container9removeAllEv))
 <BR><BR>[Called By]<UL><LI><a href="#[475]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::DrawableList::refreshDrawables()
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -10808,8 +10808,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::TextArea::~TextArea()
 </UL>
-<BR>[Address Reference Count : 2]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(i._ZN8touchgfx17DrawableListItemsI9NumUpDownLi2EED1Ev)
+<BR>[Address Reference Count : 2]<UL><LI> clockanddatesetting.o(i._ZN8touchgfx17DrawableListItemsI9NumUpDownLi2EED1Ev)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 </UL>
 <P><STRONG><a name="[6a7]"></a>NumUpDown::~NumUpDown__sub_object()</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, clockanddatesetting.o(i._ZN9NumUpDownD1Ev), UNUSED)
 
@@ -11669,7 +11669,6 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Digital_Clock::setTime24Hour(unsigned char, unsigned char, unsigned char)
 <LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClockAndDateSetting::Button_CallBack()
-<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Show_Very_Low()
 <LI><a href="#[1bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::DigitalClock::setColor(touchgfx::colortype)
 <LI><a href="#[1bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::DigitalClock::setTypedText(touchgfx::TypedText)
 <LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NumUpDown::setNumber(unsigned char)
@@ -11690,13 +11689,14 @@ Global Symbols
 <LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Save_And_Create()
 <LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::ShowMessageBox(char*)
 <LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::UpdateDisplay()
+<LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Main_ScreenView::Show_Very_Low()
 <LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::DigitalClock::updateClock()
 </UL>
-<BR>[Address Reference Count : 30]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 30]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -11728,11 +11728,11 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[50a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &=(const touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -11767,11 +11767,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[46f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Application::getInstance()
 <LI><a href="#[50a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Rect::operator &=(const touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -11814,11 +11814,11 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f8]"></a>touchgfx::Drawable::translateRectToAbsolute(touchgfx::Rect&) const</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, drawable.o(i._ZNK8touchgfx8Drawable23translateRectToAbsoluteERNS_4RectE))
-<BR>[Address Reference Count : 32]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 32]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> clockanddatesettingbase.o(.constdata__ZTVN8touchgfx6WidgetE)
 <LI> main_screenview.o(.constdata__ZTV6Mirror)
@@ -11924,11 +11924,11 @@ Global Symbols
 <P><STRONG><a name="[f3]"></a>touchgfx::Container::getSolidRect() const</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, container.o(i._ZNK8touchgfx9Container12getSolidRectEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = touchgfx::Container::getSolidRect() const
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -11953,11 +11953,11 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;touchgfx::Screen::draw(touchgfx::Rect&)
 </UL>
-<BR>[Address Reference Count : 20]<UL><LI> numupdown.o(.constdata__ZTV9NumUpDown)
-<LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
+<BR>[Address Reference Count : 20]<UL><LI> clockanddatesetting.o(.constdata__ZTV19ClockAndDateSetting)
 <LI> digital_clock.o(.constdata__ZTV13Digital_Clock)
 <LI> message_box.o(.constdata__ZTV11Message_Box)
 <LI> ready.o(.constdata__ZTV5Ready)
+<LI> numupdown.o(.constdata__ZTV9NumUpDown)
 <LI> clockanddatesettingbase.o(.constdata__ZTV23ClockAndDateSettingBase)
 <LI> digital_clockbase.o(.constdata__ZTV17Digital_ClockBase)
 <LI> numupdownbase.o(.constdata__ZTV13NumUpDownBase)
@@ -13945,10 +13945,10 @@ Local Symbols
 <P><STRONG><a name="[2fb]"></a>I2C_TransferConfig</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f7xx_hal_i2c.o(i.I2C_TransferConfig))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = I2C_TransferConfig
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
-<LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[2f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit_IT
+<BR>[Called By]<UL><LI><a href="#[2f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit_IT
 <LI><a href="#[2fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Receive_IT
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
 <LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryWrite
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryRead
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Mem_ISR_DMA
@@ -13972,9 +13972,9 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 <LI><a href="#[3b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_IsErrorOccurred
 </UL>
-<BR>[Called By]<UL><LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
+<BR>[Called By]<UL><LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
+<LI><a href="#[300]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Write
 <LI><a href="#[2fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Mem_Read
-<LI><a href="#[2f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_IsDeviceReady
 <LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryWrite
 <LI><a href="#[2fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_RequestMemoryRead
 </UL>
@@ -14047,12 +14047,12 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[367]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Transmit
+<BR>[Called By]<UL><LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
+<LI><a href="#[367]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Transmit
 <LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Receive
 <LI><a href="#[28f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_MemoryMapped
 <LI><a href="#[363]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Command
 <LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_AutoPolling
-<LI><a href="#[293]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Init
 <LI><a href="#[35f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_QSPI_Abort
 </UL>
 

@@ -469,7 +469,7 @@ void Main_ScreenView::Update_Temperature_Battery_Range_Panels(void)
 	{
 		READY.set_range(T_HIGH_RANGE);
 	}
-	else if(measurementRange == MiddleRange)
+	else if(measurementRange == LowRange)
 	{
 		READY.set_range(T_LOW_RANGE);
 	}
@@ -523,8 +523,8 @@ void Main_ScreenView::Update_Battery_Panel(void)
 
 void Main_ScreenView::Show_Very_Low(void)
 {
-	if(probeTypeIndex == 2)
-	{
+//	if(probeTypeIndex == 2)
+//	{
 		first_time_disconnection_flag = 0;
 		RESISTANCE.setVisible(false);
 		OHM_UNIT.setVisible(false);
@@ -541,7 +541,7 @@ void Main_ScreenView::Show_Very_Low(void)
 		WARNING.resizeToCurrentTextWithAlignment();
 		WARNING.invalidate();	
 		OutputFilterOperation = FastOperation;	
-	}
+//	}
 }
 void Main_ScreenView::Display_Resistance(float r)
 {	
@@ -605,7 +605,7 @@ void Main_ScreenView::Display_Resistance(float r)
 			}
 			else if(resistance_conductivity_Range == -3)
 			{	
-//				OHM_UNIT.setTypedText(touchgfx::TypedText(T_MILI_OHM));
+				//OHM_UNIT.setTypedText(touchgfx::TypedText(T_MILI_OHM));
 				Show_Very_Low();
 			}
 			else if(resistance_conductivity_Range == -6)
@@ -738,6 +738,7 @@ void Main_ScreenView::UpdateDisplay(void)
 			HOLD.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
 			HOLD.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
 			HOLD.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+
 			if(temp_Correction_flag == 1)
 			{
 				TEMP_CORRECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));

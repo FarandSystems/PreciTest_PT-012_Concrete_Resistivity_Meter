@@ -566,7 +566,7 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim) 	//Output Compare 
 				#ifdef CONCRETE				
 					if(electrical_Connection_Status == Disconnected)
 					{
-						if(turn_off_counter > 600)// 10Hz - > 100 ms, 600*100ms = 60s
+						if(turn_off_counter > 600 && usb_connection_state == 0)// 10Hz - > 100 ms, 600*100ms = 60s
 						{
 							HAL_GPIO_WritePin(Sustain_Power_GPIO_Port, Sustain_Power_Pin, GPIO_PIN_RESET);
 						}
