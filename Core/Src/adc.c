@@ -370,14 +370,15 @@ void SendCapturedSignalToPC(void)
 	sendData[(waveformIndex << 10) + 882] = (((uint32_t)(temp_Deg_Display * 100.0f)) & 0x0000FF00) >> 8;	
 	sendData[(waveformIndex << 10) + 883] = (((uint32_t)(temp_Deg_Display * 100.0f)) & 0x000000FF) >> 0;			
 	// Data index = 221 in C# App, contains ADC Levels for temperature sensor  (221 = 884 / 4)	
-	sendData[(waveformIndex << 10) + 884] = 0x00;	 // Reserved			
-	sendData[(waveformIndex << 10) + 885] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x00FF0000) >> 16;	
-	sendData[(waveformIndex << 10) + 886] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x0000FF00) >> 8;	
-	sendData[(waveformIndex << 10) + 887] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x000000FF) >> 0;	
+			
+	sendData[(waveformIndex << 10) + 884] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x00FF0000) >> 16;	
+	sendData[(waveformIndex << 10) + 885] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x0000FF00) >> 8;	
+	sendData[(waveformIndex << 10) + 886] = (((uint32_t)(displayed_Resistance_Or_Conductivity * 100.0f)) & 0x000000FF) >> 0;	
+	sendData[(waveformIndex << 10) + 887] = 0x00;	 // Reserved	
 	// Data index = 222 in C# App, contains ADC Levels for temperature sensor  (221 = 888 / 4)	
 	sendData[(waveformIndex << 10) + 888] = 0x00;	 // Reserved			
 	sendData[(waveformIndex << 10) + 889] = (((uint32_t)(probeTypeIndex)) & 0x00FF0000) >> 16;	
-	sendData[(waveformIndex << 10) + 890] = 0x00;	 // Reserved	
+	sendData[(waveformIndex << 10) + 890] = measurementRange;	 // Measurement Range (High, Low, Auto)
 	#ifdef CONCRETE
 		sendData[(waveformIndex << 10) + 891] = (((uint32_t)(electrical_Connection_Status)) & 0x000000FF) >> 0;					
 	#endif

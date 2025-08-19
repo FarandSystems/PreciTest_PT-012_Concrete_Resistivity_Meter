@@ -151,7 +151,8 @@ void Check_Power_And_Charging(void)
 		// v = level * (Vref / 4095) * (Vin/Vo), Vin/Vo = divider_Ratio
 		// Vin: Volage to be measured
 		// Vo: Voltage output of the resistor divider
-		v_Bat_Volts = 1.190f *((v_Bat_Levels * V_REF)/(4095.0f * DIVIDER_INTERNAL_BATTERY_RATIO)); // modify coef = 1.190f 
+//		v_Bat_Volts = 1.190f *((v_Bat_Levels * V_REF)/(4095.0f * DIVIDER_INTERNAL_BATTERY_RATIO)); // modify coef = 1.190f 
+		v_Bat_Volts = 3 + (4.2 - 3) * (v_Bat_Levels - 2270) / (3333 - 2270); // Measured Values
 		//v_Input_Power_Volts = ((v_Input_Power_Levels * V_REF)/(4095.0f * DIVIDER_INTERNAL_BATTERY_RATIO)); 
 		//v_Input_Jack_Charger_Volts = 1.190f*((v_Input_Jack_Charger_Levels * V_REF)/(4095.0f * DIVIDER_INPUT_JACK_CHARGER_RATIO)); 
 		
@@ -162,7 +163,17 @@ void Check_Power_And_Charging(void)
 //		I_Charge_mA = 1000.0f * (v_Input_Power_Levels - v_Bat_Levels)/CURRENT_SENSE_RESISTOR;
 		
 		// Calculate and bound Battery Percentage
-		v_Bat_Percentage = (v_Bat_Volts_Filtered - 3.0f) * 100.0f / (3.9f - 3.0f);
+		v_Bat_Percentage = (v_Bat_Volts_Filtered - 3.0f) * 100.0f / (4.2f - 3.0f);
+		
+		if(v_Bat_Percentage > 100)
+		{
+			v_Bat_Percentage = 100;
+		}
+		
+		if(v_Bat_Percentage < 0)
+		{
+			v_Bat_Percentage = 0;
+		}
 		
 		v_Bat_Percentage = (int)((v_Bat_Percentage + 5) / 5.0f) * 5; // 5% increment in bettery percent
 		

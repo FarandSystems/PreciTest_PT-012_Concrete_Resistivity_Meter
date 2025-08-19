@@ -76,7 +76,7 @@ void Service_Input_Commands(uint8_t* Rx_Buffer)
  			break;
 		
 		case 0x02:				
-			Send_Device_ID_To_PC();		
+			Send_Device_ID_To_PC();
  			break;	
 		
 		case 0x03:

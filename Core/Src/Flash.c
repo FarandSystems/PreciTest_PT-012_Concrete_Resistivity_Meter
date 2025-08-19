@@ -103,19 +103,19 @@ void Erase_one_Project_On_Flash(uint8_t projNumb)
 	for(int recordNum = 0 ; recordNum < 25; recordNum++)
 	{
 		// Change ParamWord at parameterIndex
-		paramWords [(25 * projNumb) + recordNum] = 0xFFFF;
+		paramWords[(25 * projNumb) + recordNum] = 0xFFFFFFFFu;
 	}
 
 	/* Erase the whole Sector*/
-	FLASH_Erase_Sector(FLASH_SECTOR_4, VOLTAGE_RANGE_3);
+	FLASH_Erase_Sector(FLASH_SECTOR_7, VOLTAGE_RANGE_3);
 
 	
 	//Write Again All 625 paramWords on Flash
-	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_4 ,paramWords[0])== HAL_OK)
+	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 ,paramWords[0])== HAL_OK)
 	{
 		for(i = 1; i < 626 ; i++)
 		{
-			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_4 + 4 * i ,paramWords[i]);
+			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 + 4 * i ,paramWords[i]);
 		}
 	}
 	else
@@ -151,15 +151,15 @@ void Erase_All_Projects_On_Flash(void)
 	}	
 
 	/* Erase the whole Sector*/
-	FLASH_Erase_Sector(FLASH_SECTOR_4, VOLTAGE_RANGE_3);
+	FLASH_Erase_Sector(FLASH_SECTOR_7, VOLTAGE_RANGE_3);
 
 	
 	//Write Again Project0(25 paramWords) on Flash
-	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_4 ,paramWords[0])== HAL_OK)
+	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 ,paramWords[0])== HAL_OK)
 	{
 		for(i = 1; i < 25 ; i++)
 		{
-			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_4 + 4 * i ,paramWords[i]);			
+			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 + 4 * i ,paramWords[i]);			
 		}
 	}
 	else
@@ -275,10 +275,10 @@ void Save_Data_On_Flash(void) //Each time we press the Save key, one Word is sav
 	
 	if(electrical_Connection_Status == Connected || ((electrical_Connection_Status == Disconnected)&&(hold_flag == 1)))
 	{
-		dataBuffer =  (uint8_t)(((uint32_t)(data_Buffer[0]) << 24)+
-															((uint32_t)(data_Buffer[1]) << 16)+
-															((uint32_t)(data_Buffer[2]) << 8) +
-															((uint32_t)(data_Buffer[3]) << 0));
+		dataBuffer = ((uint32_t)data_Buffer[0] << 24) |
+								 ((uint32_t)data_Buffer[1] << 16) |
+								 ((uint32_t)data_Buffer[2] <<  8) |
+								 ((uint32_t)data_Buffer[3] <<  0);
 		
 		SaveParameter(DATA_BUFFER_FLASH_INDEX + (25 * (projectNumber)) + recordNumber ,dataBuffer);	//25 : each project has 25 record
 	}	
@@ -311,21 +311,19 @@ void Send_Project_Data_To_PC(uint8_t projNumb)
 // This function send one System Settings to PC 
 void Send_Device_ID_To_PC(void)
 {
-	uint32_t device_ID_On_Flash;
-	uint8_t buff[8];	
+    static uint8_t buff[8];   // persist after function returns
 
-	device_ID_On_Flash = ReadParameter(DEVICE_ID_FLASH_INDEX);
+    uint32_t device_ID_On_Flash = ReadParameter(DEVICE_ID_FLASH_INDEX);
 
-	buff[0] = 0; // code
-	buff[1] = (uint8_t) ((device_ID_On_Flash &0xFF000000) >> 24);
-	buff[2] = (uint8_t) ((device_ID_On_Flash &0x00FF0000) >> 16);
-	buff[3] = (uint8_t) ((device_ID_On_Flash &0x0000FF00) >> 8 );
-	buff[4] = (uint8_t) ((device_ID_On_Flash &0x000000FF) >> 0 );
-	buff[5] = 0;
-	buff[6] = 0;
-	buff[7] = 0;
+    buff[0] = 0; // code
+    buff[1] = (uint8_t)((device_ID_On_Flash >> 24) & 0xFF);
+    buff[2] = (uint8_t)((device_ID_On_Flash >> 16) & 0xFF);
+    buff[3] = (uint8_t)((device_ID_On_Flash >>  8) & 0xFF);
+    buff[4] = (uint8_t)((device_ID_On_Flash >>  0) & 0xFF);
+    buff[5] = 0;
+    buff[6] = 0;
+    buff[7] = 0;
 
-	
-	Send_Via_USB(buff,8);	
+    Send_Via_USB(buff, 8);
 }
 

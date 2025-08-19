@@ -597,17 +597,18 @@ void Update_System_Mode(void)
 			systemMode = FINISH_PROCESS_START_ERASE_BUFFER_MODE;
 			__HAL_TIM_SetCompare(&htim8, TIM_CHANNEL_1,(capture1 + TIM8_CCR1_Val_Process));	// Set Next Compare Value for send mode timing	
 
+			if(hold_flag == 0)
+			{
+	  		Process_Captured_Data();			
+			}			
+				
 			if(sendFlag == 1)
 			{
 				HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 				SendCapturedSignalToPC();
 				//SendTestPatternToPC();
 			}
-			if(hold_flag == 0)
-			{
-	  		Process_Captured_Data();			
-			}			
-				
+
 			break;
 		
 		case FINISH_PROCESS_START_ERASE_BUFFER_MODE: // check if process mode is finished

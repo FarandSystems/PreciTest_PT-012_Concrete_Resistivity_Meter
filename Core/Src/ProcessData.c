@@ -25,7 +25,7 @@ double resistivity_Final = 0;
 float average_Amplitude_Temp_Corrected = 0.0f;
 
 double resistance_Fast;
-ForceRange_TypeDef  range_ForcingMode ;
+ForceRange_TypeDef  range_ForcingMode  = AutoRange;
 float Ave_Plus = 0.0f;
 float Ave_Minus = 0.0f;
 float amplitude_RMS;
@@ -44,6 +44,7 @@ uint8_t hold_flag;
 uint8_t createPrj_flag;
 
 uint8_t first_time_disconnection_flag = 1;
+uint8_t range_number = 0;
 
 extern int32_t	signal_Captured [CAPTURE_COUNT][256] __attribute__((at(ADC_DATA_BASE_ADDRESS)));
 float	signal_SubSampled_SpikeLess [CAPTURE_COUNT][256]__attribute__((at(CORRECTED_VALUE_DATA_BASE_ADDRESS)));
@@ -355,8 +356,8 @@ void Apply_LowPass_Filter_And_Cut(void)
 		
 		if(TIP_CUT_SAMPLE <= n && n < TAIL_CUT_SAMPLE )
 		{
-			yN[n] = 0.5f * yN[n - 1] + 0.5f * signal_Median[n - 1];
-			yP[n] = 0.5f * yP[n - 1] + 0.5f * signal_Median[n + (SAMPLES_PER_CAPTURE/2) - 1];
+			yN[n] = 0.8f * yN[n - 1] + 0.2f * signal_Median[n - 1];
+			yP[n] = 0.8f * yP[n - 1] + 0.2f * signal_Median[n + (SAMPLES_PER_CAPTURE/2) - 1];
 		}
 		
 		//Cut End of waveform
@@ -545,21 +546,25 @@ void Apply_Piecewise_Linear_for_Concrete_LowRange(void)
 	// 75000 ... 375000
 	// 375000 ... more
 	
-	if( 0 <= average_Amplitude_Temp_Corrected && average_Amplitude_Temp_Corrected < 17500)
+	if(( 0 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 21000))
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L1_G * average_Amplitude_Temp_Corrected  + CON_LOW_L1_O);
+		range_number = 1;
 	}
-	if(17500 <= average_Amplitude_Temp_Corrected && average_Amplitude_Temp_Corrected < 75000)
+	if((21000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 90000))
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L2_G * average_Amplitude_Temp_Corrected  + CON_LOW_L2_O);
+		range_number = 2;
 	}
-	if(75000 <= average_Amplitude_Temp_Corrected && average_Amplitude_Temp_Corrected < 375000)
+	if((90000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 450000))
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L3_G * average_Amplitude_Temp_Corrected  + CON_LOW_L3_O);
+		range_number = 3;
 	}
-	if(375000 <= average_Amplitude_Temp_Corrected)
+	if(450000 <= average_Amplitude_Temp_Corrected)
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L4_G * average_Amplitude_Temp_Corrected  + CON_LOW_L4_O);
+		range_number = 4;
 	}
 }
 void Apply_Piecewise_Linear_for_Concrete_HighRange(void)
@@ -570,21 +575,25 @@ void Apply_Piecewise_Linear_for_Concrete_HighRange(void)
 	// 175000 ... 750000
 	// 750000 ... more
 	
-	if(0 <= average_Amplitude_Temp_Corrected && average_Amplitude_Temp_Corrected < 37500)
+	if((0 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 21000))
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L1_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L1_O);
+		range_number = 5;
 	}
-	if(37500 <= average_Amplitude_Temp_Corrected && average_Amplitude_Temp_Corrected < 175000)
+	if((21000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 90000))
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L2_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L2_O);
+		range_number = 6;
 	}
-	if(175000 <= average_Amplitude_Temp_Corrected && average_Amplitude_Temp_Corrected < 750000)
+	if((90000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 450000))
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L3_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L3_O);
+		range_number = 7;
 	}
-	if(750000 <= average_Amplitude_Temp_Corrected)
+	if(450000 <= average_Amplitude_Temp_Corrected)
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L4_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L4_O);
+		range_number = 8;
 	}
 }
 
@@ -635,24 +644,20 @@ void Calibrate_Resistance(void)
 	//SOIL : Ladder resistance_Fast function is used to fix final resistance_Fast value after 5 seconds
 	if(measurementRange == LowRange)
 	{
-		#ifdef SOIL
-			
-			Apply_Piecewise_Linear_for_Soil_LowRange();
-
-		#endif
+		Apply_Piecewise_Linear_for_Concrete_LowRange();	
 	}	
 	if(measurementRange == MiddleRange)
 	{
-		#ifdef CONCRETE			
-			Apply_Piecewise_Linear_for_Concrete_LowRange();	
-			
-		#endif
+//		#ifdef CONCRETE			
+//			Apply_Piecewise_Linear_for_Concrete_LowRange();	
+//			
+//		#endif
 
-		#ifdef SOIL
-			
-			Apply_Piecewise_Linear_for_Soil_MiddleRange();	
+//		#ifdef SOIL
+//			
+//			Apply_Piecewise_Linear_for_Soil_MiddleRange();	
 
-		#endif
+//		#endif
 	}	
 	if(measurementRange == HighRange)
 	{
@@ -730,7 +735,7 @@ void Select_Range(void)
 						Go_to_High_Range();
 					}
 					break;
-		}
+		  }
 			
 			#endif
 			break;
@@ -880,9 +885,9 @@ void Check_Electrical_Connection(void)
 	Concrete_disconnect_Criteria_Prev1 = Concrete_disconnect_Criteria;
 	
 	Find_Peak();
-	if (peak_of_median_signal > 2e6)
+	if (peak_of_median_signal > 3e6)
 	{
-		Concrete_disconnect_Criteria = peak_of_median_signal / average_Amplitude_Temp_Corrected;//(varPlus + varMinus)*100/(2*amplitude_RMS);
+		Concrete_disconnect_Criteria = 2;//peak_of_median_signal / average_Amplitude_Temp_Corrected;//(varPlus + varMinus)*100/(2*amplitude_RMS);
 	}
 	else
 	{
