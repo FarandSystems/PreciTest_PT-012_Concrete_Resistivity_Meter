@@ -546,22 +546,22 @@ void Apply_Piecewise_Linear_for_Concrete_LowRange(void)
 	// 75000 ... 375000
 	// 375000 ... more
 	
-	if(( 0 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 21000))
+	if(( 0 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 35000))
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L1_G * average_Amplitude_Temp_Corrected  + CON_LOW_L1_O);
 		range_number = 1;
 	}
-	if((21000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 90000))
+	if((35000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 150000))
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L2_G * average_Amplitude_Temp_Corrected  + CON_LOW_L2_O);
 		range_number = 2;
 	}
-	if((90000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 450000))
+	if((150000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 750000))
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L3_G * average_Amplitude_Temp_Corrected  + CON_LOW_L3_O);
 		range_number = 3;
 	}
-	if(450000 <= average_Amplitude_Temp_Corrected)
+	if(750000 <= average_Amplitude_Temp_Corrected)
 	{
 		resistance_Fast = 0.0001f * (CON_LOW_L4_G * average_Amplitude_Temp_Corrected  + CON_LOW_L4_O);
 		range_number = 4;
@@ -575,22 +575,22 @@ void Apply_Piecewise_Linear_for_Concrete_HighRange(void)
 	// 175000 ... 750000
 	// 750000 ... more
 	
-	if((0 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 21000))
+	if((0 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 35000))
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L1_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L1_O);
 		range_number = 5;
 	}
-	if((21000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 90000))
+	if((35000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 150000))
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L2_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L2_O);
 		range_number = 6;
 	}
-	if((90000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 450000))
+	if((150000 <= average_Amplitude_Temp_Corrected) && (average_Amplitude_Temp_Corrected < 750000))
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L3_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L3_O);
 		range_number = 7;
 	}
-	if(450000 <= average_Amplitude_Temp_Corrected)
+	if(750000 <= average_Amplitude_Temp_Corrected)
 	{
 		resistance_Fast = 0.01f * (CON_HIGH_L4_G * average_Amplitude_Temp_Corrected  + CON_HIGH_L4_O);
 		range_number = 8;
@@ -602,7 +602,7 @@ void Apply_Piecewise_Linear_for_Soil_LowRange(void)
 	// Use a linear approxilation for all ranges of ADC level	
 //	if(average_Amplitude_Temp_Corrected > 50000)
 //	{
-		resistance_Fast =  (WEN_LOW_L1_G * average_Amplitude_Temp_Corrected  + WEN_LOW_L1_O);	
+//		resistance_Fast =  (WEN_LOW_L1_G * average_Amplitude_Temp_Corrected  + WEN_LOW_L1_O);	
 //	}
 //	if(average_Amplitude_Temp_Corrected < 50000)
 //	{
@@ -614,7 +614,7 @@ void Apply_Piecewise_Linear_for_Soil_MiddleRange(void)
 	// Use a linear approxilation for all ranges of ADC level	
 //	if(average_Amplitude_Temp_Corrected > 50000)
 //	{
-		resistance_Fast =  (WEN_LOW_L1_G * average_Amplitude_Temp_Corrected  + WEN_LOW_L1_O);	
+//		resistance_Fast =  (WEN_LOW_L1_G * average_Amplitude_Temp_Corrected  + WEN_LOW_L1_O);	
 //	}
 //	if(average_Amplitude_Temp_Corrected < 50000)
 //	{
@@ -625,7 +625,7 @@ void Apply_Piecewise_Linear_for_Soil_MiddleRange(void)
 void Apply_Piecewise_Linear_for_Soil_HighRange(void)
 {
 	// Use a linear approxilation for all ranges of ADC level	
-	resistance_Fast =  (WEN_HIGH_L1_G * average_Amplitude_Temp_Corrected  + WEN_HIGH_L1_O);
+//	resistance_Fast =  (WEN_HIGH_L1_G * average_Amplitude_Temp_Corrected  + WEN_HIGH_L1_O);
 }
 
 void Calibrate_Resistance(void)
@@ -824,7 +824,8 @@ void Apply_Filter_After_N_Measurements(void)
 		case FastOperation:
 			// the probe is connected and the system remains in agile operation for 16 Measurements 
 			// unless disconnecting the probe keeps the system in FastOperation
-			resistance_Ohm_Final = resistance_Fast;			
+			 resistance_Ohm_Final = resistance_Fast;	
+//			resistance_Ohm_Final = 0.5f * resistance_Fast + 0.5f * resistance_Ohm_Final;		
 			
 			// Count to keep the system agile for 16 Measurements
 			fast_Output_Counter++;
@@ -837,7 +838,8 @@ void Apply_Filter_After_N_Measurements(void)
 			
 		case StableOperation:
 			// Apply strong filter 8 Measurements after probe connection			
-			resistance_Ohm_Final = 0.01f * resistance_Fast + 0.99f * resistance_Ohm_Final;	
+				resistance_Ohm_Final = 0.02f * resistance_Fast + 0.98f * resistance_Ohm_Final;	
+//			resistance_Ohm_Final = 0.01f * resistance_Fast + 0.99f * resistance_Ohm_Final;	
 			//resistance_Ohm_Final = 0.1f * resistance_Fast + 0.9f * resistance_Ohm_Final;		
 			break;			
 	}			
@@ -885,7 +887,7 @@ void Check_Electrical_Connection(void)
 	Concrete_disconnect_Criteria_Prev1 = Concrete_disconnect_Criteria;
 	
 	Find_Peak();
-	if (peak_of_median_signal > 3e6)
+	if (average_Amplitude_Temp_Corrected > 3e6)
 	{
 		Concrete_disconnect_Criteria = 2;//peak_of_median_signal / average_Amplitude_Temp_Corrected;//(varPlus + varMinus)*100/(2*amplitude_RMS);
 	}

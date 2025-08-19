@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32F746G_DISCO\STM32F746G_DISCO.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32F746G_DISCO\STM32F746G_DISCO.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Aug 19 11:40:08 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Aug 19 17:47:40 2025
 <BR><P>
 <H3>Maximum Stack Usage =       2648 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -2338,8 +2338,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Calibrate_Resistance
 </UL>
 
-<P><STRONG><a name="[28d]"></a>Apply_Piecewise_Linear_for_Concrete_LowRange</STRONG> (Thumb, 278 bytes, Stack size 32 bytes, processdata.o(i.Apply_Piecewise_Linear_for_Concrete_LowRange))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Apply_Piecewise_Linear_for_Concrete_LowRange &rArr; __aeabi_dmul
+<P><STRONG><a name="[28d]"></a>Apply_Piecewise_Linear_for_Concrete_LowRange</STRONG> (Thumb, 274 bytes, Stack size 40 bytes, processdata.o(i.Apply_Piecewise_Linear_for_Concrete_LowRange))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Apply_Piecewise_Linear_for_Concrete_LowRange &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 <LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
@@ -2454,7 +2454,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2af]"></a>Calibrate_Resistance</STRONG> (Thumb, 80 bytes, Stack size 8 bytes, processdata.o(i.Calibrate_Resistance))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = Calibrate_Resistance &rArr; Apply_Piecewise_Linear_for_Concrete_LowRange &rArr; __aeabi_dmul
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = Calibrate_Resistance &rArr; Apply_Piecewise_Linear_for_Concrete_LowRange &rArr; __aeabi_dmul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[28d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Apply_Piecewise_Linear_for_Concrete_LowRange
 <LI><a href="#[28b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Apply_Piecewise_Linear_for_Concrete_HighRange
@@ -9449,9 +9449,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9493,8 +9493,8 @@ Global Symbols
 <LI> button.o(.constdata__ZTVN8touchgfx6ButtonE)
 <LI> buttonwithlabel.o(.constdata__ZTVN8touchgfx15ButtonWithLabelE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -9521,9 +9521,9 @@ Global Symbols
 <LI> buttonwithlabel.o(.constdata__ZTVN8touchgfx15ButtonWithLabelE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9551,8 +9551,8 @@ Global Symbols
 <LI> buttonwithlabel.o(.constdata__ZTVN8touchgfx15ButtonWithLabelE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9577,9 +9577,9 @@ Global Symbols
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9609,9 +9609,9 @@ Global Symbols
 <LI> buttonwithlabel.o(.constdata__ZTVN8touchgfx15ButtonWithLabelE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9649,9 +9649,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9683,9 +9683,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9731,9 +9731,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -9763,9 +9763,9 @@ Global Symbols
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> buttonwithlabel.o(.constdata__ZTVN8touchgfx15ButtonWithLabelE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -9792,9 +9792,9 @@ Global Symbols
 <LI> container.o(.constdata__ZTVN8touchgfx9ContainerE)
 <LI> buttonwithlabel.o(.constdata__ZTVN8touchgfx15ButtonWithLabelE)
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
 <LI> textarea.o(.constdata__ZTVN8touchgfx8TextAreaE)
@@ -11749,9 +11749,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -11788,9 +11788,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)
@@ -11835,9 +11835,9 @@ Global Symbols
 <LI> canvaswidget.o(.constdata__ZTVN8touchgfx12CanvasWidgetE)
 <LI> digitalclock.o(.constdata__ZTVN8touchgfx12DigitalClockE)
 <LI> scrollwheel.o(.constdata__ZTVN8touchgfx11ScrollWheelE)
-<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> drawable.o(.constdata__ZTVN8touchgfx8DrawableE)
 <LI> abstractprogressindicator.o(.constdata__ZTVN8touchgfx25AbstractProgressIndicatorE)
+<LI> circle.o(.constdata__ZTVN8touchgfx6CircleE)
 <LI> image.o(.constdata__ZTVN8touchgfx5ImageE)
 <LI> drawablelist.o(.constdata__ZTVN8touchgfx12DrawableListE)
 <LI> snapshotwidget.o(.constdata__ZTVN8touchgfx14SnapshotWidgetE)

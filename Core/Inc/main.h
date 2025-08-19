@@ -295,8 +295,8 @@ extern uint8_t usb_connection_state;
 	#define SAMPLES_PER_CAPTURE                                 174
 	#define AVE_START_SAMPLE                                    30
 	#define AVE_END_SAMPLE                                      80
-	#define CONCRETE_LOW_RANGE_THERESHOLD                                8000
-	#define CONCRETE_HIGH_RANGE_THERESHOLD                               1500000
+	#define CONCRETE_LOW_RANGE_THERESHOLD                                10000
+	#define CONCRETE_HIGH_RANGE_THERESHOLD                               2500000
 	#define DISCONNECTED_THERESHOLD                             1.5f  // This parameter is < 2 when probe is connected, (This Parameter was 2.5 previously. and caused poor performance of disconnect detection)
 	#define LOWER_DISCONNECTED_THERESHOLD												0.005f
 	#define PROBE_SIZE_AFFECTED_VARIABLE                        probeTypeIndex
