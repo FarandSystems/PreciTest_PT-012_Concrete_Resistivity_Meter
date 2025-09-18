@@ -164,3 +164,4 @@ stm32f746g_disco\main_screenview.o: ../Core/Inc/quadspi.h
 stm32f746g_disco\main_screenview.o: ../Core/Inc/PowerManagement.h
 stm32f746g_disco\main_screenview.o: ../Drivers/BSP/stm32746g_discovery_qspi.h
 stm32f746g_disco\main_screenview.o: ../Drivers/BSP/../Components/n25q128a/n25q128a.h
+stm32f746g_disco\main_screenview.o: ../Core/Inc/bootloader_entry.h

@@ -3,11 +3,13 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include "main.h"
 
+#include "bootloader_entry.h"
+
 uint8_t display_Prescalar = 0;
 uint8_t panel_READY_PreviousCondition = 0;
 uint8_t panel_USB_PreviousCondition = 0;
 
-
+int holdTicks = 0;  // 60 ticks ~ 1 s if your GUI is 60 Hz
 
 Main_ScreenView::Main_ScreenView():
 BATTERY_PERCENTClickedCallback(this, &Main_ScreenView::BATTERY_PERCENTClickHandler)
@@ -43,6 +45,15 @@ void Main_ScreenView::handleTickEvent()
 	{		
 		Save_And_Create();
 	}
+	
+	    if (MEASURE.getPressedState()) {
+        if (++holdTicks > 180) {        // ~3 seconds
+            Bootloader_RequestAndReset();
+            holdTicks = -100000;        // ensure we don't re-enter
+        }
+    } else {
+        holdTicks = 0;
+    }
 }
 void Main_ScreenView::Set_Fixed_Panels_First_Time(void)
 {	

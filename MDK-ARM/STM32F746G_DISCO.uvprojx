@@ -276,8 +276,8 @@
               </OCR_RVCT3>
               <OCR_RVCT4>
                 <Type>1</Type>
-                <StartAddress>0x8000000</StartAddress>
-                <Size>0x100000</Size>
+                <StartAddress>0x8010000</StartAddress>
+                <Size>0xf0000</Size>
               </OCR_RVCT4>
               <OCR_RVCT5>
                 <Type>1</Type>
@@ -503,6 +503,16 @@
               <FileName>stm32f7xx_hal_timebase_tim.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f7xx_hal_timebase_tim.c</FilePath>
+            </File>
+            <File>
+              <FileName>bootloader_entry.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\bootloader_entry.c</FilePath>
+            </File>
+            <File>
+              <FileName>bootloader_entry.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Core\Inc\bootloader_entry.h</FilePath>
             </File>
           </Files>
         </Group>

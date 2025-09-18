@@ -22,6 +22,7 @@
 "stm32f746g_disco\stm32f7xx_it.o"
 "stm32f746g_disco\stm32f7xx_hal_msp.o"
 "stm32f746g_disco\stm32f7xx_hal_timebase_tim.o"
+"stm32f746g_disco\bootloader_entry.o"
 "stm32f746g_disco\cortexmmcuinstrumentation.o"
 "stm32f746g_disco\touchgfxhal.o"
 "stm32f746g_disco\stm32touchcontroller.o"
