@@ -824,6 +824,7 @@ void Apply_Filter_After_N_Measurements(void)
 		case FastOperation:
 			// the probe is connected and the system remains in agile operation for 16 Measurements 
 			// unless disconnecting the probe keeps the system in FastOperation
+			 hold_flag = 0;
 			 resistance_Ohm_Final = resistance_Fast;	
 //			resistance_Ohm_Final = 0.5f * resistance_Fast + 0.5f * resistance_Ohm_Final;		
 			
@@ -833,6 +834,7 @@ void Apply_Filter_After_N_Measurements(void)
 			{
 				fast_Output_Counter = 0;				
 				OutputFilterOperation = StableOperation;
+				hold_flag = 1;
 			}
 			break;
 			

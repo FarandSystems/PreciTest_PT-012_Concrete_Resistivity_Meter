@@ -955,11 +955,10 @@ ARM Macro Assembler    Page 15
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M7.fp.sp --apcs=
 interwork --depend=stm32f746g_disco\startup_stm32f746xx.d -ostm32f746g_disco\st
 artup_stm32f746xx.o -I..\Core\Inc -I../Drivers/BSP -I.\RTE\_STM32F746G_DISCO -I
-C:\Users\TIR\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -IC:\Us
-ers\TIR\AppData\Local\Arm\Packs\Keil\STM32F7xx_DFP\2.14.0\Drivers\CMSIS\Device\
-ST\STM32F7xx\Include --predefine="__UVISION_VERSION SETA 533" --predefine="_RTE
-_ SETA 1" --predefine="STM32F746xx SETA 1" --predefine="_RTE_ SETA 1" --list=st
-artup_stm32f746xx.lst startup_stm32f746xx.s
+C:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include --predef
+ine="__UVISION_VERSION SETA 533" --predefine="_RTE_ SETA 1" --predefine="STM32F
+746xx SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f746xx.lst startup
+_stm32f746xx.s
 
 
 

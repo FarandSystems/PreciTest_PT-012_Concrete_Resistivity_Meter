@@ -15,7 +15,7 @@ public:
     virtual void tearDownScreen();
 		virtual void handleTickEvent();	
 		virtual void Save_btn_CallBack();
-		virtual void Hold_btn_CallBack();
+		virtual void History_btn_CallBack();
 		virtual void Mode_btn_CallBack();
 		virtual void Measure_btn_CallBack();	
 		virtual void New_Proj_btn_CallBack();	

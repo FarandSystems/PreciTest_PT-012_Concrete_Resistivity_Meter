@@ -9,61 +9,61 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    276, // T_SingleUseId4
+    246, // T_SingleUseId4
     137, // T_SingleUseId9
     103, // T_SingleUseId10
-    250, // T_SingleUseId11
-    207, // T_SingleUseId12
+    270, // T_SingleUseId11
+    217, // T_SingleUseId12
     115, // T_SingleUseId13
     115, // T_SingleUseId14
     115, // T_SingleUseId17
-    246, // T_SingleUseId18
-    246, // T_SingleUseId19
-    247, // T_SingleUseId22
-    316, // T_OHM
-    324, // T_KILO_OHM
-    315, // T_MEGA_OHM
-    330, // T_MICRO_OHM
-    327, // T_MILI_OHM
-    282, // T_OHM_CM
-    296, // T_KILO_OHM_CM
-    281, // T_MEGA_OHM_CM
-    286, // T_MICRO_OHM_CM
-    301, // T_MILI_OHM_CM
-    174, // T_MODE_50mm
-    196, // T_MODE_38mm
-    185, // T_MODE_BULK
-    238, // T_MODE_SOIL
-    309, // T_SingleUseId23
-    335, // T_HIGH_RANGE
-    333, // T_LOW_RANGE
+    266, // T_SingleUseId18
+    266, // T_SingleUseId19
+    267, // T_SingleUseId22
+    322, // T_OHM
+    333, // T_KILO_OHM
+    330, // T_MEGA_OHM
+    324, // T_MICRO_OHM
+    321, // T_MILI_OHM
+    285, // T_OHM_CM
+    284, // T_KILO_OHM_CM
+    289, // T_MEGA_OHM_CM
+    299, // T_MICRO_OHM_CM
+    294, // T_MILI_OHM_CM
+    185, // T_MODE_50mm
+    174, // T_MODE_38mm
+    196, // T_MODE_BULK
+    230, // T_MODE_SOIL
+    312, // T_SingleUseId23
+    340, // T_HIGH_RANGE
+    338, // T_LOW_RANGE
     115, // T_SingleUseId26
     221, // T_SingleUseId27
     0, // T_SingleUseId28
     115, // T_SingleUseId30
-    337, // T_SingleUseId31
+    336, // T_SingleUseId31
     115, // T_SingleUseId33
-    244, // T_SingleUseId34
-    321, // T_SingleUseId35
+    236, // T_SingleUseId34
+    327, // T_SingleUseId35
     318, // T_SingleUseId36
-    312, // T_SingleUseId37
-    309, // T_SingleUseId38
+    315, // T_SingleUseId37
+    312, // T_SingleUseId38
     115, // T_SingleUseId40
-    252, // T_KILO_S_M
-    258, // T_MEGA_S_M
-    254, // T_S_M
-    264, // T_MILI_S_M
-    270, // T_MICRO_S_M
+    260, // T_KILO_S_M
+    254, // T_MEGA_S_M
+    256, // T_S_M
+    272, // T_MILI_S_M
+    278, // T_MICRO_S_M
     82, // T_FW412
     117, // T_FW403
-    291, // T_SAVE
-    211, // T_SAVING
+    304, // T_SAVE
+    207, // T_SAVING
     162, // T_NEW_PROJECT
     150, // T_CREATING
     32, // T_SPLASH_FW412
     59, // T_SPLASH_FW403
-    230, // T_SingleUseId42
+    238, // T_SingleUseId42
     221, // T_SingleUseId43
-    306, // T_BATTERY_VALUE
-    337 // T_BATTERY_NO_VALUE
+    309, // T_BATTERY_VALUE
+    336 // T_BATTERY_NO_VALUE
 };

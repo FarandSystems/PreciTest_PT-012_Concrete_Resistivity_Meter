@@ -1,6 +1,8 @@
 
 
 #include "PowerManagement.h"
+#define v_Battery_filter_count  50
+
 
 uint8_t battery_Level_is_OK = 1;
 uint16_t v_Input_Power_Levels;
@@ -9,6 +11,9 @@ uint16_t v_Bat_Levels = 0;
 float	v_Bat_Volts = 0;
 float v_Bat_Volts_Filtered = 0;
 float v_Bat_Percentage = 0;
+
+float latest_v_Bat_Array[v_Battery_filter_count];
+
 uint16_t battery_Voltage_Filter_Counter;
 Voltage_Filter_Mode_TypeDef 	v_Bat_Voltage_Filter_Mode = Fast_Operation;
 
@@ -23,6 +28,9 @@ float v_Input_Jack_Charger_Volts_Filtered = 0;
 uint16_t input_Jack_Charger_Voltage_Filter_Counter;
 Voltage_Filter_Mode_TypeDef 	input_Jack_Charger_Voltage_Filter_Mode = Fast_Operation;
 
+
+
+
 float I_Charge_mA;
 
 // Power LED 
@@ -36,6 +44,9 @@ void Check_Power_And_Charging(void);
 void Apply_LPF_On_V_Battery(void);
 void Apply_LPF_On_Input_Power(void);
 void Apply_LPF_On_Input_Jack_Charger(void);
+void VBat_Push(float *arr, size_t n, float new_sample);
+float Apply_Median_Average_On_V_Battery(const float *arr, size_t n,
+                                          size_t trim_low, size_t trim_high);
 
 uint8_t charge_pin_val;
 uint8_t full_charge_pin_val;
@@ -155,8 +166,11 @@ void Check_Power_And_Charging(void)
 		v_Bat_Volts = 3 + (4.2 - 3) * (v_Bat_Levels - 2270) / (3333 - 2270); // Measured Values
 		//v_Input_Power_Volts = ((v_Input_Power_Levels * V_REF)/(4095.0f * DIVIDER_INTERNAL_BATTERY_RATIO)); 
 		//v_Input_Jack_Charger_Volts = 1.190f*((v_Input_Jack_Charger_Levels * V_REF)/(4095.0f * DIVIDER_INPUT_JACK_CHARGER_RATIO)); 
+	
+		VBat_Push(latest_v_Bat_Array, v_Battery_filter_count, v_Bat_Volts);
+		v_Bat_Volts_Filtered = Apply_Median_Average_On_V_Battery(latest_v_Bat_Array, v_Battery_filter_count, 10, 10); //trim 10
 		
-		Apply_LPF_On_V_Battery();
+//		Apply_LPF_On_V_Battery();
 //		Apply_LPF_On_Input_Power();
 //		Apply_LPF_On_Input_Jack_Charger();
 	
@@ -356,6 +370,51 @@ void Apply_LPF_On_V_Battery(void)
 	v_Bat_Volts_Filtered = alpha * v_Bat_Volts_Filtered + (1 - alpha) * v_Bat_Volts;	
 }
 
+/* Shift arr[0..n-1] left by 1 and append new_sample at arr[n-1].
+   If n == 0, it does nothing. */
+void VBat_Push(float *arr, size_t n, float new_sample)
+{
+    if (n == 0) return;
+    /* move elements 1..n-1 to 0..n-2 */
+    for (size_t i = 0; i + 1 < n; i++) arr[i] = arr[i + 1];
+    /* put newest at the tail */
+    arr[n - 1] = new_sample;
+}
+
+/* Insertion sort: OK for small n (O(n^2)), stable, no malloc */
+static void insertion_sort_float(float *a, size_t n)
+{
+    for (size_t i = 1; i < n; i++) {
+        float key = a[i];
+        size_t j = i;
+        while (j > 0 && a[j-1] > key) {
+            a[j] = a[j-1];
+            j--;
+        }
+        a[j] = key;
+    }
+}
+
+float Apply_Median_Average_On_V_Battery(const float *arr, size_t n,
+                                          size_t trim_low, size_t trim_high)
+{
+    if (!arr || n == 0) return 0.0f;
+    if (n > 50) n = 50;
+
+    float work[50];
+    for (size_t i = 0; i < n; i++) work[i] = arr[i];
+    insertion_sort_float(work, n);
+
+    if (trim_low + trim_high >= n) return 0.0f;
+
+    size_t start = trim_low;
+    size_t end   = n - trim_high;  /* exclusive */
+    double acc = 0.0;
+    size_t count = end - start;
+    for (size_t i = start; i < end; i++) acc += (double)work[i];
+
+    return (float)(acc / (double)count);
+}
 
 void Apply_LPF_On_Input_Power(void)
 {	

@@ -83,14 +83,14 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Pressed": "Button_Hollow_Gray.png",
-            "Released": "Button_Hollow_Gray.png",
+            "Pressed": "Button_Filled.png",
+            "Released": "Button_Hollow.png",
             "Alpha": 255,
             "TextId": "SingleUseId4",
             "ReleasedColor": {
-              "Red": 206,
-              "Green": 202,
-              "Blue": 206
+              "Red": 253,
+              "Green": 255,
+              "Blue": 123
             },
             "PressedColor": {
               "Red": 206,
@@ -98,13 +98,13 @@
               "Blue": 206
             },
             "TextRotation": "0",
-            "Name": "HOLD",
+            "Name": "HISTORY",
             "X": 139,
-            "Y": 386,
+            "Y": 320,
             "Width": 126,
             "Height": 60,
             "Visible": true,
-            "LockPosition": true,
+            "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -191,7 +191,7 @@
             "Width": 126,
             "Height": 60,
             "Visible": true,
-            "LockPosition": true,
+            "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -216,11 +216,11 @@
             "TextRotation": "0",
             "Name": "TEMP_CORRECT",
             "X": 139,
-            "Y": 320,
+            "Y": 386,
             "Width": 126,
             "Height": 60,
             "Visible": true,
-            "LockPosition": true,
+            "LockPosition": false,
             "Draggable": false,
             "Clickable": false,
             "Fadeable": false,
@@ -559,15 +559,15 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Hold_Interaction",
+            "InteractionName": "History_Interaction",
             "HasCompletedTrigger": false,
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "HOLD"
+              "TriggerComponent": "HISTORY"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "Hold_btn_CallBack"
+              "FunctionName": "History_btn_CallBack"
             }
           },
           {

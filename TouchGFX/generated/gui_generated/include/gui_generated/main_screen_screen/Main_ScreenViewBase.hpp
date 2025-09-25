@@ -30,7 +30,7 @@ public:
     /*
      * Virtual Action Handlers
      */
-    virtual void Hold_btn_CallBack()
+    virtual void History_btn_CallBack()
     {
         // Override and implement this function in Main_Screen
     }
@@ -77,7 +77,7 @@ protected:
     touchgfx::Box BACKGROUND;
     touchgfx::ButtonWithLabel TITLE;
     touchgfx::ButtonWithLabel SAVE;
-    touchgfx::ButtonWithLabel HOLD;
+    touchgfx::ButtonWithLabel HISTORY;
     touchgfx::ButtonWithLabel MODE;
     touchgfx::ButtonWithLabel MEASURE;
     touchgfx::ButtonWithLabel NEW_PROJECT;

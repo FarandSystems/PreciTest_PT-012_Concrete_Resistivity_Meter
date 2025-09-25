@@ -111,32 +111,14 @@ void Main_ScreenView::ShowMessageBox(char* Message_Text)
 		message_Box.invalidate();
 	}
 }
-void Main_ScreenView::Hold_btn_CallBack()
+void Main_ScreenView::History_btn_CallBack()
 {
-	turn_off_counter = 0;	
-	if(OutputFilterOperation == StableOperation)
-	{
-		if(hold_flag == 0)
-		{
-			HOLD.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
-			HOLD.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-			HOLD.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-			hold_flag = 1;
-		}
-		else if(hold_flag == 1)
-		{
-			HOLD.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
-			HOLD.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-			HOLD.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-			hold_flag = 0;
-		}
-		HOLD.invalidate();
 		Alarm(SHORT_BEEP_X1,1,8, BEEP_ON);
-	}
 }
 void Main_ScreenView::Measure_btn_CallBack()
 {
 	turn_off_counter = 0;
+	hold_flag = 0;
 	OutputFilterOperation = FastOperation;
 	Alarm(SHORT_BEEP_X1,1,8, BEEP_ON);
 }
@@ -719,16 +701,12 @@ void Main_ScreenView::UpdateDisplay(void)
 		if(OutputFilterOperation == FastOperation && panel_READY_PreviousCondition == 0)
 		{
 			panel_READY_PreviousCondition = 1;			
-			HOLD.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID));
-			HOLD.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(206, 202, 206));
-			HOLD.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(206, 202, 206));
 			TEMP_CORRECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID));
 			TEMP_CORRECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(206, 202, 206));
 			TEMP_CORRECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(206, 202, 206));
 			SAVE.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID));
 			SAVE.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(206, 202, 206));
 			SAVE.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(206, 202, 206));	
-			HOLD.invalidate();
 			TEMP_CORRECT.invalidate();
 			SAVE.invalidate();
 		}
@@ -738,9 +716,6 @@ void Main_ScreenView::UpdateDisplay(void)
 			READY.set_color(0x8C,0xC6,0x3A); // green
 			READY.setVisible(true);
 			READY.invalidate();	
-			HOLD.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
-			HOLD.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-			HOLD.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 
 			if(temp_Correction_flag == 1)
 			{
@@ -757,7 +732,6 @@ void Main_ScreenView::UpdateDisplay(void)
 			SAVE.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
 			SAVE.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
 			SAVE.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-			HOLD.invalidate();
 			TEMP_CORRECT.invalidate();
 			SAVE.invalidate();			
 		}

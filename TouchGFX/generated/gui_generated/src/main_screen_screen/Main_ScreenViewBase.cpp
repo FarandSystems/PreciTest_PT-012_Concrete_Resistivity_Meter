@@ -32,12 +32,12 @@ Main_ScreenViewBase::Main_ScreenViewBase() :
     SAVE.setLabelColorPressed(touchgfx::Color::getColorFromRGB(206, 202, 206));
     SAVE.setAction(buttonCallback);
 
-    HOLD.setXY(139, 386);
-    HOLD.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID));
-    HOLD.setLabelText(touchgfx::TypedText(T_SINGLEUSEID4));
-    HOLD.setLabelColor(touchgfx::Color::getColorFromRGB(206, 202, 206));
-    HOLD.setLabelColorPressed(touchgfx::Color::getColorFromRGB(206, 202, 206));
-    HOLD.setAction(buttonCallback);
+    HISTORY.setXY(139, 320);
+    HISTORY.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
+    HISTORY.setLabelText(touchgfx::TypedText(T_SINGLEUSEID4));
+    HISTORY.setLabelColor(touchgfx::Color::getColorFromRGB(253, 255, 123));
+    HISTORY.setLabelColorPressed(touchgfx::Color::getColorFromRGB(206, 202, 206));
+    HISTORY.setAction(buttonCallback);
 
     MODE.setXY(139, 254);
     MODE.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
@@ -60,7 +60,7 @@ Main_ScreenViewBase::Main_ScreenViewBase() :
     NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFromRGB(0, 0, 0));
     NEW_PROJECT.setAction(buttonCallback);
 
-    TEMP_CORRECT.setXY(139, 320);
+    TEMP_CORRECT.setXY(139, 386);
     TEMP_CORRECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_GRAY_ID));
     TEMP_CORRECT.setLabelText(touchgfx::TypedText(T_SINGLEUSEID9));
     TEMP_CORRECT.setLabelColor(touchgfx::Color::getColorFromRGB(206, 202, 206));
@@ -160,7 +160,7 @@ Main_ScreenViewBase::Main_ScreenViewBase() :
     add(BACKGROUND);
     add(TITLE);
     add(SAVE);
-    add(HOLD);
+    add(HISTORY);
     add(MODE);
     add(MEASURE);
     add(NEW_PROJECT);
@@ -206,12 +206,12 @@ void Main_ScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& 
         //Call Save_btn_CallBack
         Save_btn_CallBack();
     }
-    else if (&src == &HOLD)
+    else if (&src == &HISTORY)
     {
-        //Hold_Interaction
-        //When HOLD clicked call virtual function
-        //Call Hold_btn_CallBack
-        Hold_btn_CallBack();
+        //History_Interaction
+        //When HISTORY clicked call virtual function
+        //Call History_btn_CallBack
+        History_btn_CallBack();
     }
     else if (&src == &MODE)
     {
