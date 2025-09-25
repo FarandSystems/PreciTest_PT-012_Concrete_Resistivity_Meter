@@ -54,8 +54,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -72,8 +72,8 @@ I (../Core/Inc/PowerManagement.h)(0x6141C131)
 I (../Drivers/BSP/stm32746g_discovery_qspi.h)(0x5EC27624)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (..\Core\Src\Flash.c)(0x68D522D8)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\flash.o --omf_browse stm32f746g_disco\flash.crf --depend stm32f746g_disco\flash.d)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+F (..\Core\Src\Flash.c)(0x68D56C47)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\flash.o --omf_browse stm32f746g_disco\flash.crf --depend stm32f746g_disco\flash.d)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
 I (../Core/Inc/stm32f7xx_hal_conf.h)(0x689DACB9)
@@ -125,7 +125,7 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -196,8 +196,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
 I (../Core/Inc/i2c.h)(0x689DACB4)
@@ -214,7 +214,7 @@ I (../Core/Inc/PowerManagement.h)(0x6141C131)
 I (../Drivers/BSP/stm32746g_discovery_qspi.h)(0x5EC27624)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (..\Core\Src\ProcessData.c)(0x68D56053)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\processdata.o --omf_browse stm32f746g_disco\processdata.crf --depend stm32f746g_disco\processdata.d)
+F (..\Core\Src\ProcessData.c)(0x68D56C47)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\processdata.o --omf_browse stm32f746g_disco\processdata.crf --depend stm32f746g_disco\processdata.d)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
@@ -266,8 +266,8 @@ I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -338,8 +338,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -356,7 +356,7 @@ I (../Core/Inc/PowerManagement.h)(0x6141C131)
 I (../Drivers/BSP/stm32746g_discovery_qspi.h)(0x5EC27624)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (..\Core\Src\PowerManagement.c)(0x68D530B8)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\powermanagement.o --omf_browse stm32f746g_disco\powermanagement.crf --depend stm32f746g_disco\powermanagement.d)
+F (..\Core\Src\PowerManagement.c)(0x68D57105)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\powermanagement.o --omf_browse stm32f746g_disco\powermanagement.crf --depend stm32f746g_disco\powermanagement.d)
 I (../Core/Inc/PowerManagement.h)(0x6141C131)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
@@ -409,8 +409,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -427,7 +427,7 @@ I (../Core/Inc/quadspi.h)(0x689DACB5)
 I (../Drivers/BSP/stm32746g_discovery_qspi.h)(0x5EC27624)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (../Core/Src/main.c)(0x68D52060)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main.o --omf_browse stm32f746g_disco\main.crf --depend stm32f746g_disco\main.d)
+F (../Core/Src/main.c)(0x68D56C47)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main.o --omf_browse stm32f746g_disco\main.crf --depend stm32f746g_disco\main.d)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
 I (../Core/Inc/stm32f7xx_hal_conf.h)(0x689DACB9)
@@ -479,8 +479,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -567,8 +567,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -646,8 +646,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -720,8 +720,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -792,8 +792,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -863,8 +863,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -934,8 +934,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1005,8 +1005,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1076,8 +1076,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1147,8 +1147,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1218,8 +1218,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1288,8 +1288,8 @@ I (../Core/Inc/adc.h)(0x68A20FA2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1307,7 +1307,7 @@ I (../Core/Inc/PowerManagement.h)(0x6141C131)
 I (../Drivers/BSP/stm32746g_discovery_qspi.h)(0x5EC27624)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (..\Core\Src\tim.c)(0x68D525C3)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\tim.o --omf_browse stm32f746g_disco\tim.crf --depend stm32f746g_disco\tim.d)
+F (..\Core\Src\tim.c)(0x68D56C47)(--c99 -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\tim.o --omf_browse stm32f746g_disco\tim.crf --depend stm32f746g_disco\tim.d)
 I (../Core/Inc/tim.h)(0x68A20FA2)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
@@ -1360,8 +1360,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/i2c.h)(0x689DACB4)
@@ -1430,8 +1430,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1502,8 +1502,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -1861,9 +1861,9 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd.h)(0x689302EF)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_ll_usb.h)(0x689302EF)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
-F (../touchgfx/gui/src/containers/clockanddatesetting.cpp)(0x68D5697C)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\clockanddatesetting.o --omf_browse stm32f746g_disco\clockanddatesetting.crf --depend stm32f746g_disco\clockanddatesetting.d)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+F (../touchgfx/gui/src/containers/clockanddatesetting.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\clockanddatesetting.o --omf_browse stm32f746g_disco\clockanddatesetting.crf --depend stm32f746g_disco\clockanddatesetting.d)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
 I (../touchgfx/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/mvp/MVPApplication.hpp)(0x60D44B72)
@@ -1971,8 +1971,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -2088,8 +2088,8 @@ I (../middlewares/st/touchgfx/framework/include/platform/core/MCUInstrumentation
 I (../middlewares/st/touchgfx/framework/include/platform/driver/button/ButtonController.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/platform/driver/touch/TouchController.hpp)(0x60D44B72)
 F (../touchgfx/gui/src/main_screen_screen/main_screenpresenter.cpp)(0x5EE75A2C)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main_screenpresenter.o --omf_browse stm32f746g_disco\main_screenpresenter.crf --depend stm32f746g_disco\main_screenpresenter.d)
-I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D55C12)
-I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D55972)
+I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D56C48)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
 I (../touchgfx/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/mvp/MVPApplication.hpp)(0x60D44B72)
@@ -2147,8 +2147,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../touchgfx/gui/include/gui/containers/Message_Box.hpp)(0x5F26C35F)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp)(0x60D44B72)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp)(0x60D44B72)
@@ -2180,12 +2180,12 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.h
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp)(0x60D44B72)
 I (../Core/Inc/Mirror.hpp)(0x5F42600E)
-F (../touchgfx/gui/src/main_screen_screen/main_screenview.cpp)(0x68D55D47)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main_screenview.o --omf_browse stm32f746g_disco\main_screenview.crf --depend stm32f746g_disco\main_screenview.d)
-I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D55C12)
-I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D55972)
+F (../touchgfx/gui/src/main_screen_screen/main_screenview.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main_screenview.o --omf_browse stm32f746g_disco\main_screenview.crf --depend stm32f746g_disco\main_screenview.d)
+I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D56C48)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
 I (../touchgfx/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/mvp/MVPApplication.hpp)(0x60D44B72)
@@ -2243,8 +2243,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../touchgfx/gui/include/gui/containers/Message_Box.hpp)(0x5F26C35F)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp)(0x60D44B72)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp)(0x60D44B72)
@@ -2276,10 +2276,10 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.h
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp)(0x60D44B72)
 I (../Core/Inc/Mirror.hpp)(0x5F42600E)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
 I (../Core/Inc/stm32f7xx_hal_conf.h)(0x689DACB9)
@@ -2329,8 +2329,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -2519,7 +2519,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Abstract
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
 F (../touchgfx/gui/src/spalsh_screen_screen/spalsh_screenpresenter.cpp)(0x5F255736)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\spalsh_screenpresenter.o --omf_browse stm32f746g_disco\spalsh_screenpresenter.crf --depend stm32f746g_disco\spalsh_screenpresenter.d)
 I (../touchgfx/gui/include/gui/spalsh_screen_screen/Spalsh_screenView.hpp)(0x60EC43FD)
@@ -2631,7 +2631,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
 I (../Core/Inc/Mirror.hpp)(0x5F42600E)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x689302EF)
 I (../Core/Inc/stm32f7xx_hal_conf.h)(0x689DACB9)
@@ -2681,8 +2681,8 @@ I (../Core/Inc/spi.h)(0x689DACB5)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8F1DC2)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -2699,8 +2699,8 @@ I (../Core/Inc/quadspi.h)(0x689DACB5)
 I (../Core/Inc/PowerManagement.h)(0x6141C131)
 I (../Drivers/BSP/stm32746g_discovery_qspi.h)(0x5EC27624)
 I (../Drivers/BSP/../Components/n25q128a/n25q128a.h)(0x5EC27624)
-F (../touchgfx/generated/fonts/src/applicationfontprovider.cpp)(0x68D55F26)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\applicationfontprovider.o --omf_browse stm32f746g_disco\applicationfontprovider.crf --depend stm32f746g_disco\applicationfontprovider.d)
-I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D55F27)
+F (../touchgfx/generated/fonts/src/applicationfontprovider.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\applicationfontprovider.o --omf_browse stm32f746g_disco\applicationfontprovider.crf --depend stm32f746g_disco\applicationfontprovider.d)
+I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Font.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
@@ -2714,8 +2714,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/ConstFont.hpp)(0x60D44B
 I (../touchgfx/generated/texts/include/texts/TypedTextDatabase.hpp)(0x689DC115)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
-F (../touchgfx/generated/images/src/bitmapdatabase.cpp)(0x68D56352)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\bitmapdatabase.o --omf_browse stm32f746g_disco\bitmapdatabase.crf --depend stm32f746g_disco\bitmapdatabase.d)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
+F (../touchgfx/generated/images/src/bitmapdatabase.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\bitmapdatabase.o --omf_browse stm32f746g_disco\bitmapdatabase.crf --depend stm32f746g_disco\bitmapdatabase.d)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F1DC2)
@@ -2733,12 +2733,12 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp)(0x60D44B72
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
-I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D55F27)
+I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x60D44B72)
 I (../touchgfx/generated/fonts/include/fonts/GeneratedFont.hpp)(0x689DC115)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/ConstFont.hpp)(0x60D44B72)
-F (../touchgfx/generated/gui_generated/src/containers/clockanddatesettingbase.cpp)(0x68D56616)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\clockanddatesettingbase.o --omf_browse stm32f746g_disco\clockanddatesettingbase.crf --depend stm32f746g_disco\clockanddatesettingbase.d)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+F (../touchgfx/generated/gui_generated/src/containers/clockanddatesettingbase.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\clockanddatesettingbase.o --omf_browse stm32f746g_disco\clockanddatesettingbase.crf --depend stm32f746g_disco\clockanddatesettingbase.d)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
 I (../touchgfx/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/mvp/MVPApplication.hpp)(0x60D44B72)
@@ -2797,8 +2797,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWil
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Button.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp)(0x60D44B72)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
 F (../touchgfx/generated/gui_generated/src/containers/digital_clockbase.cpp)(0x60E4118C)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\digital_clockbase.o --omf_browse stm32f746g_disco\digital_clockbase.crf --depend stm32f746g_disco\digital_clockbase.d)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Digital_ClockBase.hpp)(0x60E4118B)
@@ -2854,14 +2854,14 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x6
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Button.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
-F (../touchgfx/generated/fonts/src/font_tccm_____ttf_18_4bpp_0.cpp)(0x68D55F27)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\font_tccm_____ttf_18_4bpp_0.o --omf_browse stm32f746g_disco\font_tccm_____ttf_18_4bpp_0.crf --depend stm32f746g_disco\font_tccm_____ttf_18_4bpp_0.d)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
+F (../touchgfx/generated/fonts/src/font_tccm_____ttf_18_4bpp_0.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\font_tccm_____ttf_18_4bpp_0.o --omf_browse stm32f746g_disco\font_tccm_____ttf_18_4bpp_0.crf --depend stm32f746g_disco\font_tccm_____ttf_18_4bpp_0.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (../touchgfx/generated/fonts/src/font_tccm_____ttf_18_4bpp_4.cpp)(0x68D55F27)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\font_tccm_____ttf_18_4bpp_4.o --omf_browse stm32f746g_disco\font_tccm_____ttf_18_4bpp_4.crf --depend stm32f746g_disco\font_tccm_____ttf_18_4bpp_4.d)
+F (../touchgfx/generated/fonts/src/font_tccm_____ttf_18_4bpp_4.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\font_tccm_____ttf_18_4bpp_4.o --omf_browse stm32f746g_disco\font_tccm_____ttf_18_4bpp_4.crf --depend stm32f746g_disco\font_tccm_____ttf_18_4bpp_4.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F1DC2)
@@ -2933,7 +2933,7 @@ I (../touchgfx/generated/fonts/include/fonts/CachedFont.hpp)(0x689DC115)
 I (../touchgfx/generated/fonts/include/fonts/FontCache.hpp)(0x689DC115)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
-I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D55F27)
+I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x60D44B72)
 I (../touchgfx/generated/fonts/include/fonts/GeneratedFont.hpp)(0x689DC115)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/ConstFont.hpp)(0x60D44B72)
@@ -2990,8 +2990,8 @@ I (../middlewares/st/touchgfx/framework/include/platform/driver/touch/TouchContr
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
-I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D55C12)
-I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D55972)
+I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/mvp/View.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp)(0x614308E8)
 I (../touchgfx/gui/include/gui/model/ModelListener.hpp)(0x5EE75A2C)
@@ -3006,8 +3006,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../touchgfx/gui/include/gui/containers/Message_Box.hpp)(0x5F26C35F)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp)(0x60D44B72)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp)(0x60D44B72)
@@ -3038,7 +3038,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.h
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp)(0x60D44B72)
 I (../Core/Inc/Mirror.hpp)(0x5F42600E)
 I (../touchgfx/gui/include/gui/spalsh_screen_screen/Spalsh_screenView.hpp)(0x60EC43FD)
@@ -3072,7 +3072,7 @@ F (../touchgfx/generated/images/src/image_button_hollow_gray.cpp)(0x689DC115)(--
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
 F (../touchgfx/generated/images/src/image_clock_transparent.cpp)(0x689DC115)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\image_clock_transparent.o --omf_browse stm32f746g_disco\image_clock_transparent.crf --depend stm32f746g_disco\image_clock_transparent.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (../touchgfx/generated/images/src/image_clocksetting_background.cpp)(0x68D56352)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\image_clocksetting_background.o --omf_browse stm32f746g_disco\image_clocksetting_background.crf --depend stm32f746g_disco\image_clocksetting_background.d)
+F (../touchgfx/generated/images/src/image_clocksetting_background.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\image_clocksetting_background.o --omf_browse stm32f746g_disco\image_clocksetting_background.crf --depend stm32f746g_disco\image_clocksetting_background.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
 F (../touchgfx/generated/images/src/image_fw412_splashscreenlogo.cpp)(0x68A06D20)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\image_fw412_splashscreenlogo.o --omf_browse stm32f746g_disco\image_fw412_splashscreenlogo.crf --depend stm32f746g_disco\image_fw412_splashscreenlogo.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
@@ -3086,7 +3086,7 @@ F (../touchgfx/generated/images/src/image_title.cpp)(0x689DC115)(--cpp -c --cpu 
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
 F (../touchgfx/generated/images/src/image_usb_symbol.cpp)(0x689DC115)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\image_usb_symbol.o --omf_browse stm32f746g_disco\image_usb_symbol.crf --depend stm32f746g_disco\image_usb_symbol.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (../touchgfx/generated/fonts/src/kerning_tccm_____ttf_18_4bpp.cpp)(0x68D55F27)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\kerning_tccm_____ttf_18_4bpp.o --omf_browse stm32f746g_disco\kerning_tccm_____ttf_18_4bpp.crf --depend stm32f746g_disco\kerning_tccm_____ttf_18_4bpp.d)
+F (../touchgfx/generated/fonts/src/kerning_tccm_____ttf_18_4bpp.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\kerning_tccm_____ttf_18_4bpp.o --omf_browse stm32f746g_disco\kerning_tccm_____ttf_18_4bpp.crf --depend stm32f746g_disco\kerning_tccm_____ttf_18_4bpp.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Font.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
@@ -3134,15 +3134,15 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8F1DC2)
-F (../touchgfx/generated/texts/src/languagegb.cpp)(0x68D564D8)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\languagegb.o --omf_browse stm32f746g_disco\languagegb.crf --depend stm32f746g_disco\languagegb.d)
+F (../touchgfx/generated/texts/src/languagegb.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\languagegb.o --omf_browse stm32f746g_disco\languagegb.crf --depend stm32f746g_disco\languagegb.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-F (../touchgfx/generated/gui_generated/src/main_screen_screen/main_screenviewbase.cpp)(0x68D55B30)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main_screenviewbase.o --omf_browse stm32f746g_disco\main_screenviewbase.crf --depend stm32f746g_disco\main_screenviewbase.d)
-I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D55972)
+F (../touchgfx/generated/gui_generated/src/main_screen_screen/main_screenviewbase.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\main_screenviewbase.o --omf_browse stm32f746g_disco\main_screenviewbase.crf --depend stm32f746g_disco\main_screenviewbase.d)
+I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D56C48)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
 I (../touchgfx/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/mvp/MVPApplication.hpp)(0x60D44B72)
@@ -3200,8 +3200,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../touchgfx/gui/include/gui/containers/Message_Box.hpp)(0x5F26C35F)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp)(0x60D44B72)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp)(0x60D44B72)
@@ -3233,9 +3233,9 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.h
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp)(0x60D44B72)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
 F (../touchgfx/generated/gui_generated/src/containers/message_boxbase.cpp)(0x60E4118C)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\message_boxbase.o --omf_browse stm32f746g_disco\message_boxbase.crf --depend stm32f746g_disco\message_boxbase.d)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
@@ -3289,8 +3289,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Button.hpp)(0x6
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0x60D44B72)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
 F (../touchgfx/generated/gui_generated/src/containers/numupdownbase.cpp)(0x60F405D1)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\numupdownbase.o --omf_browse stm32f746g_disco\numupdownbase.crf --depend stm32f746g_disco\numupdownbase.d)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/NumUpDownBase.hpp)(0x60F405D1)
@@ -3341,7 +3341,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Widget.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
 F (../touchgfx/generated/gui_generated/src/containers/readybase.cpp)(0x60F3DD89)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\readybase.o --omf_browse stm32f746g_disco\readybase.crf --depend stm32f746g_disco\readybase.d)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ReadyBase.hpp)(0x60F3D0A5)
@@ -3407,7 +3407,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 F (../touchgfx/generated/gui_generated/src/spalsh_screen_screen/spalsh_screenviewbase.cpp)(0x68A06D20)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\spalsh_screenviewbase.o --omf_browse stm32f746g_disco\spalsh_screenviewbase.crf --depend stm32f746g_disco\spalsh_screenviewbase.d)
 I (../touchgfx/generated/gui_generated/include/gui_generated/spalsh_screen_screen/Spalsh_screenViewBase.hpp)(0x60F3DD3E)
 I (../touchgfx/gui/include/gui/common/FrontendApplication.hpp)(0x60F3D936)
@@ -3462,9 +3462,9 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Color.hpp)(0x60D44B72)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
-F (../touchgfx/generated/fonts/src/table_tccm_____ttf_18_4bpp.cpp)(0x68D55F27)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\table_tccm_____ttf_18_4bpp.o --omf_browse stm32f746g_disco\table_tccm_____ttf_18_4bpp.crf --depend stm32f746g_disco\table_tccm_____ttf_18_4bpp.d)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
+F (../touchgfx/generated/fonts/src/table_tccm_____ttf_18_4bpp.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\table_tccm_____ttf_18_4bpp.o --omf_browse stm32f746g_disco\table_tccm_____ttf_18_4bpp.crf --depend stm32f746g_disco\table_tccm_____ttf_18_4bpp.d)
 I (../touchgfx/generated/fonts/include/fonts/GeneratedFont.hpp)(0x689DC115)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/ConstFont.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
@@ -3524,7 +3524,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Font.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8F1DC2)
-F (../touchgfx/generated/texts/src/texts.cpp)(0x68D564D8)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\texts.o --omf_browse stm32f746g_disco\texts.crf --depend stm32f746g_disco\texts.d)
+F (../touchgfx/generated/texts/src/texts.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\texts.o --omf_browse stm32f746g_disco\texts.crf --depend stm32f746g_disco\texts.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TextProvider.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
@@ -3555,7 +3555,7 @@ I (../middlewares/st/touchgfx/framework/include/platform/core/MCUInstrumentation
 I (../middlewares/st/touchgfx/framework/include/platform/driver/button/ButtonController.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/platform/driver/touch/TouchController.hpp)(0x60D44B72)
 I (../touchgfx/generated/texts/include/texts/TypedTextDatabase.hpp)(0x689DC115)
-F (../touchgfx/generated/texts/src/typedtextdatabase.cpp)(0x68D564D8)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\typedtextdatabase.o --omf_browse stm32f746g_disco\typedtextdatabase.crf --depend stm32f746g_disco\typedtextdatabase.d)
+F (../touchgfx/generated/texts/src/typedtextdatabase.cpp)(0x68D56C48)(--cpp -c --cpu Cortex-M7.fp.sp -g -O1 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM7/r0p1 -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/Components/ft5336 -I ../Drivers/BSP -I ../USB_DEVICE/App -I ../USB_DEVICE/Target -I ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc -I ../touchgfx/App -I ../touchgfx/target -I ../TouchGFX/App -I ../TouchGFX/target/generated -I ../TouchGFX/target -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../middlewares/st/touchgfx/framework/include -I ../touchgfx/generated/fonts/include -I ../touchgfx/generated/gui_generated/include -I ../touchgfx/generated/images/include -I ../touchgfx/generated/texts/include -I ../touchgfx/gui/include-I.\RTE\_STM32F746G_DISCO-IC:\Users\em\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include-D__UVISION_VERSION="533" -D_RTE_ -DSTM32F746xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F746xx -DUSE_BPP="16"-o stm32f746g_disco\typedtextdatabase.o --omf_browse stm32f746g_disco\typedtextdatabase.crf --depend stm32f746g_disco\typedtextdatabase.d)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/TypedText.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
@@ -3574,7 +3574,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Types.hpp)(0x60D44B
 I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x5E8F1DC2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/hal/Config.hpp)(0x60D44B72)
-I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D55F27)
+I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Font.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp)(0x60D44B72)
@@ -3637,8 +3637,8 @@ I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -3717,8 +3717,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -3798,8 +3798,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -3874,8 +3874,8 @@ I (../Core/Inc/main.h)(0x68A4AA3B)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -3907,7 +3907,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/Font.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Unicode.hpp)(0x60D44B72)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Texts.hpp)(0x60D44B72)
-I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D55F27)
+I (../touchgfx/generated/fonts/include/fonts/ApplicationFontProvider.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/FontManager.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/common/FrontendHeap.hpp)(0x5EE75A2C)
 I (../touchgfx/generated/gui_generated/include/gui_generated/common/FrontendHeapBase.hpp)(0x60E4118B)
@@ -3953,8 +3953,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Screen.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/mvp/Presenter.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/model/Model.hpp)(0x5EE75A2C)
-I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D55C12)
-I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D55972)
+I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/mvp/View.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp)(0x614308E8)
 I (../touchgfx/gui/include/gui/model/ModelListener.hpp)(0x5EE75A2C)
@@ -3967,8 +3967,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../touchgfx/gui/include/gui/containers/Message_Box.hpp)(0x5F26C35F)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp)(0x60D44B72)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp)(0x60D44B72)
@@ -3999,13 +3999,13 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.h
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp)(0x60D44B72)
 I (../Core/Inc/Mirror.hpp)(0x5F42600E)
 I (../touchgfx/gui/include/gui/spalsh_screen_screen/Spalsh_screenView.hpp)(0x60EC43FD)
 I (../touchgfx/generated/gui_generated/include/gui_generated/spalsh_screen_screen/Spalsh_screenViewBase.hpp)(0x60F3DD3E)
 I (../touchgfx/gui/include/gui/spalsh_screen_screen/Spalsh_screenPresenter.hpp)(0x5F255736)
-I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56352)
+I (../touchgfx/generated/images/include/BitmapDatabase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/lcd/LCD16DebugPrinter.hpp)(0x60D44B72)
 I (../TouchGFX/target/generated/STM32DMA.hpp)(0x689DACB6)
@@ -4109,8 +4109,8 @@ I (C:\Keil_v5\ARM\ARMCC\include\exception)(0x5E8F1DC2)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/Screen.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/mvp/Presenter.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/model/Model.hpp)(0x5EE75A2C)
-I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D55C12)
-I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D55972)
+I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenView.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/main_screen_screen/Main_ScreenViewBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/mvp/View.hpp)(0x60D44B72)
 I (../touchgfx/gui/include/gui/main_screen_screen/Main_ScreenPresenter.hpp)(0x614308E8)
 I (../touchgfx/gui/include/gui/model/ModelListener.hpp)(0x5EE75A2C)
@@ -4125,8 +4125,8 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp)(0
 I (../touchgfx/gui/include/gui/containers/Message_Box.hpp)(0x5F26C35F)
 I (../touchgfx/generated/gui_generated/include/gui_generated/containers/Message_BoxBase.hpp)(0x60E4118B)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/Image.hpp)(0x60D44B72)
-I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D568B0)
-I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56616)
+I (../touchgfx/gui/include/gui/containers/ClockAndDateSetting.hpp)(0x68D56C48)
+I (../touchgfx/generated/gui_generated/include/gui_generated/containers/ClockAndDateSettingBase.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheel.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/DrawableList.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/containers/scrollers/ScrollWheelBase.hpp)(0x60D44B72)
@@ -4157,7 +4157,7 @@ I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/Canvas.h
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp)(0x60D44B72)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp)(0x60D44B72)
-I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D564D8)
+I (../touchgfx/generated/texts/include/texts/TextKeysAndLanguages.hpp)(0x68D56C48)
 I (../middlewares/st/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp)(0x60D44B72)
 I (../Core/Inc/Mirror.hpp)(0x5F42600E)
 I (../touchgfx/gui/include/gui/spalsh_screen_screen/Spalsh_screenView.hpp)(0x60EC43FD)
@@ -6174,8 +6174,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -6252,8 +6252,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -6329,8 +6329,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)
@@ -6407,8 +6407,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_pcd_ex.h)(0x689302EF)
 I (../Core/Inc/adc.h)(0x68A20FA2)
 I (../Core/Inc/spi.h)(0x689DACB5)
 I (../Core/Inc/ProcessData.h)(0x616144B7)
-I (../Core/Inc/Device_Constants.h)(0x68D504DB)
-I (../Core/Inc/Flash.h)(0x68D510C2)
+I (../Core/Inc/Device_Constants.h)(0x68D56C47)
+I (../Core/Inc/Flash.h)(0x68D56C47)
 I (../Core/Inc/LM35_Temperature_Measurement.h)(0x5F881460)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x5E8F1DC2)
 I (../Core/Inc/tim.h)(0x68A20FA2)

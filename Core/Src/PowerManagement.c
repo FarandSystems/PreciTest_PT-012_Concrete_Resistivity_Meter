@@ -13,6 +13,7 @@ float v_Bat_Volts_Filtered = 0;
 float v_Bat_Percentage = 0;
 
 float latest_v_Bat_Array[v_Battery_filter_count];
+uint8_t vBat_Get_Percentage(float vBat);
 
 uint16_t battery_Voltage_Filter_Counter;
 Voltage_Filter_Mode_TypeDef 	v_Bat_Voltage_Filter_Mode = Fast_Operation;
@@ -27,6 +28,19 @@ float	v_Input_Jack_Charger_Volts = 0;
 float v_Input_Jack_Charger_Volts_Filtered = 0;
 uint16_t input_Jack_Charger_Voltage_Filter_Counter;
 Voltage_Filter_Mode_TypeDef 	input_Jack_Charger_Voltage_Filter_Mode = Fast_Operation;
+
+
+static const float vBatLUT_Volts[] = {
+    3.00f, 3.20f, 3.40f, 3.50f, 3.60f,
+    3.70f, 3.75f, 3.80f, 3.85f, 3.90f,
+    3.95f, 4.00f, 4.05f, 4.10f, 4.20f
+};
+
+static const uint8_t vBatLUT_Percent[] = {
+      0,   5,  10,  20,  30,
+     40,  50,  60,  70,  75,
+     80,  85,  90,  95, 100
+};
 
 
 
@@ -128,6 +142,31 @@ void Set_LED_Color(void)
 		}
 	}	
 }
+
+// Linear interpolation between LUT points
+uint8_t vBat_Get_Percentage(float vBat)
+{
+    if (vBat <= vBatLUT_Volts[0])
+        return 0;
+    if (vBat >= vBatLUT_Volts[14])
+        return 100;
+
+    for (int i = 0; i < 14; i++)
+    {
+        if (vBat >= vBatLUT_Volts[i] && vBat <= vBatLUT_Volts[i+1])
+        {
+            float x0 = vBatLUT_Volts[i];
+            float x1 = vBatLUT_Volts[i+1];
+            float y0 = vBatLUT_Percent[i];
+            float y1 = vBatLUT_Percent[i+1];
+
+            float t = (vBat - x0) / (x1 - x0);
+            return (uint8_t)(y0 + t * (y1 - y0));
+        }
+    }
+    return 0; // fallback
+}
+
 void Check_Power_And_Charging(void)
 {
 	static uint8_t waiting_counter = 0;
@@ -177,7 +216,8 @@ void Check_Power_And_Charging(void)
 //		I_Charge_mA = 1000.0f * (v_Input_Power_Levels - v_Bat_Levels)/CURRENT_SENSE_RESISTOR;
 		
 		// Calculate and bound Battery Percentage
-		v_Bat_Percentage = (v_Bat_Volts_Filtered - 3.0f) * 100.0f / (4.2f - 3.0f);
+//		v_Bat_Percentage = (v_Bat_Volts_Filtered - 3.0f) * 100.0f / (4.2f - 3.0f);
+			v_Bat_Percentage = vBat_Get_Percentage(v_Bat_Volts_Filtered);
 		
 		if(v_Bat_Percentage > 100)
 		{
