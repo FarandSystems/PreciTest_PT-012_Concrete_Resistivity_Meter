@@ -58,7 +58,7 @@ void Main_ScreenView::handleTickEvent()
 void Main_ScreenView::Set_Fixed_Panels_First_Time(void)
 {	
 	
-	projectRecordNumber = ReadParameter(PROJECT_RECORD_NUMBER_FLASH_INDEX);
+	projectRecordNumber = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX);
 	
 	projectNumber = (projectRecordNumber & 0xFF000000) >> 24;
 	
@@ -202,7 +202,7 @@ void Main_ScreenView::Save_btn_CallBack()
 		SAVE.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 		SAVE.setLabelText(touchgfx::TypedText(T_SAVING));
 		SAVE.invalidate();
-		HAL_TIM_Base_Start_IT(&htim3);
+		HAL_TIM_Base_Start_IT(&htim3); // Start 1 second delay
 		Alarm(SHORT_BEEP_X1,1,8, BEEP_ON);		
 	}	
 }
@@ -231,13 +231,15 @@ void Main_ScreenView::BATTERY_PERCENTClickHandler(const TextProgress& text_progr
 void Main_ScreenView::Save_And_Create(void)
 {	
 	save_and_Create_delay_flag = 0;
+	
 	if(save_flag == 1)
 	{
+		// After 1 second delay, saving is performed.
 		save_flag = 0;
-		HAL_TIM_Base_Stop_IT(&htim3);
+		HAL_TIM_Base_Stop_IT(&htim3); 
 
-		Save_Record_and_Project_Number();
-		Save_Data_On_Flash();				
+		Update_Project_Info();
+		Save_Record_Data_On_Flash();				
 
 		SAVE.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
 		SAVE.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
@@ -260,34 +262,43 @@ void Main_ScreenView::Save_And_Create(void)
 		Restart_Output_Filter_in_Save_And_CreatingProj();
 		
 	}	
+	
+	
 	if(createPrj_flag == 1)
 	{
 		createPrj_flag = 0;
 		HAL_TIM_Base_Stop_IT(&htim3);
 		
-		projectRecordNumber = ReadParameter(PROJECT_RECORD_NUMBER_FLASH_INDEX);	
+		projectRecordNumber = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX);	
+		
 		projectNumber = ((projectRecordNumber & 0xFF000000) >> 24 ); // Project Number
 		recordNumber = (projectRecordNumber & 0x00FF0000) >> 16;
 		
 		if(projectNumber < 24)
 		{	
-			if(recordNumber != 0)
-			{
+			Alarm(SHORT_BEEP_X1,1,32, BEEP_ON);
+//			if(recordNumber != 0)
+//			{
 				projectNumber ++;
 				recordNumber = 0;
-				Erase_one_Project_On_Flash(projectNumber);				
-
+				Erase_one_Project_On_Flash(projectNumber);
+			
+				
 				NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
 				NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 				NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
 				NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
 				NEW_PROJECT.invalidate();
 				
+				Unicode::snprintf(PROJECT_NUMBuffer, PROJECT_NUM_SIZE,"%2d",projectNumber);	
+				PROJECT_NUM.resizeToCurrentTextWithAlignment();
+				PROJECT_NUM.invalidate();
+				
 				Unicode::snprintf(HELPBuffer,HELP_SIZE,"Press Save to Record as Number %d",recordNumber + 1);
 				HELP.setWildcard(HELPBuffer);
 				HELP.resizeToCurrentTextWithAlignment();
 				HELP.invalidate();
-			}
+//			}
 
 		}
 		else
@@ -311,15 +322,18 @@ void Main_ScreenView::Save_And_Create(void)
 		Unicode::snprintf(PROJECT_NUMBuffer, PROJECT_NUM_SIZE,"%2d",projectNumber);	
 		PROJECT_NUM.resizeToCurrentTextWithAlignment();
 		PROJECT_NUM.invalidate();
-		projectRecordNum[0] = projectNumber;
+		
+		latestProjectInfo[0] = projectNumber;
+		
 		// After New Project Record Number Should be Zero
-		projectRecordNum[1] = 0;  // Record Number
-		projectRecordNumber = ((uint32_t)(projectRecordNum[0]) << 24) +
-													((uint32_t)(projectRecordNum[1]) << 16) +
-													((uint32_t)(projectRecordNum[2]) << 8)  +
-													((uint32_t)(projectRecordNum[3]) << 0);
+		latestProjectInfo[1] = 0;  // Record Number
+		
+//		projectRecordNumber = ((uint32_t)(latestProjectInfo[0]) << 24) +
+//													((uint32_t)(latestProjectInfo[1]) << 16) +
+//													((uint32_t)(latestProjectInfo[2]) << 8)  +
+//													((uint32_t)(latestProjectInfo[3]) << 0);
 	
-		SaveParameter(PROJECT_RECORD_NUMBER_FLASH_INDEX,projectRecordNumber);		
+		Save_In_Four_Words(LATEST_PROJECT_INFO_FLASH_INDEX, latestProjectInfo);		
 		
 	}
 }
@@ -587,7 +601,7 @@ void Main_ScreenView::Display_Resistance(float r)
 		resistance_conductivity_Range = 6;		
 	}	
 	
-	resistance_Or_conductivityX10 = displayed_Resistance_Or_Conductivity * 10;
+	resistance_Or_conductivityX10 = (uint16_t)(displayed_Resistance_Or_Conductivity * 10);
 	
 	if(electrical_Connection_Status == Connected)
 	{

@@ -10,22 +10,22 @@
 
 
 
-extern void SaveParameter(uint16_t parameterIndex, uint32_t param);
+extern void Save_In_Four_Words(uint16_t flash_Address, uint8_t* parameter_Array) ;
 extern uint32_t ReadParameter(uint16_t parameterIndex);
 extern void Send_Via_USB(uint8_t* Buf, uint32_t Len);
 extern void Send_Project_Data_To_PC(uint8_t projNumb);
 extern void SendCapturedSignalToPC(void);
 extern void Erase_one_Project_On_Flash(uint8_t projNumb);
 extern void Erase_All_Projects_On_Flash(void);
-extern void Save_Record_and_Project_Number(void);
-extern void Save_Data_On_Flash(void);
+extern void Update_Project_Info(void);
+extern void Save_Record_Data_On_Flash(void);
 extern void Save_Device_ID(uint8_t year, uint8_t SN);
 extern void Send_Device_ID_To_PC(void);
 extern void Force_RecordNum0_And_ProjectNum1(void);
 
 extern uint8_t projectNumber ;
 extern uint8_t recordNumber;
-extern uint8_t projectRecordNum[4];
+extern uint8_t latestProjectInfo[16];
 extern uint32_t projectRecordNumber;
 extern uint32_t dataBuffer;
 

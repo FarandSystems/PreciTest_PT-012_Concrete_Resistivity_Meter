@@ -341,7 +341,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
   /* USER CODE BEGIN Callback 1 */
 	if (htim->Instance == TIM3) {
-    TIMER3_Update_Interrupt_Handler();
+    TIMER3_Update_Interrupt_Handler(); // 1 second period
   }
 	if (htim->Instance == TIM7)
 	{
