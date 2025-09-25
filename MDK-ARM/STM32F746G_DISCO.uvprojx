@@ -803,6 +803,16 @@
               <FilePath>../touchgfx/generated/gui_generated/src/containers/digital_clockbase.cpp</FilePath>
             </File>
             <File>
+              <FileName>Font_TCCM_____TTF_18_4bpp_0.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_tccm_____ttf_18_4bpp_0.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Font_TCCM_____TTF_18_4bpp_4.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/font_tccm_____ttf_18_4bpp_4.cpp</FilePath>
+            </File>
+            <File>
               <FileName>Font_TCCM_____TTF_20_4bpp_0.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/fonts/src/font_tccm_____ttf_20_4bpp_0.cpp</FilePath>
@@ -908,6 +918,11 @@
               <FilePath>../touchgfx/generated/images/src/image_clock_transparent.cpp</FilePath>
             </File>
             <File>
+              <FileName>image_ClockSetting_BackGround.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/images/src/image_clocksetting_background.cpp</FilePath>
+            </File>
+            <File>
               <FileName>image_FW412_SplashScreenLogo.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/image_fw412_splashscreenlogo.cpp</FilePath>
@@ -936,6 +951,11 @@
               <FileName>image_USB_Symbol.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/images/src/image_usb_symbol.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Kerning_TCCM_____TTF_18_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/kerning_tccm_____ttf_18_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Kerning_TCCM_____TTF_20_4bpp.cpp</FileName>
@@ -991,6 +1011,11 @@
               <FileName>Spalsh_screenViewBase.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>../touchgfx/generated/gui_generated/src/spalsh_screen_screen/spalsh_screenviewbase.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>Table_TCCM_____TTF_18_4bpp.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>../touchgfx/generated/fonts/src/table_tccm_____ttf_18_4bpp.cpp</FilePath>
             </File>
             <File>
               <FileName>Table_TCCM_____TTF_20_4bpp.cpp</FileName>

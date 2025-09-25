@@ -34,6 +34,21 @@ public:
         // Override and implement this function in ClockAndDateSetting
     }
 
+    virtual void Month_setUpdateItem(NumUpDown& item, int16_t itemIndex)
+    {
+        // Override and implement this function in ClockAndDateSetting
+    }
+
+    virtual void Day_setUpdateItem(NumUpDown& item, int16_t itemIndex)
+    {
+        // Override and implement this function in ClockAndDateSetting
+    }
+
+    virtual void Year_setUpdateItem(NumUpDown& item, int16_t itemIndex)
+    {
+        // Override and implement this function in ClockAndDateSetting
+    }
+
     /*
      * Virtual Action Handlers
      */
@@ -64,6 +79,20 @@ protected:
     touchgfx::ScrollWheel Second_set;
     touchgfx::DrawableListItems<NumUpDown, 2> Second_setListItems;
     touchgfx::ButtonWithLabel Center_Btn;
+    touchgfx::TextArea Clock_Hint;
+    touchgfx::TextArea Second_lbl_1;
+    touchgfx::TextArea Month_lbl;
+    touchgfx::TextArea Day_lbl;
+    touchgfx::Image Month_Back;
+    touchgfx::Image D_Back;
+    touchgfx::Image Y_Back;
+    touchgfx::ScrollWheel Month_set;
+    touchgfx::DrawableListItems<NumUpDown, 2> Month_setListItems;
+    touchgfx::ScrollWheel Day_set;
+    touchgfx::DrawableListItems<NumUpDown, 2> Day_setListItems;
+    touchgfx::ScrollWheel Year_set;
+    touchgfx::DrawableListItems<NumUpDown, 2> Year_setListItems;
+    touchgfx::TextArea Year_lbl;
 
 private:
 

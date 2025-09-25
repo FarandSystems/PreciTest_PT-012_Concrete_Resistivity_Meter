@@ -633,7 +633,14 @@ void Calibrate_Resistance(void)
 	// Temp correction: Displayed Resistivity is compensated regarding sample temperature and the Calibrated value is calculated for 25 degrees centigrade.
 	if(temp_Correction_flag == 1)
 	{
-		average_Amplitude_Temp_Corrected =  amplitude_RMS * (24.5f + temp_Deg_Display)/49.5f; 
+		//amplitude_RMS ? your measured value at temp_Deg_Display °C.
+
+		//(temp_Deg_Display - 23.0f) ? difference from the reference temperature.
+
+		//0.02f ? ASTM coefficient (2 % per °C).
+
+		//Divide by (1 + a?T) to normalize back to 23 °C.
+		average_Amplitude_Temp_Corrected = amplitude_RMS / (1.0f + 0.02f * (temp_Deg_Display - 23.0f));
 	}
 	else
 	{

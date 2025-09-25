@@ -11,6 +11,9 @@ public:
 		virtual void Hour_setUpdateItem(NumUpDown& item, int16_t itemIndex);
 		virtual void Minute_setUpdateItem(NumUpDown& item, int16_t itemIndex);
 		virtual void Second_setUpdateItem(NumUpDown& item, int16_t itemIndex);
+		virtual void Year_setUpdateItem(NumUpDown& item, int16_t itemIndex);
+		virtual void Month_setUpdateItem(NumUpDown& item, int16_t itemIndex);
+		virtual void Day_setUpdateItem(NumUpDown& item, int16_t itemIndex);
 		virtual void Button_CallBack();
 		virtual	void Show_Present_Time(uint8_t Hour,uint8_t Minute,uint8_t Second);
     virtual void initialize();

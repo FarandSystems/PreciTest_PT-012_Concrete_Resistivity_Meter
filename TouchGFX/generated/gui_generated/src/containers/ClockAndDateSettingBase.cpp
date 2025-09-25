@@ -11,9 +11,9 @@ ClockAndDateSettingBase::ClockAndDateSettingBase() :
     updateItemCallback(this, &ClockAndDateSettingBase::updateItemCallbackHandler)
 {
     setWidth(250);
-    setHeight(130);
+    setHeight(220);
     BackGround.setXY(0, 0);
-    BackGround.setBitmap(touchgfx::Bitmap(BITMAP_MESSAGE_BOX_BACKGROUND_ID));
+    BackGround.setBitmap(touchgfx::Bitmap(BITMAP_CLOCKSETTING_BACKGROUND_ID));
 
     H_Back.setXY(31, 16);
     H_Back.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_BACK_TEST_ID));
@@ -75,12 +75,82 @@ ClockAndDateSettingBase::ClockAndDateSettingBase() :
     Second_set.setDrawables(Second_setListItems, updateItemCallback);
     Second_set.animateToItem(30, 0);
 
-    Center_Btn.setXY(62, 78);
+    Center_Btn.setXY(62, 175);
     Center_Btn.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_SMALL_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_SMALL_ID));
     Center_Btn.setLabelText(touchgfx::TypedText(T_SINGLEUSEID38));
     Center_Btn.setLabelColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Center_Btn.setLabelColorPressed(touchgfx::Color::getColorFromRGB(41, 41, 41));
     Center_Btn.setAction(buttonCallback);
+
+    Clock_Hint.setXY(81, 151);
+    Clock_Hint.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Clock_Hint.setLinespacing(0);
+    Clock_Hint.setTypedText(touchgfx::TypedText(T_SINGLEUSEID46));
+
+    Second_lbl_1.setXY(167, 23);
+    Second_lbl_1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Second_lbl_1.setLinespacing(0);
+    Second_lbl_1.setTypedText(touchgfx::TypedText(T_SINGLEUSEID47));
+
+    Month_lbl.setXY(11, 92);
+    Month_lbl.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Month_lbl.setLinespacing(0);
+    Month_lbl.setTypedText(touchgfx::TypedText(T_SINGLEUSEID48));
+
+    Day_lbl.setXY(88, 92);
+    Day_lbl.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Day_lbl.setLinespacing(0);
+    Day_lbl.setTypedText(touchgfx::TypedText(T_SINGLEUSEID49));
+
+    Month_Back.setXY(31, 80);
+    Month_Back.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_BACK_TEST_ID));
+
+    D_Back.setXY(111, 80);
+    D_Back.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_BACK_TEST_ID));
+
+    Y_Back.setXY(186, 80);
+    Y_Back.setBitmap(touchgfx::Bitmap(BITMAP_SCROLL_BACK_TEST_ID));
+
+    Month_set.setPosition(31, 79, 50, 50);
+    Month_set.setHorizontal(false);
+    Month_set.setCircular(true);
+    Month_set.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    Month_set.setSwipeAcceleration(10);
+    Month_set.setDragAcceleration(10);
+    Month_set.setNumberOfItems(12);
+    Month_set.setSelectedItemOffset(0);
+    Month_set.setDrawableSize(50, 0);
+    Month_set.setDrawables(Month_setListItems, updateItemCallback);
+    Month_set.animateToItem(1, 0);
+
+    Day_set.setPosition(111, 80, 50, 50);
+    Day_set.setHorizontal(false);
+    Day_set.setCircular(true);
+    Day_set.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    Day_set.setSwipeAcceleration(10);
+    Day_set.setDragAcceleration(10);
+    Day_set.setNumberOfItems(31);
+    Day_set.setSelectedItemOffset(0);
+    Day_set.setDrawableSize(50, 0);
+    Day_set.setDrawables(Day_setListItems, updateItemCallback);
+    Day_set.animateToItem(1, 0);
+
+    Year_set.setPosition(186, 80, 50, 50);
+    Year_set.setHorizontal(false);
+    Year_set.setCircular(true);
+    Year_set.setEasingEquation(touchgfx::EasingEquations::backEaseOut);
+    Year_set.setSwipeAcceleration(10);
+    Year_set.setDragAcceleration(10);
+    Year_set.setNumberOfItems(80);
+    Year_set.setSelectedItemOffset(0);
+    Year_set.setDrawableSize(50, 0);
+    Year_set.setDrawables(Year_setListItems, updateItemCallback);
+    Year_set.animateToItem(25, 0);
+
+    Year_lbl.setXY(167, 92);
+    Year_lbl.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Year_lbl.setLinespacing(0);
+    Year_lbl.setTypedText(touchgfx::TypedText(T_SINGLEUSEID50));
 
     add(BackGround);
     add(H_Back);
@@ -93,6 +163,17 @@ ClockAndDateSettingBase::ClockAndDateSettingBase() :
     add(Minute_set);
     add(Second_set);
     add(Center_Btn);
+    add(Clock_Hint);
+    add(Second_lbl_1);
+    add(Month_lbl);
+    add(Day_lbl);
+    add(Month_Back);
+    add(D_Back);
+    add(Y_Back);
+    add(Month_set);
+    add(Day_set);
+    add(Year_set);
+    add(Year_lbl);
 }
 
 void ClockAndDateSettingBase::initialize()
@@ -111,6 +192,21 @@ void ClockAndDateSettingBase::initialize()
     for (int i = 0; i < Second_setListItems.getNumberOfDrawables(); i++)
     {
         Second_setListItems[i].initialize();
+    }
+    Month_set.initialize();
+    for (int i = 0; i < Month_setListItems.getNumberOfDrawables(); i++)
+    {
+        Month_setListItems[i].initialize();
+    }
+    Day_set.initialize();
+    for (int i = 0; i < Day_setListItems.getNumberOfDrawables(); i++)
+    {
+        Day_setListItems[i].initialize();
+    }
+    Year_set.initialize();
+    for (int i = 0; i < Year_setListItems.getNumberOfDrawables(); i++)
+    {
+        Year_setListItems[i].initialize();
     }
 }
 
@@ -144,6 +240,24 @@ void ClockAndDateSettingBase::updateItemCallbackHandler(touchgfx::DrawableListIt
         touchgfx::Drawable* d = items->getDrawable(containerIndex);
         NumUpDown* cc = (NumUpDown*)d;
         Second_setUpdateItem(*cc, itemIndex);
+    }
+    if (items == &Month_setListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        NumUpDown* cc = (NumUpDown*)d;
+        Month_setUpdateItem(*cc, itemIndex);
+    }
+    if (items == &Day_setListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        NumUpDown* cc = (NumUpDown*)d;
+        Day_setUpdateItem(*cc, itemIndex);
+    }
+    if (items == &Year_setListItems)
+    {
+        touchgfx::Drawable* d = items->getDrawable(containerIndex);
+        NumUpDown* cc = (NumUpDown*)d;
+        Year_setUpdateItem(*cc, itemIndex);
     }
 }
 

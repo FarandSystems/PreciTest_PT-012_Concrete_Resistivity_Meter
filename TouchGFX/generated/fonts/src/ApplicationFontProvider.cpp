@@ -24,6 +24,9 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::FONT_20:
         // TCCM_____TTF_20_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[4]);
+    case Typography::FONT_18:
+        // TCCM_____TTF_18_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
     default:
         return 0;
     }

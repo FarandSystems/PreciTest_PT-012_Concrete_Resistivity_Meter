@@ -10,13 +10,15 @@ extern touchgfx::GeneratedFont& getFont_TCCM_____TTF_80_4bpp();
 extern touchgfx::GeneratedFont& getFont_TCCM_____TTF_25_4bpp();
 extern touchgfx::GeneratedFont& getFont_TCCM_____TTF_40_4bpp();
 extern touchgfx::GeneratedFont& getFont_TCCM_____TTF_20_4bpp();
+extern touchgfx::GeneratedFont& getFont_TCCM_____TTF_18_4bpp();
 
 const touchgfx::Font* touchgfx_fonts[] = {
     &(getFont_TCCM_____TTF_30_4bpp()),
     &(getFont_TCCM_____TTF_80_4bpp()),
     &(getFont_TCCM_____TTF_25_4bpp()),
     &(getFont_TCCM_____TTF_40_4bpp()),
-    &(getFont_TCCM_____TTF_20_4bpp())
+    &(getFont_TCCM_____TTF_20_4bpp()),
+    &(getFont_TCCM_____TTF_18_4bpp())
 };
 
 extern const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[];
@@ -80,7 +82,12 @@ const touchgfx::TypedText::TypedTextData typedText_database_Gb[] TEXT_LOCATION_F
     { 0, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
+    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
 };
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
@@ -140,7 +147,12 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 0, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
+    { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR }
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
@@ -190,6 +202,9 @@ void resetFont(touchgfx::FontId fontId)
         break;
     case 4:
         touchgfx_fonts[4] = &(getFont_TCCM_____TTF_20_4bpp());
+        break;
+    case 5:
+        touchgfx_fonts[5] = &(getFont_TCCM_____TTF_18_4bpp());
         break;
     }
 }
