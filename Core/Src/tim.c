@@ -562,22 +562,14 @@ void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim) 	//Output Compare 
 			// auto turn off mode
 			if(auto_turn_off_mode == 1)
 			{
-				turn_off_counter++;
-				#ifdef CONCRETE				
+				turn_off_counter++;		
 					if(electrical_Connection_Status == Disconnected)
 					{
-						if(turn_off_counter > 600 && usb_connection_state == 0)// 10Hz - > 100 ms, 600*100ms = 60s
+						if(turn_off_counter > 6000 && usb_connection_state == 0)// 10Hz - > 100 ms, 600*100ms = 60s
 						{
 							HAL_GPIO_WritePin(Sustain_Power_GPIO_Port, Sustain_Power_Pin, GPIO_PIN_RESET);
 						}
 					}
-				#endif
-				#ifdef SOIL
-					if(turn_off_counter > 3000)// 10Hz - > 100 ms, 3000*100ms = 300s = 5 min 
-					{
-						HAL_GPIO_WritePin(Sustain_Power_GPIO_Port, Sustain_Power_Pin, GPIO_PIN_RESET);
-					}				
-				#endif
 				
 			}
 			

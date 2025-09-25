@@ -3,7 +3,7 @@
 <title>Static Call Graph - [STM32F746G_DISCO\STM32F746G_DISCO.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image STM32F746G_DISCO\STM32F746G_DISCO.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Sep 25 14:40:02 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Thu Sep 25 14:56:49 2025
 <BR><P>
 <H3>Maximum Stack Usage =        896 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -4027,7 +4027,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM8_Init
 </UL>
 
-<P><STRONG><a name="[38a]"></a>HAL_TIM_OC_DelayElapsedCallback</STRONG> (Thumb, 236 bytes, Stack size 32 bytes, tim.o(i.HAL_TIM_OC_DelayElapsedCallback))
+<P><STRONG><a name="[38a]"></a>HAL_TIM_OC_DelayElapsedCallback</STRONG> (Thumb, 238 bytes, Stack size 32 bytes, tim.o(i.HAL_TIM_OC_DelayElapsedCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = HAL_TIM_OC_DelayElapsedCallback &rArr; Update_System_Mode &rArr; SendCapturedSignalToPC &rArr; Send_Via_USB &rArr; Farand_USB_Tx &rArr; USBD_CDC_TransmitPacket &rArr; USBD_LL_Transmit &rArr; HAL_PCD_EP_Transmit &rArr; USB_EPStartXfer &rArr; USB_WritePacket
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Caibrate_And_Filter_Temperature
@@ -5873,7 +5873,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> main_screenview.o(.constdata__ZTV15Main_ScreenView)
 </UL>
-<P><STRONG><a name="[146]"></a>Main_ScreenView::Update_Temperature_Battery_Range_Panels()</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, main_screenview.o(i._ZN15Main_ScreenView39Update_Temperature_Battery_Range_PanelsEv))
+<P><STRONG><a name="[146]"></a>Main_ScreenView::Update_Temperature_Battery_Range_Panels()</STRONG> (Thumb, 172 bytes, Stack size 16 bytes, main_screenview.o(i._ZN15Main_ScreenView39Update_Temperature_Battery_Range_PanelsEv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448 + Unknown Stack Size
 <LI>Call Chain = Main_ScreenView::Update_Temperature_Battery_Range_Panels() &rArr; touchgfx::Unicode::snprintfFloat(unsigned short*, unsigned short, const char*, float) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const char*, const float*) &rArr; touchgfx::Unicode::snprintfFloats(unsigned short*, unsigned short, const unsigned short*, const char*, const float*) &rArr; touchgfx::Unicode::itoa(int, unsigned short*, unsigned short, int) &rArr; touchgfx::Unicode::strncpy(unsigned short*, const char*, unsigned short)
 </UL>

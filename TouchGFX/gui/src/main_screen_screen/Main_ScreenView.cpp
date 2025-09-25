@@ -448,20 +448,20 @@ void Main_ScreenView::Update_Temperature_Battery_Range_Panels(void)
 	Update_Battery_Panel();
 	
 	wating_Counter++;
-	if(wating_Counter > 30) //wait for some seconds(15s) 
+	if(wating_Counter > 10) //wait for some seconds(15s) 
 	{
 		// Update Temperature Panel
 		Unicode::snprintfFloat(TEMPERATUREBuffer,TEMPERATURE_SIZE,"%3.1f",(double)(0.5f * (int)(2.0f * temp_Deg_Display + 0.5f)));
 		TEMPERATURE.setVisible(true);
 		BATTERY_PERCENT.setVisible(true);				
 	}
-	if(Charging_Mode == CHARGING && wating_Counter > 30)
+	if(Charging_Mode == CHARGING && wating_Counter > 10)
 	{
 		wating_Counter = 0;
 	}
 		
 	
-	if(wating_Counter > 20) //wait for some seconds(10s)
+	if(wating_Counter > 10) //wait for some seconds(10s)
 	{
 		Connect_Charger_Warning();
 	}

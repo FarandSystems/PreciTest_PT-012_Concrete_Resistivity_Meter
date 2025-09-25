@@ -27,11 +27,16 @@ Project File Date:  09/21/2025
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F746G_DISCO'
-compiling Flash.c...
+compiling Main_ScreenView.cpp...
+../touchgfx/gui/include/gui/common/FrontendApplication.hpp(11): warning:  #611-D: overloaded virtual function "touchgfx::Application::draw"  is only partially overridden in class "FrontendApplication" 
+  class FrontendApplication : public FrontendApplicationBase
+../Core/Inc/bootloader_entry.h(14): warning:  #1-D: last line of file ends without a newline
+  #endif
+../touchgfx/gui/src/main_screen_screen/main_screenview.cpp: 2 warnings, 0 errors
 linking...
 Program Size: Code=125316 RO-data=460160 RW-data=1288 ZI-data=191640  
 FromELF: creating hex file...
-"STM32F746G_DISCO\STM32F746G_DISCO.axf" - 0 Error(s), 0 Warning(s).
+"STM32F746G_DISCO\STM32F746G_DISCO.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,7 +59,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
-Build Time Elapsed:  00:00:32
+Build Time Elapsed:  00:00:42
 </pre>
 </body>
 </html>
