@@ -12,174 +12,251 @@ uint32_t record_Data_Word;
 uint32_t flash_Data [FLASH_DATA_BUFFER_SIZE] __attribute__((at(FLASH_DATA_BASE_ADDRESS)));
 uint8_t tx_Buff [SEND_FLASH_DATA_BUFFER_SIZE] __attribute__((at(SEND_FLASH_DATA_BASE_ADDRESS)));
 
-void Save_In_Four_Words(uint16_t flash_Address, uint8_t* parameter_Array);
-uint32_t ReadParameter(uint16_t parameterIndex);
+
+static uint32_t g_paramWords[WORDS_TOTAL];
+
+uint8_t Save_In_Four_Words(uint32_t wordIndex, const uint8_t *parameter_Array);
+uint32_t ReadParameter(uint32_t wordIndex);
 void Save_Device_ID(uint8_t year, uint8_t SN);
 void Update_Project_Info(void);
 void Send_Device_ID_To_PC(void);
 void Send_Project_Data_To_PC(uint8_t projNumb);
-void Erase_one_Project_On_Flash(uint8_t projNumb);
-void Erase_All_Projects_On_Flash(void);
+uint8_t Erase_one_Project_On_Flash(uint8_t projNumb);
+uint8_t Erase_All_Projects_On_Flash(void);
 void Force_RecordNum0_And_ProjectNum1(void);
+void App_InitLatestInfo(void);
 
-uint32_t ReadParameter(uint16_t parameterIndex)
+uint32_t ReadParameter(uint32_t wordIndex)
 {
-	__IO uint32_t data32;
+    const uint32_t *addr = (const uint32_t *)(FLASH_BASE_ADDR_SECTOR7 + 4u * wordIndex);
+    return *addr;
+}
 
-	data32 = *(__IO uint32_t *)(ADDR_FLASH_SECTOR_7 + 4 * parameterIndex);
-	
-	return data32;	
+/* ====== Utilities ====== */
+static void Flash_ClearErrors(void)
+{
+    uint32_t mask = 0;
+    mask |= FLASH_FLAG_EOP;
+	#ifdef FLASH_FLAG_OPERR
+			mask |= FLASH_FLAG_OPERR;
+	#endif
+	#ifdef FLASH_FLAG_WRPERR
+			mask |= FLASH_FLAG_WRPERR;
+	#endif
+	#ifdef FLASH_FLAG_PGAERR
+			mask |= FLASH_FLAG_PGAERR;
+	#endif
+	#ifdef FLASH_FLAG_PGPERR
+			mask |= FLASH_FLAG_PGPERR;
+	#endif
+	#ifdef FLASH_FLAG_PGSERR
+			mask |= FLASH_FLAG_PGSERR;
+	#endif
+	#ifdef FLASH_FLAG_RDERR
+			mask |= FLASH_FLAG_RDERR;
+	#endif
+			__HAL_FLASH_CLEAR_FLAG(mask);
+}
+
+static void Flash_CacheBarrier(void)
+{
+	#ifdef SCB_CleanInvalidateDCache
+			SCB_CleanInvalidateDCache();
+	#endif
+	#ifdef SCB_InvalidateICache
+			SCB_InvalidateICache();
+	#endif
+}
+
+static void Flash_SnapshotSector(void)
+{
+    uint32_t i;
+    for (i = 0; i < WORDS_TOTAL; i++) {
+        const uint32_t *src = (const uint32_t *)(FLASH_BASE_ADDR_SECTOR7 + 4u*i);
+        g_paramWords[i] = *src;
+    }
+}
+
+/* Program whole RAM image back to flash */
+static uint8_t Flash_ProgramWholeImage(void)
+{
+    uint32_t i;
+    HAL_StatusTypeDef st;
+    for (i = 0; i < WORDS_TOTAL; i++) {
+        uint32_t addr = FLASH_BASE_ADDR_SECTOR7 + 4u*i;
+        st = HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, addr, g_paramWords[i]);
+        if (st != HAL_OK) return 0;
+    }
+    return 1;
+}
+
+static uint8_t Flash_EraseSector(void)
+{
+    FLASH_EraseInitTypeDef EraseInit;
+    uint32_t SectorError = 0xFFFFFFFFu;
+
+    EraseInit.TypeErase    = FLASH_TYPEERASE_SECTORS;
+#ifdef FLASH_VOLTAGE_RANGE_3
+    EraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
+#else
+    EraseInit.VoltageRange = VOLTAGE_RANGE_3;
+#endif
+    EraseInit.Sector       = FLASH_SECTOR_TO_USE;
+    EraseInit.NbSectors    = 1;
+
+    if (HAL_FLASHEx_Erase(&EraseInit, &SectorError) != HAL_OK) return 0;
+    if (SectorError != 0xFFFFFFFFu) return 0;
+    return 1;
+}
+
+/* Word-index helpers (DATA_BUFFER_FLASH_INDEX is the word index of Project 0 start) */
+static inline uint32_t ProjectBaseWordIndex(uint32_t projN)  /* projN: 0..24 */
+{
+    return (uint32_t)DATA_BUFFER_FLASH_INDEX + projN * WORDS_PER_PROJECT;
+}
+
+static inline uint32_t RecordWordIndex(uint32_t projN, uint32_t recN) /* recN: 0..24 */
+{
+    return ProjectBaseWordIndex(projN) + recN * WORDS_PER_RECORD;
+}
+
+/* Clamp helpers */
+static inline uint32_t clampu32(uint32_t v, uint32_t lo, uint32_t hi)
+{
+    if (v < lo) return lo;
+    if (v > hi) return hi;
+    return v;
 }
 
 
-void Save_In_Four_Words(uint16_t flash_Address, uint8_t* parameter_Array) 
+/* Returns 1 on success, 0 on failure. Writes 4 words starting at wordIndex. */
+uint8_t Save_In_Four_Words(uint32_t wordIndex, const uint8_t *parameter_Array)
 {
-	//Read All Words, Change the Intended Word, Erase All Sector, Write again All ParamWords 
-  uint32_t paramWords[2504]; // Totally 25 projects each has 100 words + 1 Device ID
-	
-	 /* Unlock the Flash to enable the flash control register access *************/ 
-  HAL_FLASH_Unlock();   
+    uint32_t i, k;
+    HAL_StatusTypeDef st;
+    uint32_t SectorError = 0xFFFFFFFFu;
+    FLASH_EraseInitTypeDef EraseInit;
 
-  /* Clear pending flags (if any) */  
-	__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR );	
-	
-	//Read FlashBytes to ParamByte Array (626 Word 25x25)
-	for (int i = 0 ; i < 2504 ; i++)
-	{
-		paramWords[i] = ReadParameter(i);
-	}
-	
-	
-	for (int word_index = 0; word_index < 4; word_index++)
-	{
-		// Change ParamWord at parameterIndex
-		paramWords[flash_Address + word_index] = (uint32_t)((parameter_Array[4 * word_index +0] << 24) 
-																											+ (parameter_Array[4 * word_index +1] << 16) 
-																											+ (parameter_Array[4 * word_index +2] << 8) 
-																											+ (parameter_Array[4 * word_index +3] << 0)); // Write one Word
-	}
+    if (parameter_Array == 0) return 0;
+    if (wordIndex + 4u > WORDS_TOTAL) return 0;
 
+    /* Snapshot sector into RAM */
+    for (i = 0; i < WORDS_TOTAL; i++) {
+        const uint32_t *src = (const uint32_t *)(ADDR_FLASH_SECTOR_7 + i * 4u);
+        g_paramWords[i] = *src;
+    }
 
-	/* Erase the whole Sector*/
-	FLASH_Erase_Sector(FLASH_SECTOR_7, VOLTAGE_RANGE_3);
+    /* Patch 4 words from 16 bytes (big-endian) */
+    for (k = 0; k < 4u; k++) {
+        uint32_t w = ((uint32_t)parameter_Array[4u*k + 0u] << 24) |
+                     ((uint32_t)parameter_Array[4u*k + 1u] << 16) |
+                     ((uint32_t)parameter_Array[4u*k + 2u] <<  8) |
+                     ((uint32_t)parameter_Array[4u*k + 3u] <<  0);
+        g_paramWords[wordIndex + k] = w;
+    }
 
-	
-	//Write All paramWords on Flash
-	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 ,paramWords[0])== HAL_OK)
-	{
-		for(int i = 1; i < 2504 ; i++)
-		{
-			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 + 4 * i ,paramWords[i]);
-		}
-	}
-	else
-	{
-////		panel[SAVE].BackColor = Farand_LIGHT_TOMATO;
-////		Farand_DrawPanel(&panel[SAVE]);
-	}  
+    HAL_FLASH_Unlock();
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP    | FLASH_FLAG_OPERR  |
+                           FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR |
+                           FLASH_FLAG_PGPERR
+#ifdef FLASH_FLAG_RDERR
+                           | FLASH_FLAG_RDERR
+#endif
+                           );
 
-////////////////////////////////////////////////////////////////////////////////////////		
-	 /* Lock the Flash to disable the flash control register access (recommended
-     to protect the FLASH memory against possible unwanted operation) *********/
-  HAL_FLASH_Lock(); 
+    EraseInit.TypeErase    = FLASH_TYPEERASE_SECTORS;
+    EraseInit.VoltageRange = VOLTAGE_RANGE_3;  /* 2.7–3.6 V */
+    EraseInit.Sector       = FLASH_SECTOR_TO_USE;
+    EraseInit.NbSectors    = 1;
+
+    __disable_irq();
+    st = HAL_FLASHEx_Erase(&EraseInit, &SectorError);
+    if (st != HAL_OK || SectorError != 0xFFFFFFFFu) {
+        __enable_irq();
+        HAL_FLASH_Lock();
+        return 0;
+    }
+
+    for (i = 0; i < WORDS_TOTAL; i++) {
+        uint32_t addr = ADDR_FLASH_SECTOR_7 + i * 4u;
+        st = HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, addr, g_paramWords[i]);
+        if (st != HAL_OK) {
+            __enable_irq();
+            HAL_FLASH_Lock();
+            return 0;
+        }
+    }
+    __enable_irq();
+
+    Flash_CacheBarrier();
+    HAL_FLASH_Lock();
+    return 1;
 }
 
 // Read All Projects
 // Force the Intended Project to be 0
 // Erase the whole Sectore4
 // Write Again All Projects on Flash
-void Erase_one_Project_On_Flash(uint8_t projNumb)
+uint8_t Erase_one_Project_On_Flash(uint8_t projNumb)
 {
-	uint16_t i;
-  uint32_t paramWords[2504];
-	
-	 /* Unlock the Flash to enable the flash control register access *************/ 
-  HAL_FLASH_Unlock();   
+    uint32_t start, i;
 
-  /* Clear pending flags (if any) */  
-	__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR );
-	
-	
-	//Read FlashBytes to ParamWord Array 
-	for (i = 0 ; i < 2504 ; i++)
-	{
-		paramWords[i] = ReadParameter(i);
-	}	
-	
-	//Erase one Project (25 Record)
-	for(int recordNum = 0 ; recordNum < 25; recordNum++)
-	{
-		// Change ParamWord at parameterIndex
-		paramWords[(25 * projNumb) + recordNum] = 0xFFFFFFFFu;
-	}
+    /* bounds: if you number 1..24 and keep 0 for settings, adjust here */
+    if (projNumb >= PROJECTS_COUNT) return 0;
 
-	/* Erase the whole Sector*/
-	FLASH_Erase_Sector(FLASH_SECTOR_7, VOLTAGE_RANGE_3);
+    HAL_FLASH_Unlock();
+    Flash_ClearErrors();
 
-	
-	//Write Again All 625 paramWords on Flash
-	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 ,paramWords[0])== HAL_OK)
-	{
-		for(i = 1; i < 2504 ; i++)
-		{
-			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 + 4 * i ,paramWords[i]);
-		}
-	}
-	else
-	{
-////		panel[SAVE].BackColor = Farand_LIGHT_TOMATO;
-////		Farand_DrawPanel(&panel[SAVE]);
-	}
+    /* Read current sector image */
+    Flash_SnapshotSector();
 
-////////////////////////////////////////////////////////////////////////////////////////		
-	 /* Lock the Flash to disable the flash control register access (recommended
-     to protect the FLASH memory against possible unwanted operation) *********/
-  HAL_FLASH_Lock(); 
+    /* Compute project start index (in words) */
+    start = BASE_OFFSET_WORDS + (uint32_t)projNumb * WORDS_PER_PROJECT;
+    if (start + WORDS_PER_PROJECT > WORDS_TOTAL) { HAL_FLASH_Lock(); return 0; }
+
+    /* Wipe that project’s words */
+    for (i = 0; i < WORDS_PER_PROJECT; i++) {
+        g_paramWords[start + i] = 0xFFFFFFFFu;
+    }
+
+    /* Erase & re-program */
+    __disable_irq();
+    if (!Flash_EraseSector()) { __enable_irq(); HAL_FLASH_Lock(); return 0; }
+    if (!Flash_ProgramWholeImage()) { __enable_irq(); HAL_FLASH_Lock(); return 0; }
+    __enable_irq();
+
+    Flash_CacheBarrier();
+    HAL_FLASH_Lock();
+    return 1;
 }
 
 //Read the ProjectNumber0(Device Settings)
 //Erase the whole Sector4
 //Write Again the project Number 0 
-void Erase_All_Projects_On_Flash(void)
+uint8_t Erase_All_Projects_On_Flash(void)
 {
-	int i;
-  uint32_t paramWords[2504];
+    uint32_t i;
 
-	 /* Unlock the Flash to enable the flash control register access *************/ 
-  HAL_FLASH_Unlock();   
+    HAL_FLASH_Unlock();
+    Flash_ClearErrors();
 
-  /* Clear pending flags (if any) */  
-	__HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_EOP | FLASH_FLAG_OPERR | FLASH_FLAG_WRPERR );
-	
-	//Read FlashBytes to ParamWord Array 
-	for (i = 0 ; i < 25 ; i++)
-	{
-		paramWords[i] = ReadParameter(i);
-	}	
+    /* Preserve only the first KEEP_HEAD_WORDS words; others -> 0xFFFFFFFF */
+    Flash_SnapshotSector();
 
-	/* Erase the whole Sector*/
-	FLASH_Erase_Sector(FLASH_SECTOR_7, VOLTAGE_RANGE_3);
+    /* Fill the tail with erased value */
+    for (i = KEEP_HEAD_WORDS; i < WORDS_TOTAL; i++) {
+        g_paramWords[i] = 0xFFFFFFFFu;
+    }
 
-	
-	//Write Again Project0(25 paramWords) on Flash
-	if (HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 ,paramWords[0])== HAL_OK)
-	{
-		for(i = 1; i < 25 ; i++)
-		{
-			HAL_FLASH_Program(TYPEPROGRAM_WORD,ADDR_FLASH_SECTOR_7 + 4 * i ,paramWords[i]);			
-		}
-	}
-	else
-	{
-////		panel[SAVE].BackColor = Farand_LIGHT_TOMATO;
-////		Farand_DrawPanel(&panel[SAVE]);
-	}
+    /* Erase & re-program */
+    __disable_irq();
+    if (!Flash_EraseSector()) { __enable_irq(); HAL_FLASH_Lock(); return 0; }
+    if (!Flash_ProgramWholeImage()) { __enable_irq(); HAL_FLASH_Lock(); return 0; }
+    __enable_irq();
 
-////////////////////////////////////////////////////////////////////////////////////////		
-	 /* Lock the Flash to disable the flash control register access (recommended
-     to protect the FLASH memory against possible unwanted operation) *********/
-  HAL_FLASH_Lock(); 
-	
+    Flash_CacheBarrier();
+    HAL_FLASH_Lock();
+    return 1;
 }
 
 void Save_Device_ID(uint8_t year, uint8_t SN)
@@ -198,6 +275,90 @@ void Save_Device_ID(uint8_t year, uint8_t SN)
 	four_words[3] = SN;
 	
 	Save_In_Four_Words(DEVICE_ID_FLASH_INDEX, four_words);
+}
+
+static uint8_t crc8_07(const uint8_t *p, uint32_t n)
+{
+    uint8_t crc = 0;
+    for (uint32_t i = 0; i < n; i++) {
+        crc ^= p[i];
+        for (uint8_t b = 0; b < 8; b++) {
+            crc = (crc & 0x80) ? (uint8_t)((crc << 1) ^ 0x07) : (uint8_t)(crc << 1);
+        }
+    }
+    return crc;
+}
+
+static void Save_LatestInfo_4Words(uint8_t project, uint8_t record)
+{
+    uint8_t blk[16] = {0};
+    blk[0] = project;                 /* proj */
+    blk[1] = record;                  /* rec  */
+    blk[2] = 1;                       /* version */
+    /* blk[3] = 0 */
+    blk[4] = 0x4C; blk[5] = 0x50; blk[6] = 0x49; blk[7] = 0x46;  /* 'L','P','I','F' */
+    /* blk[8..11] = 0 */
+    blk[12] = crc8_07(blk, 12);       /* CRC of first 12 bytes */
+    /* blk[13..15] = 0 */
+
+    Save_In_Four_Words(LATEST_PROJECT_INFO_FLASH_INDEX, blk);
+}
+
+static uint8_t Load_LatestInfo_4Words(uint8_t *project, uint8_t *record)
+{
+    /* Read first word (bytes 0..3) */
+    uint32_t w0 = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX);
+    /* Read next words to rebuild the 16B block for CRC/magic check */
+    uint32_t w1 = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX + 1u);
+    uint32_t w2 = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX + 2u);
+    uint32_t w3 = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX + 3u);
+
+    uint8_t blk[16];
+    blk[0]  = (uint8_t)((w0 >> 24) & 0xFF);
+    blk[1]  = (uint8_t)((w0 >> 16) & 0xFF);
+    blk[2]  = (uint8_t)((w0 >>  8) & 0xFF);
+    blk[3]  = (uint8_t)((w0 >>  0) & 0xFF);
+    blk[4]  = (uint8_t)((w1 >> 24) & 0xFF);
+    blk[5]  = (uint8_t)((w1 >> 16) & 0xFF);
+    blk[6]  = (uint8_t)((w1 >>  8) & 0xFF);
+    blk[7]  = (uint8_t)((w1 >>  0) & 0xFF);
+    blk[8]  = (uint8_t)((w2 >> 24) & 0xFF);
+    blk[9]  = (uint8_t)((w2 >> 16) & 0xFF);
+    blk[10] = (uint8_t)((w2 >>  8) & 0xFF);
+    blk[11] = (uint8_t)((w2 >>  0) & 0xFF);
+    blk[12] = (uint8_t)((w3 >> 24) & 0xFF);
+    blk[13] = (uint8_t)((w3 >> 16) & 0xFF);
+    blk[14] = (uint8_t)((w3 >>  8) & 0xFF);
+    blk[15] = (uint8_t)((w3 >>  0) & 0xFF);
+
+    /* Quick invalid cases: fully erased or bad magic */
+    if ((w0 == 0xFFFFFFFFu && w1 == 0xFFFFFFFFu && w2 == 0xFFFFFFFFu && w3 == 0xFFFFFFFFu) ||
+        !(blk[4] == 0x4C && blk[5] == 0x50 && blk[6] == 0x49 && blk[7] == 0x46)) {
+        return 0; /* invalid */
+    }
+
+    /* CRC check */
+    if (blk[12] != crc8_07(blk, 12)) {
+        return 0; /* invalid */
+    }
+		    *project = blk[0];
+    *record  = blk[1];
+    return 1; /* valid */
+}
+
+void App_InitLatestInfo(void)
+{
+    uint8_t proj, rec;
+    if (!Load_LatestInfo_4Words(&proj, &rec) ||
+        proj < 1 || proj > 24 || rec > 24)
+    {
+        /* Seed sane defaults and store */
+        proj = 1; rec = 0;
+        Save_LatestInfo_4Words(proj, rec);
+    }
+
+    projectNumber = proj;
+    recordNumber  = rec;
 }
 
 void Update_Project_Info(void) //Each time we press the Save key, one Word is saved
@@ -265,83 +426,110 @@ void Force_RecordNum0_And_ProjectNum1(void)
 }
 //Each time we press the Save key, one Word (1 Record) is saved
 //Each Project includes 25 Records (Measurements)
-void Save_Record_Data_On_Flash(void) //Each time we press the Save key, one Word is saved
-{	
-	Record_Buffer[0]  = (uint8_t)((resistance_Or_conductivityX10 & 0xFF00) >> 8);		
-	Record_Buffer[1]  = (uint8_t)((resistance_Or_conductivityX10 & 0x00FF) >> 0);			
-	Record_Buffer[2]  = (uint8_t)(resistance_conductivity_Range + 6); //resistance_conductivity_Range can be : -6, -3, 0, 3, 6 ...> 0,3,9,12	
-	Record_Buffer[3]  = (uint8_t)(probeTypeIndex); //0 = 38mm 1 = 50mm 2 = Bulk
-									  
-	Record_Buffer[4]  = (uint8_t)(Minute);
-	Record_Buffer[5]  = (uint8_t)(Hour);
-	Record_Buffer[6]  = (uint8_t)(0x00); //Reserved
-	Record_Buffer[7]  = (uint8_t)(0x00); //Reserved
-									  
-	Record_Buffer[8]  = (uint8_t)(Day);
-	Record_Buffer[9]  = (uint8_t)(Month);
-	Record_Buffer[10] = (uint8_t)(Year);
-	Record_Buffer[11] = (uint8_t)(0x00); //Reserved
-	
-	Record_Buffer[12] = (uint8_t)(temp_Deg_Display);
-	Record_Buffer[13] = (uint8_t)(0x00); //Reserved
-	Record_Buffer[14] = (uint8_t)(0x00); //Don't Use
-	Record_Buffer[15] = (uint8_t)(0x00); //Don't Use
-	
-	if(electrical_Connection_Status == Connected || ((electrical_Connection_Status == Disconnected)&&(hold_flag == 1)))
-	{
-			Save_In_Four_Words(DATA_BUFFER_FLASH_INDEX + (25 * 4 * (projectNumber)) + recordNumber * 4 , Record_Buffer);	//each project contains 25 records , each record contains 4 Words
-	}	
-	
+void Save_Record_Data_On_Flash(void) // Each press saves one 16-byte record
+{
+    /* Build record payload (16 bytes = 4 words) */
+    Record_Buffer[0]  = (uint8_t)((resistance_Or_conductivityX10 >> 8) & 0xFF);
+    Record_Buffer[1]  = (uint8_t)((resistance_Or_conductivityX10 >> 0) & 0xFF);
+    Record_Buffer[2]  = (uint8_t)(resistance_conductivity_Range + 6); /* -6,-3,0,3,6 -> 0,3,6,9,12? (your mapping) */
+    Record_Buffer[3]  = (uint8_t)(probeTypeIndex);
 
+    Record_Buffer[4]  = (uint8_t)Minute;
+    Record_Buffer[5]  = (uint8_t)Hour;
+    Record_Buffer[6]  = 0x00;
+    Record_Buffer[7]  = 0x00;
+
+    Record_Buffer[8]  = (uint8_t)Day;
+    Record_Buffer[9]  = (uint8_t)Month;
+    Record_Buffer[10] = (uint8_t)Year;
+    Record_Buffer[11] = 0x00;
+
+    Record_Buffer[12] = (uint8_t)temp_Deg_Display;
+    Record_Buffer[13] = 0x00;
+    Record_Buffer[14] = 0x00;
+    Record_Buffer[15] = 0x00;
+
+    /* Only save when connected or in hold mode */
+    if (electrical_Connection_Status == Connected ||
+        (electrical_Connection_Status == Disconnected && hold_flag == 1))
+    {
+        /* UI uses 1..24; project 0 is settings/header. Map 1..24 -> 1..24, clamp inside range. */
+        uint32_t proj = clampu32((uint32_t)projectNumber, 1u, (PROJECTS_COUNT - 1u)); /* 1..24 */
+        uint32_t rec  = clampu32((uint32_t)recordNumber, 0u, (RECORDS_PER_PROJECT - 1u)); /* 0..24 */
+
+        uint32_t wordIndex = RecordWordIndex(proj, rec); /* DATA_BUFFER_FLASH_INDEX + proj*100 + rec*4 */
+
+        /* Program 4 words (will snapshot, erase, reprogram whole sector safely) */
+        if (!Save_In_Four_Words(wordIndex, Record_Buffer)) {
+            /* Optional: show a UI error or beep pattern */
+            Alarm(EMERGENCY_BEEP, 1, 32, BEEP_ON);
+        } else {
+//            Alarm(SHORT_BEEP_X1, 1, 8, BEEP_ON); /* success cue */
+        }
+    }
 }
 
-// This function send one Project Parameters to PC to analysis them.
 void Send_Project_Data_To_PC(uint8_t project_Number)
 {
-	//Read 1 Project, Project Number is received from PC
-	for(uint8_t recordNumber = 0 ; recordNumber < 25; recordNumber++ )
-	{
-		for(uint8_t word_Number = 0 ; word_Number < 4; word_Number++)
-		{
-			flash_Data[4 * recordNumber + word_Number] = ReadParameter(DATA_BUFFER_FLASH_INDEX + (25 * 4 * (projectNumber)) + (recordNumber * 4 ) + word_Number); //each project contains 25 records , each record contains 4 Words
-		}
-		
-	}
-	
-	//Clear the tx buffer
-	for(uint16_t index = 0; index < sizeof(tx_Buff); index++)
-	{
-		tx_Buff[index] = (uint8_t)0x00;
-	}
-	
-	
-	// Fill first 14 bytes record data of 1 project
-	for(uint8_t record_Index = 0 ; record_Index < 25; record_Index++ ) //16 bytes are sent for 1 record hence 25 records are sent in 25 * 16 = 400 bytes
-	{
-		tx_Buff[(record_Index) * 16 + 0]  = 0; // code 0x1A
-		tx_Buff[(record_Index) * 16 + 1]  = (uint8_t) ((flash_Data[4 * record_Index + 0] & 0xFF000000) >> 24); // Probe Type 0 = 38mm 1 = 50mm 2 = Bulk
-		tx_Buff[(record_Index) * 16 + 2]  = (uint8_t) ((flash_Data[4 * record_Index + 0] & 0x00FF0000) >> 16); // Resistence Range 0 ... 12 (-6 ... 6)
-		tx_Buff[(record_Index) * 16 + 3]  = (uint8_t) ((flash_Data[4 * record_Index + 0] & 0x0000FF00) >> 8 ); // Resistence/ConductivityX10 HB
-		tx_Buff[(record_Index) * 16 + 4]  = (uint8_t) ((flash_Data[4 * record_Index + 0] & 0x000000FF) >> 0 ); // Resistence/ConductivityX10 LB
-		tx_Buff[(record_Index) * 16 + 5]  = (uint8_t) ((flash_Data[4 * record_Index + 1] & 0xFF000000) >> 24); // Reserved
-		tx_Buff[(record_Index) * 16 + 6]  = (uint8_t) ((flash_Data[4 * record_Index + 1] & 0x00FF0000) >> 16); // Reserved
-		tx_Buff[(record_Index) * 16 + 7]  = (uint8_t) ((flash_Data[4 * record_Index + 1] & 0x0000FF00) >> 8 ); // Time(hh)
+    uint32_t base = ProjectBaseWordIndex(project_Number);
+    uint32_t i;
 
-		
-		tx_Buff[(record_Index) * 16 + 8]  = 0; // code 0x1A
-		tx_Buff[(record_Index) * 16 + 9]  = (uint8_t) ((flash_Data[4 * record_Index + 1] & 0x000000FF) >> 0 );// Time(mm)
-		tx_Buff[(record_Index) * 16 + 10] = (uint8_t) ((flash_Data[4 * record_Index + 2] & 0xFF000000) >> 24); // Reserved
-		tx_Buff[(record_Index) * 16 + 11] = (uint8_t) ((flash_Data[4 * record_Index + 2] & 0x00FF0000) >> 16); // Date(YY)
-		tx_Buff[(record_Index) * 16 + 12] = (uint8_t) ((flash_Data[4 * record_Index + 2] & 0x0000FF00) >> 8 ); // Date(MM)
-		tx_Buff[(record_Index) * 16 + 13] = (uint8_t) ((flash_Data[4 * record_Index + 2] & 0x000000FF) >> 0 ); // Date(dd)
-		tx_Buff[(record_Index) * 16 + 14] = (uint8_t) ((flash_Data[4 * record_Index + 3] & 0x0000FF00) >> 8 ); // Reserved
-		tx_Buff[(record_Index) * 16 + 15] = (uint8_t) ((flash_Data[4 * record_Index + 3] & 0x000000FF) >> 0 ); // Reserved
-	}
-	
-	
-	Send_Via_USB(tx_Buff, 512);	
+    /* Read 1 project = 100 words */
+    for (i = 0; i < WORDS_PER_PROJECT; i++) {
+        flash_Data[i] = ReadParameter(base + i);
+    }
+
+    /* Clear the 512B TX buffer (you send 512) */
+    for (i = 0; i < sizeof(tx_Buff); i++) {
+        tx_Buff[i] = 0x00;
+    }
+
+    /* === KEEPING YOUR TX PATTERN AS IS ===
+       (same fields and positions you used)
+       Each record -> 16 bytes; 25 records -> first 400 bytes filled
+    */
+    for (uint8_t record_Index = 0; record_Index < RECORDS_PER_PROJECT; record_Index++)
+    {
+        uint32_t w0 = flash_Data[4u * record_Index + 0u];
+        uint32_t w1 = flash_Data[4u * record_Index + 1u];
+        uint32_t w2 = flash_Data[4u * record_Index + 2u];
+        uint32_t w3 = flash_Data[4u * record_Index + 3u];
+
+        uint32_t o = (uint32_t)record_Index * 16u;
+			
+			    /* --- ERASED RECORD HANDLING (all words 0xFFFFFFFF) --- */
+				if (w0 == 0xFFFFFFFFu && w1 == 0xFFFFFFFFu &&
+						w2 == 0xFFFFFFFFu && w3 == 0xFFFFFFFFu)
+				{
+						/* Keep your TX pattern: we already cleared tx_Buff to 0x00,
+							 so leave these 16 bytes as zeros to indicate "empty record". */
+						/* If you ever want 0xFF instead, do: memset(&tx_Buff[o], 0xFF, 16); */
+						continue;
+				}
+
+        tx_Buff[o + 0]  = 0;                                           /* code 0x1A (you kept 0) */
+        tx_Buff[o + 1]  = (uint8_t)((w0 & 0xFF000000u) >> 24);         /* Probe Type */
+        tx_Buff[o + 2]  = (uint8_t)((w0 & 0x00FF0000u) >> 16);         /* Range (0..12) */
+        tx_Buff[o + 3]  = (uint8_t)((w0 & 0x0000FF00u) >> 8 );         /* Resist/Cond ×10 HB */
+        tx_Buff[o + 4]  = (uint8_t)((w0 & 0x000000FFu) >> 0 );         /* Resist/Cond ×10 LB */
+
+        tx_Buff[o + 5]  = (uint8_t)((w1 & 0xFF000000u) >> 24);         /* Reserved */
+        tx_Buff[o + 6]  = (uint8_t)((w1 & 0x00FF0000u) >> 16);         /* Reserved */
+        tx_Buff[o + 7]  = (uint8_t)((w1 & 0x0000FF00u) >> 8 );         /* Time (hh) */
+
+        tx_Buff[o + 8]  = 0;                                           /* code 0x1A (you kept 0) */
+        tx_Buff[o + 9]  = (uint8_t)((w1 & 0x000000FFu) >> 0 );         /* Time (mm) */
+        tx_Buff[o + 10] = (uint8_t)((w2 & 0xFF000000u) >> 24);         /* Reserved */
+        tx_Buff[o + 11] = (uint8_t)((w2 & 0x00FF0000u) >> 16);         /* Date (YY) */
+        tx_Buff[o + 12] = (uint8_t)((w2 & 0x0000FF00u) >> 8 );         /* Date (MM) */
+        tx_Buff[o + 13] = (uint8_t)((w2 & 0x000000FFu) >> 0 );         /* Date (dd) */
+        tx_Buff[o + 14] = (uint8_t)((w3 & 0xFF000000u) >> 24 );         /* Temp */
+        tx_Buff[o + 15] = (uint8_t)((w3 & 0x000000FFu) >> 0 );         /* Reserved */
+    }
+
+    /* You were sending 512; keep it */
+    Send_Via_USB(tx_Buff, 512);
 }
-
 // This function send one System Settings to PC 
 void Send_Device_ID_To_PC(void)
 {

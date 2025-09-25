@@ -229,114 +229,92 @@ void Main_ScreenView::BATTERY_PERCENTClickHandler(const TextProgress& text_progr
 }
 
 void Main_ScreenView::Save_And_Create(void)
-{	
-	save_and_Create_delay_flag = 0;
-	
-	if(save_flag == 1)
-	{
-		// After 1 second delay, saving is performed.
-		save_flag = 0;
-		HAL_TIM_Base_Stop_IT(&htim3); 
+{
+    save_and_Create_delay_flag = 0;
 
-		Update_Project_Info();
-		Save_Record_Data_On_Flash();				
+    if (save_flag == 1)
+    {
+        save_flag = 0;
+        HAL_TIM_Base_Stop_IT(&htim3);
 
-		SAVE.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
-		SAVE.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-		SAVE.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-		SAVE.setLabelText(touchgfx::TypedText(T_SAVE));
-		SAVE.invalidate();
-		
-		NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
-		NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-		NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
-		NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
-		NEW_PROJECT.invalidate();
-		
-		Unicode::snprintf(HELPBuffer,HELP_SIZE,"Press Save to Record as Number %d",recordNumber + 1);
-    HELP.setWildcard(HELPBuffer);
-    HELP.resizeToCurrentTextWithAlignment();
-    HELP.invalidate();
-//		ShowMessageBox("Data Saved!");
+        /* Update next record/project indexes (handles rollover) */
+        Update_Project_Info();
 
-		Restart_Output_Filter_in_Save_And_CreatingProj();
-		
-	}	
-	
-	
-	if(createPrj_flag == 1)
-	{
-		createPrj_flag = 0;
-		HAL_TIM_Base_Stop_IT(&htim3);
-		
-		projectRecordNumber = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX);	
-		
-		projectNumber = ((projectRecordNumber & 0xFF000000) >> 24 ); // Project Number
-		recordNumber = (projectRecordNumber & 0x00FF0000) >> 16;
-		
-		if(projectNumber < 24)
-		{	
-			Alarm(SHORT_BEEP_X1,1,32, BEEP_ON);
-//			if(recordNumber != 0)
-//			{
-				projectNumber ++;
-				recordNumber = 0;
-				Erase_one_Project_On_Flash(projectNumber);
-			
-				
-				NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
-				NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-				NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-				NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
-				NEW_PROJECT.invalidate();
-				
-				Unicode::snprintf(PROJECT_NUMBuffer, PROJECT_NUM_SIZE,"%2d",projectNumber);	
-				PROJECT_NUM.resizeToCurrentTextWithAlignment();
-				PROJECT_NUM.invalidate();
-				
-				Unicode::snprintf(HELPBuffer,HELP_SIZE,"Press Save to Record as Number %d",recordNumber + 1);
-				HELP.setWildcard(HELPBuffer);
-				HELP.resizeToCurrentTextWithAlignment();
-				HELP.invalidate();
-//			}
+        /* Save the actual record */
+        Save_Record_Data_On_Flash();
 
-		}
-		else
-		{
-			projectNumber = 1;
-			recordNumber = 0;
-			Erase_one_Project_On_Flash(projectNumber);
-		
-			NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
-			NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-			NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
-			NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
-			NEW_PROJECT.invalidate();
-		
-			Unicode::snprintf(HELPBuffer,HELP_SIZE,"Press Mode to change Probe Size");
-			HELP.setWildcard(HELPBuffer);
-			HELP.resizeToCurrentText();				
+        /* UI refresh */
+        SAVE.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
+        SAVE.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
+        SAVE.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
+        SAVE.setLabelText(touchgfx::TypedText(T_SAVE));
+        SAVE.invalidate();
 
-		}
+        NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID), touchgfx::Bitmap(BITMAP_BUTTON_HOLLOW_ID));
+        NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
+        NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(253, 255, 123));
+        NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
+        NEW_PROJECT.invalidate();
 
-		Unicode::snprintf(PROJECT_NUMBuffer, PROJECT_NUM_SIZE,"%2d",projectNumber);	
-		PROJECT_NUM.resizeToCurrentTextWithAlignment();
-		PROJECT_NUM.invalidate();
-		
-		latestProjectInfo[0] = projectNumber;
-		
-		// After New Project Record Number Should be Zero
-		latestProjectInfo[1] = 0;  // Record Number
-		
-//		projectRecordNumber = ((uint32_t)(latestProjectInfo[0]) << 24) +
-//													((uint32_t)(latestProjectInfo[1]) << 16) +
-//													((uint32_t)(latestProjectInfo[2]) << 8)  +
-//													((uint32_t)(latestProjectInfo[3]) << 0);
-	
-		Save_In_Four_Words(LATEST_PROJECT_INFO_FLASH_INDEX, latestProjectInfo);		
-		
-	}
+        Unicode::snprintf(HELPBuffer, HELP_SIZE, "Press Save to Record as Number %d", recordNumber + 1);
+        HELP.setWildcard(HELPBuffer);
+        HELP.resizeToCurrentTextWithAlignment();
+        HELP.invalidate();
+
+        Restart_Output_Filter_in_Save_And_CreatingProj();
+    }
+
+    if (createPrj_flag == 1)
+    {
+        createPrj_flag = 0;
+        HAL_TIM_Base_Stop_IT(&htim3);
+
+        /* Read last saved project/record (word packed) */
+        projectRecordNumber = ReadParameter(LATEST_PROJECT_INFO_FLASH_INDEX);
+        projectNumber = (uint8_t)((projectRecordNumber >> 24) & 0xFF);
+        recordNumber  = (uint8_t)((projectRecordNumber >> 16) & 0xFF);
+
+        /* Move to next project (1..24), wrap to 1 */
+        if (projectNumber < (PROJECTS_COUNT - 1u)) {   /* 1..23 -> +1 */
+            projectNumber++;
+        } else {
+            projectNumber = 1;                          /* wrap to 1 */
+        }
+        recordNumber = 0;
+
+        /* Erase the chosen project's space (100 words) */
+        if (!Erase_one_Project_On_Flash(projectNumber)) {
+            /* Optional: show error */
+            Alarm(EMERGENCY_BEEP, 1, 32, BEEP_ON);
+        } else {
+//            Alarm(SHORT_BEEP_X1, 1, 8, BEEP_ON);
+        }
+
+        /* Update UI: NEW_PROJECT button, project number, help text */
+        NEW_PROJECT.setBitmaps(touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID), touchgfx::Bitmap(BITMAP_BUTTON_FILLED_ID));
+        NEW_PROJECT.setLabelColor(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+        NEW_PROJECT.setLabelColorPressed(touchgfx::Color::getColorFrom24BitRGB(0, 0, 0));
+        NEW_PROJECT.setLabelText(touchgfx::TypedText(T_NEW_PROJECT));
+        NEW_PROJECT.invalidate();
+
+        Unicode::snprintf(PROJECT_NUMBuffer, PROJECT_NUM_SIZE, "%2d", projectNumber);
+        PROJECT_NUM.resizeToCurrentTextWithAlignment();
+        PROJECT_NUM.invalidate();
+
+        Unicode::snprintf(HELPBuffer, HELP_SIZE, "Press Save to Record as Number %d", recordNumber + 1);
+        HELP.setWildcard(HELPBuffer);
+        HELP.resizeToCurrentTextWithAlignment();
+        HELP.invalidate();
+
+        /* Persist latest project info to flash */
+        latestProjectInfo[0] = projectNumber; /* project */
+        latestProjectInfo[1] = recordNumber;  /* record */
+        /* latestProjectInfo[2], [3] can remain as-is (reserved) */
+
+        Save_In_Four_Words(LATEST_PROJECT_INFO_FLASH_INDEX, latestProjectInfo);
+    }
 }
+
 void Main_ScreenView::Temp_Correct_btn_CallBack()
 {
 	if(OutputFilterOperation == StableOperation)

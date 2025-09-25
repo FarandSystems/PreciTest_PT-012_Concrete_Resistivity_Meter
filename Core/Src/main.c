@@ -145,6 +145,10 @@ int main(void)
 	// Read First Conversion Value (This is necessary because the conversion will not proceed until the conversion data is read)
 	Read_ADC_24Bit();
 	
+//	Erase_All_Projects_On_Flash();
+//	Force_RecordNum0_And_ProjectNum1();
+//	App_InitLatestInfo();
+	
 	Configure_and_Start_Timers();
 	
 	Initialize_RTC();	
@@ -153,9 +157,7 @@ int main(void)
 	
 	HAL_ADC_Start_DMA(&hadc3,(uint32_t*)ADC_ConvertedValue,2);
 	
-//	Erase_All_Projects_On_Flash();
-//	Force_RecordNum0_And_ProjectNum1();
-	 
+
   /* USER CODE END 2 */
 
   /* Init scheduler */

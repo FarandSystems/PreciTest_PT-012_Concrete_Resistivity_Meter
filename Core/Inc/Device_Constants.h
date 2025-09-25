@@ -9,7 +9,7 @@
 #include "main.h"
 /*Flash Index*/
 #define DEVICE_ID_FLASH_INDEX 						0
-#define LATEST_PROJECT_INFO_FLASH_INDEX 1
+#define LATEST_PROJECT_INFO_FLASH_INDEX 4
 #define DATA_BUFFER_FLASH_INDEX   				64
 
 //Calibration Report for FW411 
